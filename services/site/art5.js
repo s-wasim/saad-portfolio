@@ -1,5 +1,5 @@
 // v5: animated handshake: both right hands are rigged (human seen from the back, robot from the palm side); the robot is split into a back layer and a front layer (thumb + hooked fingertips) so its fingers can wrap over the human hand.
-// v4: regular handshake (grip), pointing pose + finger morph, Zaslia/Moonhouse signage. v3: power-grip clasp. v2: shop SVG (both eras), vector hands, frame-4 shop pieces, glass debris, screen crack, grain.
+// v4: regular handshake (grip), pointing pose + finger morph, Zaslia/Audiowide signage. v3: power-grip clasp. v2: shop SVG (both eras), vector hands, frame-4 shop pieces, glass debris, screen crack, grain.
 (function () {
   const KEEP = { viewBox: 1, filterUnits: 1, stdDeviation: 1, preserveAspectRatio: 1, gradientUnits: 1 };
   const kb = k => (KEEP[k] || k.startsWith('data-')) ? k : k.replace(/[A-Z]/g, m => '-' + m.toLowerCase());
@@ -38,7 +38,7 @@
     L.sign = N ? [
       h('rect', { x: 40, y: 66, width: 520, height: 62, rx: 6, fill: '#071233' }),
       h('rect', { x: 40, y: 66, width: 520, height: 62, rx: 6, ...led, opacity: 0.7 }),
-      h('text', { x: 300, y: 108, textAnchor: 'middle', fontFamily: 'Moonhouse, sans-serif', fontWeight: 400, fontSize: 24, letterSpacing: 6, fill: '#e9f6ff', filter: u('glow') }, 'GENERAL STORE')
+      h('text', { x: 300, y: 108, textAnchor: 'middle', fontFamily: 'Audiowide, sans-serif', fontWeight: 400, fontSize: 24, letterSpacing: 6, fill: '#e9f6ff', filter: u('glow') }, 'GENERAL STORE')
     ] : [
       h('rect', { x: 40, y: 66, width: 520, height: 62, rx: 2, fill: '#2c1c12' }),
       h('rect', { x: 48, y: 74, width: 504, height: 46, fill: 'none', stroke: '#d6b479', strokeOpacity: 0.55 }),
@@ -114,7 +114,7 @@
     ];
     L.wsign = N ? [
       h('rect', { x: 236, y: 266, width: 86, height: 32, rx: 4, fill: '#0b2a8a', stroke: '#39e6ff', strokeWidth: 1.2, filter: u('glow') }),
-      h('text', { x: 279, y: 287, textAnchor: 'middle', fontFamily: 'Moonhouse, sans-serif', fontWeight: 400, fontSize: 10, letterSpacing: 0.8, fill: '#e9f6ff' }, 'OPEN 24/7')
+      h('text', { x: 279, y: 287, textAnchor: 'middle', fontFamily: 'Audiowide, sans-serif', fontWeight: 400, fontSize: 10, letterSpacing: 0.8, fill: '#e9f6ff' }, 'OPEN 24/7')
     ] : [
       h('rect', { x: 246, y: 444, width: 70, height: 34, fill: '#efe2c4', transform: 'rotate(-3 281 461)' }),
       h('rect', { x: 270, y: 440, width: 22, height: 7, fill: '#e8dcae', opacity: 0.8, transform: 'rotate(-3 281 461)' }),
@@ -141,7 +141,7 @@
     L.dsign = N ? [
       h('rect', { x: 420, y: 300, width: 70, height: 26, rx: 13, fill: '#071233', stroke: '#39e6ff', strokeWidth: 1.2, filter: u('glow') }),
       h('circle', { cx: 434, cy: 313, r: 3, fill: '#39e6ff' }),
-      h('text', { x: 461, y: 318, textAnchor: 'middle', fontFamily: 'Moonhouse, sans-serif', fontWeight: 400, fontSize: 11, letterSpacing: 1.5, fill: '#e9f6ff' }, 'OPEN')
+      h('text', { x: 461, y: 318, textAnchor: 'middle', fontFamily: 'Audiowide, sans-serif', fontWeight: 400, fontSize: 11, letterSpacing: 1.5, fill: '#e9f6ff' }, 'OPEN')
     ] : [
       h('path', { d: 'M428 326 L455 282 L482 326', stroke: '#2a1a10', strokeWidth: 1.2, fill: 'none' }),
       h('circle', { cx: 455, cy: 282, r: 2, fill: '#2a1a10' })
@@ -165,14 +165,14 @@
     const defs = h('defs', null,
       lg('o-fac', [[0, '#b58157'], [1, '#7a4f34']]), lg('n-fac', [[0, '#10215e'], [1, '#060c2a']]),
       lg('o-side', [[0, '#6a4530'], [1, '#3c2618']], 1, 0), lg('n-side', [[0, '#0a1440'], [1, '#030818']], 1, 0),
-      lg('o-int', [[0, '#3a2a20'], [1, '#1c130e']]), lg('n-int', [[0, '#2a5cff'], [0.55, '#163aa8'], [1, '#0a1a55']]),
+      lg('o-int', [[0, '#3a2a20'], [1, '#1c130e']]), lg('n-int', [[0, '#2350f0'], [0.55, '#163aa8'], [1, '#0a1a55']]),
       lg('o-gls', [[0, '#9a90a8', 0.42], [0.6, '#4a4252', 0.3], [1, '#1c1820', 0.5]], 0.4, 1),
-      lg('n-gls', [[0, '#c9f4ff', 0.18], [0.5, '#7fdcff', 0.04], [1, '#2a5cff', 0.12]], 0.4, 1),
+      lg('n-gls', [[0, '#c9f4ff', 0.18], [0.5, '#7fdcff', 0.04], [1, '#2350f0', 0.12]], 0.4, 1),
       lg('sh', [[0, '#000', 0.38], [1, '#000', 0]]), lg('cone', [[0, '#39e6ff', 0.3], [1, '#39e6ff', 0]]),
-      lg('scr', [[0, '#7fe9ff', 0.55], [1, '#2a5cff', 0.35]]), lg('wood', [[0, '#8a6447'], [1, '#5a3b27']]),
+      lg('scr', [[0, '#7fe9ff', 0.55], [1, '#2350f0', 0.35]]), lg('wood', [[0, '#8a6447'], [1, '#5a3b27']]),
       rg('lamp', [[0, '#ffd88f', 0.9], [1, '#ffd88f', 0]]),
       rg('wrm', [[0, '#ffcf7a', 0.62], [1, '#ffb85c', 0.14]], { cx: 0.5, cy: 0.72, r: 0.78 }),
-      rg('orb', [[0, '#ffffff'], [0.35, '#9ff3ff'], [1, '#2a5cff']], { cx: 0.38, cy: 0.32, r: 0.7 }),
+      rg('orb', [[0, '#ffffff'], [0.35, '#9ff3ff'], [1, '#2350f0']], { cx: 0.38, cy: 0.32, r: 0.7 }),
       rg('halo', [[0, '#39e6ff', 0.6], [1, '#39e6ff', 0]]),
       h('filter', { id: id + '-glow', filterUnits: 'userSpaceOnUse', x: -60, y: -60, width: 760, height: 700 },
         h('feGaussianBlur', { stdDeviation: 3, result: 'b' }),

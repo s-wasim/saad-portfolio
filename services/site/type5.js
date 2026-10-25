@@ -1,8 +1,8 @@
-// v4 type: every word is its own span, set in Zaslia (the past) or Moonhouse (the future). Each block of text spreads its words over
-// ranks 0..1; a word turns Moonhouse once the frame's mix ratio passes its rank. Swaps flicker unless reduced motion is on.
+// v4 type: every word is its own span, set in Zaslia (the past) or Audiowide (the future). Each block of text spreads its words over
+// ranks 0..1; a word turns Audiowide once the frame's mix ratio passes its rank. Swaps flicker unless reduced motion is on.
 (function () {
-  const ZF = "Zaslia, Cormorant, serif", MF = "Moonhouse, 'Hanken Grotesk', sans-serif";
-  // size multipliers per role [ui < 14px, text < 40px, display]; Zaslia caps are tall and narrow, Moonhouse is wide
+  const ZF = "Zaslia, Cormorant, serif", MF = "Audiowide, 'Hanken Grotesk', sans-serif";
+  // size multipliers per role [ui < 14px, text < 40px, display]; Zaslia caps are tall and narrow, Audiowide is wide with a tall x-height
   // v5: ui and body text are larger and get a faux-semibold stroke (Zaslia ships in one thin weight); display sizes are untouched
   const K = { z: [1.42, 1.1, 0.8], m: [1.16, 1.1, 0.9] };
   const SW = { z: ['0.05em', '0.045em', null], m: ['0.018em', '0.015em', null] };

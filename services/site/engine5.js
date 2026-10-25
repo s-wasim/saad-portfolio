@@ -1,6 +1,6 @@
 // v5: animated handshake: hold brings the human hand in, then the fingers and thumbs close round each other, two pumps, the robot lets go and leaves; soft shadow under the clasp.
 // v4: backward steps get their own (mirrored) timeline instead of a reversed one; frame-1 sign hint (glow, pointing hand, pointing cursor);
-// hold-driven handshake reach-in + 2 pumps; Zaslia -> Moonhouse word mix. v3: drives the WebGL fall (SWFall) in frame 4. v2 step engine: one gesture = one frame, except frame 4 which scrubs continuously after its hold-to-crack gate.
+// hold-driven handshake reach-in + 2 pumps; Zaslia -> Audiowide word mix. v3: drives the WebGL fall (SWFall) in frame 4. v2 step engine: one gesture = one frame, except frame 4 which scrubs continuously after its hold-to-crack gate.
 (function () {
   const QUIET = 400, MIN_WHEEL = 4, D_STEP = 1.4, D_BACK = 1.15, D_JUMP = 1.0, SCRUB = 5200, HOLD5 = 1.3;
   const clamp = v => Math.max(0, Math.min(1, v));

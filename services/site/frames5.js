@@ -15,7 +15,7 @@
     { id: 'future', year: 2030, name: 'Join the future' }
   ];
   const MOOD = {
-    past: { '--ink': '#2b1d12', '--chip': 'rgba(255,248,236,0.55)', '--line': 'rgba(43,29,18,0.3)', '--ptr': '#8c3829', '--glow': 'rgba(140,56,41,0)' },
+    past: { '--ink': '#1a110a', '--chip': 'rgba(255,248,236,0.55)', '--line': 'rgba(43,29,18,0.3)', '--ptr': '#8c3829', '--glow': 'rgba(140,56,41,0)' },
     alarm: { '--ink': '#fff3f1', '--chip': 'rgba(42,3,7,0.45)', '--line': 'rgba(255,243,241,0.3)', '--ptr': '#fff3f1', '--glow': 'rgba(255,180,170,0.9)' },
     future: { '--ink': '#e9f6ff', '--chip': 'rgba(4,10,31,0.45)', '--line': 'rgba(185,220,255,0.3)', '--ptr': '#39e6ff', '--glow': 'rgba(57,230,255,0.9)' }
   };
@@ -87,7 +87,7 @@
       rOff: atWeb('r', q.rOff, q.rOff[2], s, 0), hExit: atWeb('h', q.hExit, q.hExit[2], s, 0)
     };
   }
-  // share of words set in Moonhouse: none before the handshake, a few right after it, all of them by frame 12
+  // share of words set in Audiowide: none before the handshake, a few right after it, all of them by frame 12
   const MIX = [0, 0, 0, 0, 0, 0.3, 0.42, 0.54, 0.66, 0.78, 0.9, 1];
   function mix(f, g) { return f === 5 ? (g.g5 ? 0.16 : 0) : MIX[f - 1]; }
 
