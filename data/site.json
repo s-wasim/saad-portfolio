@@ -1,0 +1,231 @@
+{
+  "_about": "One source for the facts the generated pages, structured data and llms.txt share. tools/build.py reads it; edit here, then run python3 tools/build.py. Prices are the client guide's 'from' figures.",
+  "origin": "https://saad-dev.com",
+  "booking_url": "https://cal.id/saad-saad-dev/onboarding-call?duration=20",
+  "person": {
+    "name": "Saad Waseem",
+    "job_title": "Independent AI/ML engineer",
+    "positioning": "Saad Waseem is an independent AI/ML engineer in Lahore, Pakistan. He builds production AI agents (LangGraph, MCP, Claude) for tech teams, and websites, business systems and AI automations for small businesses.",
+    "email": "saad@saad-dev.com",
+    "city": "Lahore",
+    "country": "Pakistan",
+    "country_code": "PK",
+    "works_with": "remote teams in the US and EU",
+    "rate": "$40/hr for build work",
+    "same_as": ["https://github.com/s-wasim", "https://linkedin.com/in/s-waseem"],
+    "knows_about": ["AI agents", "LangGraph", "Model Context Protocol (MCP)", "Anthropic Claude", "Retrieval-augmented generation (RAG)", "Human-in-the-loop automation", "Data engineering", "Apache Airflow", "Snowflake", "Databricks", "Python", "Web development"],
+    "role": "Lead developer of AI Reports at Maiden Century (Claude agents over 100GB+ of financial data, three report tiers in production)"
+  },
+  "process": [
+    ["Free 20-minute audit", "A call about what is slowing the business down, and what I would build to fix it."],
+    ["A fixed quote", "One price for the whole job, agreed before any work starts. No hourly meter running."],
+    ["50% up front, 50% on delivery", "Half to start, half when it is live and you are happy with it."],
+    ["Two months of support", "Fixes and small changes are included for two months (up to 5 hours a month). After that, $30/hr if you need me."]
+  ],
+  "subscriptions_note": "Any software subscriptions are in your name and paid by you directly, so you own everything.",
+  "services": [
+    {
+      "slug": "websites",
+      "card": "01",
+      "frame": 6,
+      "name": "Websites & online stores",
+      "from_usd": 200,
+      "headline": "Open at 3 a.m.",
+      "summary": "A fast site that books, sells and answers while you sleep.",
+      "title_tag": "Small business website design, from $200",
+      "description": "Websites and online stores for small businesses, built by an independent engineer: one-page sites from $200, business sites, Shopify and custom stores with online booking.",
+      "for_who": "Shops, trades, studios and service businesses whose website is out of date, slow, or missing, and who lose customers after hours.",
+      "included": [
+        ["One-page site", "Everything a customer needs on one fast page: what you do, prices, hours, location and a way to reach you."],
+        ["Business site", "Up to 8 pages, written and laid out for your customers, set up so Google can find each service."],
+        ["Shopify store", "Products, payments and shipping on Shopify, ready to take orders."],
+        ["Custom store", "A store built with Next.js and Stripe when Shopify does not fit."],
+        ["Add-ons", "Online booking, moving your old site over, and a Spanish version."]
+      ]
+    },
+    {
+      "slug": "business-systems",
+      "card": "02",
+      "frame": 7,
+      "name": "Business systems",
+      "from_usd": 600,
+      "headline": "Shoeboxes, sorted.",
+      "summary": "Orders, stock, invoices and customers on one screen, not in a box under the counter.",
+      "title_tag": "CRM, invoicing and inventory systems for small business, from $600",
+      "description": "A CRM, invoicing and stock system for your small business, set up on your own computer with open-source tools and customised to how you work. From $600.",
+      "for_who": "Owners running the business from paper, spreadsheets and memory, who want one place for customers, invoices and stock without another monthly bill.",
+      "included": [
+        ["Single system", "One system set up and customised: customers (CRM), invoicing, or stock and equipment tracking."],
+        ["Office suite", "Customers, invoices and stock working together, so a sale updates everything at once."],
+        ["Operations suite", "The office suite plus the workflows around it, shaped to how your team actually works."],
+        ["Your own computer", "Built on open-source tools such as Twenty, Invoice Ninja and Snipe-IT, running on a machine you own. Your data stays with you."]
+      ]
+    },
+    {
+      "slug": "ai-assistant",
+      "card": "03",
+      "frame": 8,
+      "name": "AI assistant (Claude for Small Business setup)",
+      "h1_sub": "for small businesses: Claude, set up for you",
+      "from_usd": 250,
+      "headline": "Answers in seconds.",
+      "summary": "An assistant that knows your shop replies day and night, and hands you the tricky ones.",
+      "title_tag": "AI assistant for small business: Claude set up for you, from $250",
+      "description": "Claude for Small Business, set up for you: connected to your email, calendar and files, with workflows tuned to your shop and training for your team. From $250.",
+      "for_who": "Small teams who know AI could save them hours but have not had the time to set it up properly, or tried and gave up.",
+      "included": [
+        ["Quick start (solo)", "Claude set up for one person: connectors to the tools you already use, a few workflows tuned to your work, and a walkthrough."],
+        ["Team setup (2 to 10 people)", "The same for a whole team, with shared workflows and training so everyone actually uses it."],
+        ["Connectors and plugins", "Email, calendar, documents and the other tools you rely on, connected safely."],
+        ["Training", "A session for you and your team on what to ask it, and what not to."]
+      ]
+    },
+    {
+      "slug": "automations",
+      "card": "04",
+      "frame": 9,
+      "name": "AI automations & custom agents",
+      "from_usd": 400,
+      "headline": "Busywork, handled.",
+      "summary": "Inquiries turn into drafted quotes, reminders and follow-ups. You read them and press Approve.",
+      "title_tag": "AI automation for small business and custom AI agents, from $400",
+      "description": "AI automations and custom agents for small businesses: inquiries become drafted quotes, reminders and follow-ups, and nothing is sent until a person approves it. From $400.",
+      "for_who": "Businesses drowning in repetitive messages, quotes and paperwork, who want it drafted for them but still want the final say.",
+      "included": [
+        ["Single automation", "One job taken off your plate, for example turning an inquiry into a drafted quote."],
+        ["Bundle of three", "Three automations that work together, priced as a set."],
+        ["Custom agent", "A purpose-built AI agent for a bigger workflow, with a human approval step where it matters."],
+        ["Approval built in", "Drafts wait for you. Nothing goes to a customer until a person presses Approve."]
+      ],
+      "proof": ["inbound-lead-responder", "document-pipeline"]
+    },
+    {
+      "slug": "mobile",
+      "card": "05",
+      "frame": 10,
+      "name": "Mobile control panel",
+      "from_usd": 600,
+      "headline": "Run it from anywhere.",
+      "summary": "Sales, bookings, messages and even the lights, all from your phone.",
+      "title_tag": "Mobile app for your small business, from $600",
+      "description": "A mobile control panel for your small business: sales, bookings and messages on your phone as an installable web app, or a full app-store app. From $600.",
+      "for_who": "Owners who are rarely at the desk and want the business in their pocket.",
+      "included": [
+        ["Control panel", "An installable web app for your phone: today's sales, bookings and messages in one place. No app store needed."],
+        ["App-store app", "A full app in the app stores when you need one."]
+      ]
+    },
+    {
+      "slug": "growth",
+      "card": "06",
+      "frame": 11,
+      "name": "Growth & marketing automation",
+      "from_usd": 300,
+      "headline": "Found, and chosen.",
+      "summary": "Better search rankings, more five-star reviews and customers who come back.",
+      "title_tag": "Local SEO, reviews and marketing automation for small business, from $300",
+      "description": "Growth for local businesses: Google Business Profile and reviews, local SEO, email and SMS campaigns, a social calendar and paid ads set up for you. From $300.",
+      "for_who": "Good businesses that are hard to find online, or that rarely hear from past customers again.",
+      "included": [
+        ["Google Business Profile and reviews", "Your listing completed and a simple way to ask happy customers for reviews."],
+        ["Local SEO", "The fixes that help you show up when people nearby search for what you do."],
+        ["Email and SMS campaigns", "Messages that bring past customers back, sent on a schedule."],
+        ["Social calendar", "Posts planned and scheduled for you."],
+        ["Paid ads setup", "Ads set up with a budget you control."],
+        ["Local growth starter", "A combined starting package for a business starting from scratch."]
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "repo": "document_pipeline",
+      "slug": "document-pipeline",
+      "kind": "Document AI · human-in-the-loop",
+      "summary": "Upload a PDF or a photo of a document; Claude classifies it, extracts the fields into a schema, a non-AI check validates the numbers, one repair attempt runs if they do not add up, and a person approves before anything is written to the database.",
+      "how": [
+        "LangGraph pipeline: load → classify → extract → validate → (one repair loop) → review queue.",
+        "Claude's native PDF and vision input, so there is no separate OCR service.",
+        "Cross-field validation is plain code, not an LLM: cheap and deterministic.",
+        "At most three LLM calls per document: classify, extract and an optional repair.",
+        "A review queue shows the document next to the extracted fields; Approve & Commit writes the rows in one transaction."
+      ],
+      "stack": ["Python", "LangGraph", "Anthropic Claude", "Pydantic", "PostgreSQL", "SQLAlchemy", "Streamlit", "Docker"],
+      "numbers": ["69 tests", "≤3 LLM calls per document", "1 repair attempt", "1 human approval gate"]
+    },
+    {
+      "repo": "Portfolio-Summarizer",
+      "slug": "portfolio-summarizer",
+      "kind": "Data platform · MCP · agent",
+      "summary": "An Airflow-orchestrated data platform that pulls SEC filings, prices and news every day, lands them in a 14-table DuckDB warehouse, scores each ticker from −100 to +100, and lets a Claude agent query it all through an MCP server.",
+      "how": [
+        "Daily Airflow DAGs extract from SEC EDGAR, Yahoo Finance and Alpha Vantage.",
+        "Three tiers: raw Parquet, a 14-table DuckDB warehouse, and derived scores in their own partition.",
+        "Idempotent loads: appends dedupe on a declared primary key, so a re-run costs nothing.",
+        "A five-module scoring model blends price signals, EPS prediction, financial health and qualitative signals into one score.",
+        "An MCP server exposes named DuckDB queries as tools; a Claude agent (LangGraph) answers questions about the portfolio."
+      ],
+      "stack": ["Apache Airflow", "Polars", "PyArrow", "DuckDB", "MCP", "LangGraph", "Anthropic Claude", "Docker Compose"],
+      "numbers": ["3 data sources", "14 tables", "5 scoring modules", "score from −100 to +100"],
+      "extra_link": ["Data dictionary", "https://github.com/s-wasim/Portfolio-Summarizer/blob/main/docs/data_dictionary.md"]
+    },
+    {
+      "repo": "inbound_lead_responder",
+      "slug": "inbound-lead-responder",
+      "kind": "Email agent · approval before send",
+      "summary": "An email agent that reads inbound messages, sorts real leads from spam and support, extracts the lead's details, routes it to the right team using an editable rules table, and drafts a proposal document — then waits for a person before anything is sent.",
+      "how": [
+        "A six-node LangGraph graph: it classifies the email, extracts the lead, routes it, drafts the proposal and hands it over.",
+        "Routing follows a keyword rules table the team can edit; Claude only breaks ties.",
+        "Proposals are generated as Word documents with python-docx.",
+        "At most four Claude calls per lead email.",
+        "Every run has a node-by-node trace, so you can see why a lead went where it did."
+      ],
+      "stack": ["Python", "LangGraph", "Anthropic Claude", "PostgreSQL", "SQLAlchemy", "python-docx", "Streamlit", "Docker"],
+      "numbers": ["6 nodes", "≤4 Claude calls per lead", "1 human approval before sending"]
+    },
+    {
+      "repo": "FaceClusterer",
+      "slug": "face-clusterer",
+      "kind": "Computer vision · clustering",
+      "summary": "Point it at a folder of photos and it groups them by who is in them: SigLIP image embeddings and InsightFace face embeddings are clustered by a consensus vote across six thresholds, giving stable identity labels with no retraining, no labels and no fixed number of clusters.",
+      "how": [
+        "Global image embeddings from SigLIP (google/siglip-so400m-patch14-384), batched and GPU-accelerated when available.",
+        "Face detection and face embeddings from InsightFace (buffalo_l).",
+        "Ensemble and consensus clustering across six thresholds, so identities stay stable on noisy photo sets.",
+        "Results are written into browsable folders and zipped."
+      ],
+      "stack": ["Python", "SigLIP", "InsightFace", "NumPy"],
+      "numbers": ["6 thresholds", "0 labels needed", "0 retraining"]
+    },
+    {
+      "repo": "self_spawnAgents",
+      "slug": "self-spawn-agents",
+      "kind": "Multi-agent system · guardrails",
+      "summary": "A reference implementation of a four-agent system: a controller that proposes new ventures, a sandboxed code builder, capped-budget child agents, and a profit-blind ethics auditor that can veto the other three.",
+      "how": [
+        "Mother agent: a stateful LangGraph controller that manages cash flow across three pots.",
+        "Code builder: stateless, generating tools inside a gVisor sandbox.",
+        "Ethics auditor: profit-blind, with a frozen prompt, and the power to veto.",
+        "Child agents: one per venture, each with a capped budget.",
+        "Frozen-config integrity: changing a protected file trips an alarm unless its hash is re-signed; an operator kill switch works over email."
+      ],
+      "stack": ["Python", "LangGraph", "Anthropic Claude", "PostgreSQL", "Docker", "gVisor"],
+      "numbers": ["4 agents", "140 tests", "frozen-config hashes", "capped budgets per child"]
+    },
+    {
+      "repo": "ai_knowledge_bot",
+      "slug": "ai-knowledge-bot",
+      "kind": "RAG · cited answers",
+      "summary": "A retrieval-augmented (RAG) app for getting up to speed on an unfamiliar codebase: ingest a repository, ask questions in plain English, and get answers grounded in the code with clickable file:line citations. When the code does not answer the question, it says so instead of guessing.",
+      "how": [
+        "Ingests a local folder or a public GitHub repo, chunked with a line-window chunker.",
+        "Two retrieval modes: Postgres full-text search, or voyage-code-3 embeddings with pgvector.",
+        "A LangGraph flow rewrites the question, grades the retrieved chunks, then answers with citations.",
+        "At most three Claude calls per question.",
+        "An explicit 'not found' path, and every retrieved chunk and grade visible in the UI."
+      ],
+      "stack": ["Python", "LangGraph", "Anthropic Claude", "Voyage AI", "PostgreSQL", "pgvector", "Streamlit", "Docker"],
+      "numbers": ["≤3 Claude calls per question", "file:line citations", "2 retrieval modes"]
+    }
+  ]
+}

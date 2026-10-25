@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>document_pipeline: Document AI · human-in-the-loop | Saad Waseem</title>
+<meta name="description" content="Upload a PDF or a photo of a document; Claude classifies it, extracts the fields into a schema, a non-AI check validates the numbers, one repair attempt runs if they do not add up, and a person approves before anything is written to the database.">
+<meta name="theme-color" content="#0A0503">
+<link rel="canonical" href="https://saad-dev.com/cv/work/document-pipeline/">
+<meta property="og:site_name" content="Saad Waseem">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://saad-dev.com/cv/work/document-pipeline/">
+<meta property="og:image" content="https://saad-dev.com/cv/assets/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="document_pipeline: Document AI · human-in-the-loop | Saad Waseem">
+<meta name="twitter:description" content="Upload a PDF or a photo of a document; Claude classifies it, extracts the fields into a schema, a non-AI check validates the numbers, one repair attempt runs if they do not add up, and a person approves before anything is written to the database.">
+<meta name="twitter:image" content="https://saad-dev.com/cv/assets/og-card.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","@id":"https://saad-dev.com/cv/work/document-pipeline/#code","name":"document_pipeline","description":"Upload a PDF or a photo of a document; Claude classifies it, extracts the fields into a schema, a non-AI check validates the numbers, one repair attempt runs if they do not add up, and a person approves before anything is written to the database.","url":"https://saad-dev.com/cv/work/document-pipeline/","codeRepository":"https://github.com/s-wasim/document_pipeline","programmingLanguage":"Python","keywords":["Python","LangGraph","Anthropic Claude","Pydantic","PostgreSQL","SQLAlchemy","Streamlit","Docker"],"author":{"@type":"Person","@id":"https://saad-dev.com/#saad","name":"Saad Waseem"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://saad-dev.com/"},{"@type":"ListItem","position":2,"name":"CV","item":"https://saad-dev.com/cv/"},{"@type":"ListItem","position":3,"name":"Work","item":"https://saad-dev.com/cv/work/"},{"@type":"ListItem","position":4,"name":"document_pipeline","item":"https://saad-dev.com/cv/work/document-pipeline/"}]}</script>
+<link rel="stylesheet" href="/cv/work/work.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<div class="crt">
+<header class="bar">
+  <a class="home" href="/cv/">SAAD.DEV</a>
+  <nav aria-label="Site"><a href="/cv/work/">WORK</a><a href="/cv/#book">BOOK</a><a href="/services/">SERVICES</a></nav>
+</header>
+<main>
+<article class="case">
+<p class="crumbs"><a href="/cv/">saad.dev</a> / <a href="/cv/work/">work</a> / document_pipeline</p>
+<p class="label">Document AI · human-in-the-loop</p>
+<h1>document_pipeline</h1>
+<p class="lead">Claude-vision state machine. Any document in, a validated row out. Three LLM calls, one repair attempt, one human gate, 69 tests.</p>
+<pre class="cmd"><code>$ python -m document_pipeline invoice.pdf</code></pre>
+<ol class="trace" aria-label="A sample run"><li><b>[classify]</b> invoice.pdf → INVOICE <i>0.9s</i></li><li><b>[extract]</b> 14 fields, schema-enforced <i>1.4s</i></li><li><b>[validate]</b> cross-field check .......... FAIL</li><li><b>[repair]</b> 1 attempt ................... OK</li><li class="ok">✓ committed to postgres · 3 llm calls · 69/69 tests</li></ol>
+<section><h2>What it does</h2><p>Upload a PDF or a photo of a document; Claude classifies it, extracts the fields into a schema, a non-AI check validates the numbers, one repair attempt runs if they do not add up, and a person approves before anything is written to the database.</p></section>
+<section><h2>How it works</h2><ul class="how"><li>LangGraph pipeline: load → classify → extract → validate → (one repair loop) → review queue.</li><li>Claude&#x27;s native PDF and vision input, so there is no separate OCR service.</li><li>Cross-field validation is plain code, not an LLM: cheap and deterministic.</li><li>At most three LLM calls per document: classify, extract and an optional repair.</li><li>A review queue shows the document next to the extracted fields; Approve &amp; Commit writes the rows in one transaction.</li></ul></section>
+<section><h2>By the numbers</h2><ul class="nums"><li>69 tests</li><li>≤3 LLM calls per document</li><li>1 repair attempt</li><li>1 human approval gate</li></ul></section>
+<section><h2>Stack</h2><ul class="chips"><li>Python</li><li>LangGraph</li><li>Anthropic Claude</li><li>Pydantic</li><li>PostgreSQL</li><li>SQLAlchemy</li><li>Streamlit</li><li>Docker</li></ul></section>
+<p class="links"><a class="primary" href="https://github.com/s-wasim/document_pipeline">Source on GitHub &#8599;</a><a href="/cv/#work">Back to the CV</a><a href="/services/automations/">Want one built for you?</a></p>
+</article>
+</main>
+<footer class="foot">
+  <p>Saad Waseem · AI/ML engineer · Lahore, Pakistan · <a href="mailto:saad@saad-dev.com">saad@saad-dev.com</a> · <a href="https://github.com/s-wasim">GitHub</a> · <a href="https://linkedin.com/in/s-waseem">LinkedIn</a></p>
+</footer>
+</div>
+</body>
+</html>

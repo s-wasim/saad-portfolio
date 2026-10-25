@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FaceClusterer: Computer vision · clustering | Saad Waseem</title>
+<meta name="description" content="Point it at a folder of photos and it groups them by who is in them: SigLIP image embeddings and InsightFace face embeddings are clustered by a consensus vote across six thresholds, giving stable identity labels with no retraining, no labels and no fixed number of clusters.">
+<meta name="theme-color" content="#0A0503">
+<link rel="canonical" href="https://saad-dev.com/cv/work/face-clusterer/">
+<meta property="og:site_name" content="Saad Waseem">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://saad-dev.com/cv/work/face-clusterer/">
+<meta property="og:image" content="https://saad-dev.com/cv/assets/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FaceClusterer: Computer vision · clustering | Saad Waseem">
+<meta name="twitter:description" content="Point it at a folder of photos and it groups them by who is in them: SigLIP image embeddings and InsightFace face embeddings are clustered by a consensus vote across six thresholds, giving stable identity labels with no retraining, no labels and no fixed number of clusters.">
+<meta name="twitter:image" content="https://saad-dev.com/cv/assets/og-card.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","@id":"https://saad-dev.com/cv/work/face-clusterer/#code","name":"FaceClusterer","description":"Point it at a folder of photos and it groups them by who is in them: SigLIP image embeddings and InsightFace face embeddings are clustered by a consensus vote across six thresholds, giving stable identity labels with no retraining, no labels and no fixed number of clusters.","url":"https://saad-dev.com/cv/work/face-clusterer/","codeRepository":"https://github.com/s-wasim/FaceClusterer","programmingLanguage":"Python","keywords":["Python","SigLIP","InsightFace","NumPy"],"author":{"@type":"Person","@id":"https://saad-dev.com/#saad","name":"Saad Waseem"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://saad-dev.com/"},{"@type":"ListItem","position":2,"name":"CV","item":"https://saad-dev.com/cv/"},{"@type":"ListItem","position":3,"name":"Work","item":"https://saad-dev.com/cv/work/"},{"@type":"ListItem","position":4,"name":"FaceClusterer","item":"https://saad-dev.com/cv/work/face-clusterer/"}]}</script>
+<link rel="stylesheet" href="/cv/work/work.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<div class="crt">
+<header class="bar">
+  <a class="home" href="/cv/">SAAD.DEV</a>
+  <nav aria-label="Site"><a href="/cv/work/">WORK</a><a href="/cv/#book">BOOK</a><a href="/services/">SERVICES</a></nav>
+</header>
+<main>
+<article class="case">
+<p class="crumbs"><a href="/cv/">saad.dev</a> / <a href="/cv/work/">work</a> / FaceClusterer</p>
+<p class="label">Computer vision · clustering</p>
+<h1>FaceClusterer</h1>
+<p class="lead">SigLIP global embeddings and InsightFace face embeddings, voted into a consensus across six thresholds. No model retraining, no labels.</p>
+<pre class="cmd"><code>$ python cluster.py ./album</code></pre>
+<ol class="trace" aria-label="A sample run"><li><b>[load]</b> 812 images</li><li><b>[siglip]</b> global embeddings <i>11.2s</i></li><li><b>[insight]</b> buffalo_l face embeddings</li><li><b>[ensemble]</b> consensus vote · 6 thresholds</li><li class="ok">✓ 7 stable identities → faces.txt</li></ol>
+<section><h2>What it does</h2><p>Point it at a folder of photos and it groups them by who is in them: SigLIP image embeddings and InsightFace face embeddings are clustered by a consensus vote across six thresholds, giving stable identity labels with no retraining, no labels and no fixed number of clusters.</p></section>
+<section><h2>How it works</h2><ul class="how"><li>Global image embeddings from SigLIP (google/siglip-so400m-patch14-384), batched and GPU-accelerated when available.</li><li>Face detection and face embeddings from InsightFace (buffalo_l).</li><li>Ensemble and consensus clustering across six thresholds, so identities stay stable on noisy photo sets.</li><li>Results are written into browsable folders and zipped.</li></ul></section>
+<section><h2>By the numbers</h2><ul class="nums"><li>6 thresholds</li><li>0 labels needed</li><li>0 retraining</li></ul></section>
+<section><h2>Stack</h2><ul class="chips"><li>Python</li><li>SigLIP</li><li>InsightFace</li><li>NumPy</li></ul></section>
+<p class="links"><a class="primary" href="https://github.com/s-wasim/FaceClusterer">Source on GitHub &#8599;</a><a href="/cv/#work">Back to the CV</a><a href="/services/automations/">Want one built for you?</a></p>
+</article>
+</main>
+<footer class="foot">
+  <p>Saad Waseem · AI/ML engineer · Lahore, Pakistan · <a href="mailto:saad@saad-dev.com">saad@saad-dev.com</a> · <a href="https://github.com/s-wasim">GitHub</a> · <a href="https://linkedin.com/in/s-waseem">LinkedIn</a></p>
+</footer>
+</div>
+</body>
+</html>

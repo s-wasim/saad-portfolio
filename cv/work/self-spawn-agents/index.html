@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>self_spawnAgents: Multi-agent system · guardrails | Saad Waseem</title>
+<meta name="description" content="A reference implementation of a four-agent system: a controller that proposes new ventures, a sandboxed code builder, capped-budget child agents, and a profit-blind ethics auditor that can veto the other three.">
+<meta name="theme-color" content="#0A0503">
+<link rel="canonical" href="https://saad-dev.com/cv/work/self-spawn-agents/">
+<meta property="og:site_name" content="Saad Waseem">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://saad-dev.com/cv/work/self-spawn-agents/">
+<meta property="og:image" content="https://saad-dev.com/cv/assets/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="self_spawnAgents: Multi-agent system · guardrails | Saad Waseem">
+<meta name="twitter:description" content="A reference implementation of a four-agent system: a controller that proposes new ventures, a sandboxed code builder, capped-budget child agents, and a profit-blind ethics auditor that can veto the other three.">
+<meta name="twitter:image" content="https://saad-dev.com/cv/assets/og-card.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","@id":"https://saad-dev.com/cv/work/self-spawn-agents/#code","name":"self_spawnAgents","description":"A reference implementation of a four-agent system: a controller that proposes new ventures, a sandboxed code builder, capped-budget child agents, and a profit-blind ethics auditor that can veto the other three.","url":"https://saad-dev.com/cv/work/self-spawn-agents/","codeRepository":"https://github.com/s-wasim/self_spawnAgents","programmingLanguage":"Python","keywords":["Python","LangGraph","Anthropic Claude","PostgreSQL","Docker","gVisor"],"author":{"@type":"Person","@id":"https://saad-dev.com/#saad","name":"Saad Waseem"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://saad-dev.com/"},{"@type":"ListItem","position":2,"name":"CV","item":"https://saad-dev.com/cv/"},{"@type":"ListItem","position":3,"name":"Work","item":"https://saad-dev.com/cv/work/"},{"@type":"ListItem","position":4,"name":"self_spawnAgents","item":"https://saad-dev.com/cv/work/self-spawn-agents/"}]}</script>
+<link rel="stylesheet" href="/cv/work/work.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<div class="crt">
+<header class="bar">
+  <a class="home" href="/cv/">SAAD.DEV</a>
+  <nav aria-label="Site"><a href="/cv/work/">WORK</a><a href="/cv/#book">BOOK</a><a href="/services/">SERVICES</a></nav>
+</header>
+<main>
+<article class="case">
+<p class="crumbs"><a href="/cv/">saad.dev</a> / <a href="/cv/work/">work</a> / self_spawnAgents</p>
+<p class="label">Multi-agent system · guardrails</p>
+<h1>self_spawnAgents</h1>
+<p class="lead">Four agents, no human in the revenue loop — and a profit-blind ethics auditor that can veto the other three. Frozen-config hashes, a sandboxed code generator, capped budgets per child. 140 tests.</p>
+<pre class="cmd"><code>$ python -m aae.mother --propose</code></pre>
+<ol class="trace" aria-label="A sample run"><li><b>[mother]</b> vertical proposal · rung 2 <i>1.2s</i></li><li><b>[ethics]</b> profit-blind review ....... PASS</li><li><b>[builder]</b> tool generated · gVisor sandbox <i>4.8s</i></li><li><b>[child]</b> budget cap $40 · spawned</li><li class="ok">✓ 140/140 tests · frozen hashes intact</li></ol>
+<section><h2>What it does</h2><p>A reference implementation of a four-agent system: a controller that proposes new ventures, a sandboxed code builder, capped-budget child agents, and a profit-blind ethics auditor that can veto the other three.</p></section>
+<section><h2>How it works</h2><ul class="how"><li>Mother agent: a stateful LangGraph controller that manages cash flow across three pots.</li><li>Code builder: stateless, generating tools inside a gVisor sandbox.</li><li>Ethics auditor: profit-blind, with a frozen prompt, and the power to veto.</li><li>Child agents: one per venture, each with a capped budget.</li><li>Frozen-config integrity: changing a protected file trips an alarm unless its hash is re-signed; an operator kill switch works over email.</li></ul></section>
+<section><h2>By the numbers</h2><ul class="nums"><li>4 agents</li><li>140 tests</li><li>frozen-config hashes</li><li>capped budgets per child</li></ul></section>
+<section><h2>Stack</h2><ul class="chips"><li>Python</li><li>LangGraph</li><li>Anthropic Claude</li><li>PostgreSQL</li><li>Docker</li><li>gVisor</li></ul></section>
+<p class="links"><a class="primary" href="https://github.com/s-wasim/self_spawnAgents">Source on GitHub &#8599;</a><a href="/cv/#work">Back to the CV</a><a href="/services/automations/">Want one built for you?</a></p>
+</article>
+</main>
+<footer class="foot">
+  <p>Saad Waseem · AI/ML engineer · Lahore, Pakistan · <a href="mailto:saad@saad-dev.com">saad@saad-dev.com</a> · <a href="https://github.com/s-wasim">GitHub</a> · <a href="https://linkedin.com/in/s-waseem">LinkedIn</a></p>
+</footer>
+</div>
+</body>
+</html>
