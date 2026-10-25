@@ -20,7 +20,7 @@ SITE = Path(__file__).resolve().parent.parent / 'cv'
 
 def problems(site=SITE):
     text = (site / 'content.txt').read_text(encoding='utf-8')
-    template, _ = tf.read_bundle((site / 'index.html').read_text(encoding='utf-8'))
+    template = (site / 'page.html').read_text(encoding='utf-8')
     return tf.check(text, template)
 
 

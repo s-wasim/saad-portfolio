@@ -1,6 +1,8 @@
 __pycache__/
-Gemfile
-Gemfile.lock
-vendor/
-_site/
-.bundle/
+/Gemfile
+/Gemfile.lock
+/vendor/
+/_site/
+/.bundle/
+# review screenshots, not part of the site
+/docs/*.jpg

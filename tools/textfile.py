@@ -1,25 +1,23 @@
-"""content.txt <-> index.html — parse, check and fill the site's text.
+"""content.txt <-> cv/page.html — parse, check and bake the site's text.
 
 content.txt is a list of entries:
 
     <!-- TAB_NAME | HEADING/SECTION -->
     Actual text here.
 
-The page template inside index.html carries a marker wherever text goes:
+The CV's source, cv/page.html, carries a marker wherever text goes:
 
     ⟦KEY⟧               text in the page markup     (filled HTML-escaped)
     ⟦js:KEY⟧            text inside a script string  (filled JS-escaped)
     ⟦js{a,b}:KEY⟧       the same, with {a} {b} slots the script fills in
 
-The loader in index.html does the same fill in the browser; this module is the
-Python twin used by tools/preview.py, tools/check_text.py and the build. The two
-must agree byte for byte — build/text/loader_test.mjs holds them to it.
+tools/build.py bakes the text into cv/index.html, the page visitors and
+crawlers get; tools/check_text.py and tools/preview.py use the same rules.
 
 Standard library only, so it runs anywhere Python 3 does, GitHub's runners
 included.
 """
 import difflib
-import json
 import re
 from collections import namedtuple
 
@@ -27,8 +25,6 @@ HEADER = re.compile(r'^\s*<!--(.*?)-->\s*$')
 MARKER = re.compile('⟦(?:(js)(?:\\{([^{}⟦⟧]*)\\})?:)?([^⟦⟧]+)⟧')
 SLOT = re.compile(r'\{([A-Za-z_][A-Za-z0-9_]*)\}')
 
-TEMPLATE_BLOCK = re.compile(r'(<script type="__bundler/template">\n)(.*?)(\n  </script>)', re.S)
-BACKUP_BLOCK = re.compile(r'  <script type="__bundler/text_backup">\n(.*?)\n  </script>\n', re.S)
 
 JS_ESC = {'\\': '\\\\', "'": "\\'", '"': '\\"', '`': '\\`', '$': '\\$', '\n': '\\n',
           '\r': '\\r', '\t': '\\t', '\u2028': '\\u2028', '\u2029': '\\u2029', '<': '\\x3C'}
@@ -163,52 +159,13 @@ def check(text, template):
     out.sort(key=lambda q: q.line or 0)
     for key in missing:
         out.append(Problem('error', None,
-                           'Missing header "%s". The page shows its backup text there.' % key))
+                           'Missing header "%s". The site will not publish until it is back: '
+                           'the page would show the header itself there.' % key))
     return out
 
 
-def _decode_template(html):
-    m = TEMPLATE_BLOCK.search(html)
-    if not m:
-        raise ValueError('index.html has no __bundler/template block')
-    return m
-
-
-def read_bundle(html):
-    """(template string, backup entries) from index.html's text."""
-    template = json.loads(_decode_template(html).group(2))
-    b = BACKUP_BLOCK.search(html)
-    backup = json.loads(b.group(1))['entries'] if b else {}
-    return template, backup
-
-
-def backup_block(entries):
-    data = json.dumps({'v': 1, 'entries': entries}, ensure_ascii=False, indent=0)
-    return ('  <script type="__bundler/text_backup">\n'
-            + data.replace('<', '\\u003c') + '\n  </script>\n')
-
-
-def write_backup(html, entries):
-    """index.html with its backup block set to `entries` (inserted if absent)."""
-    block = backup_block(entries)
-    if BACKUP_BLOCK.search(html):
-        return BACKUP_BLOCK.sub(lambda _: block, html, count=1)
-    start = _decode_template(html).start()
-    line_start = html.rfind('\n', 0, start) + 1
-    return html[:line_start] + block + html[line_start:]
-
-
-def refresh_backup(text, html):
-    """Backup = for each marker: content.txt's text, else the old backup's.
-    Returns (new html, whether anything changed)."""
-    template, old = read_bundle(html)
-    live = parse(text).entries
-    entries = {}
-    for key in markers(template):
-        if key in live:
-            entries[key] = live[key]
-        elif key in old:
-            entries[key] = old[key]
-    if entries == old and BACKUP_BLOCK.search(html):
-        return html, False
-    return write_backup(html, entries), True
+def bake(text, template):
+    """The page with every marker filled from content.txt.
+    Returns (html, headers the page needs that content.txt lacks); a missing
+    header is filled with its own name, so the gap is visible, never silent."""
+    return fill(template, parse(text).entries, {})

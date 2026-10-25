@@ -1,19 +1,7 @@
 """Tests for textfile.py — run from this folder:  python3 -m unittest -v test_textfile"""
-import json
 import unittest
 
 import textfile as tf
-
-
-def bundle(template, backup=None):
-    """A minimal stand-in for index.html: the two script blocks the tools read."""
-    out = '<html><body>\n'
-    if backup is not None:
-        out += tf.backup_block(backup)
-    out += ('  <script type="__bundler/template">\n'
-            + json.dumps(template, ensure_ascii=False).replace('</', '<\\u002F')
-            + '\n  </script>\n</body></html>\n')
-    return out
 
 
 class Parse(unittest.TestCase):
@@ -156,39 +144,17 @@ class Check(unittest.TestCase):
         self.assertEqual(self.errors(text), [])
 
 
-class Bundle(unittest.TestCase):
-    def test_read_bundle_returns_template_and_backup(self):
-        tpl, backup = tf.read_bundle(bundle('<p>⟦A⟧</p></script>', {'A': 'x'}))
-        self.assertEqual(tpl, '<p>⟦A⟧</p></script>')
-        self.assertEqual(backup, {'A': 'x'})
+class Bake(unittest.TestCase):
+    def test_bake_fills_markup_and_script_markers(self):
+        html, missing = tf.bake('<!-- A -->\nFish & "chips"\n<!-- B -->\nit\'s\n',
+                                "<p>⟦A⟧</p><script>x='⟦js:B⟧'</script>")
+        self.assertEqual(html, "<p>Fish &amp; &quot;chips&quot;</p><script>x='it\\'s'</script>")
+        self.assertEqual(missing, [])
 
-    def test_no_backup_block_reads_as_empty(self):
-        self.assertEqual(tf.read_bundle(bundle('t'))[1], {})
-
-    def test_backup_block_survives_hostile_text(self):
-        hostile = {'A': '</script><script>alert(1)</script> <!-- <script> -->'}
-        html = tf.write_backup(bundle('t'), hostile)
-        # the block adds exactly one closing tag (its own) and no opening comment
-        self.assertEqual(html.count('</script>'), bundle('t').count('</script>') + 1)
-        self.assertNotIn('<!--', html)
-        self.assertEqual(tf.read_bundle(html)[1], hostile)
-
-    def test_write_backup_replaces_instead_of_duplicating(self):
-        html = tf.write_backup(tf.write_backup(bundle('t'), {'A': '1'}), {'A': '2'})
-        self.assertEqual(html.count('__bundler/text_backup'), 1)
-        self.assertEqual(tf.read_bundle(html)[1], {'A': '2'})
-
-    def test_refresh_backup_takes_live_keeps_old_drops_unused(self):
-        html = bundle('⟦A⟧⟦B⟧', {'A': 'oldA', 'B': 'oldB', 'Z': 'gone'})
-        new, changed = tf.refresh_backup('<!-- A -->\nnewA\n<!-- Q -->\nq\n', html)
-        self.assertTrue(changed)
-        self.assertEqual(tf.read_bundle(new)[1], {'A': 'newA', 'B': 'oldB'})
-
-    def test_refresh_backup_unchanged(self):
-        html = bundle('⟦A⟧', {'A': 'a'})
-        new, changed = tf.refresh_backup('<!-- A -->\na\n', html)
-        self.assertFalse(changed)
-        self.assertEqual(new, html)
+    def test_bake_missing_key_reported_and_visible(self):
+        html, missing = tf.bake('<!-- A -->\na\n', '<p>⟦A⟧ ⟦B | gone⟧</p>')
+        self.assertEqual(html, '<p>a B | gone</p>')
+        self.assertEqual(missing, ['B | gone'])
 
 
 if __name__ == '__main__':

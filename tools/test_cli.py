@@ -1,6 +1,5 @@
-"""Tests for check_text.py and preview.py — run from this folder:
+"""Tests for check_text.py, build.py and preview.py — run from this folder:
    python3 -m unittest -v test_cli"""
-import json
 import os
 import shutil
 import subprocess
@@ -18,17 +17,11 @@ GOOD = ('<!-- GLOBAL | repo link -->\nsource →\n'
         '<!-- TWIN | greeting -->\nhi {name}\n')
 
 
-def make_site(content, backup=None):
-    """A throwaway copy of the repo layout: cv/index.html, cv/content.txt, tools/."""
+def make_site(content):
+    """A throwaway copy of the repo layout: cv/page.html, cv/content.txt, tools/."""
     d = Path(tempfile.mkdtemp())
     (d / 'cv').mkdir()
-    html = '<html><body>\n'
-    if backup is not None:
-        html += tf.backup_block(backup)
-    html += ('  <script type="__bundler/template">\n'
-             + json.dumps(TEMPLATE, ensure_ascii=False).replace('</', '<\\u002F')
-             + '\n  </script>\n</body></html>\n')
-    (d / 'cv' / 'index.html').write_text(html, encoding='utf-8')
+    (d / 'cv' / 'page.html').write_text('<html><body>' + TEMPLATE + '</body></html>\n', encoding='utf-8')
     (d / 'cv' / 'content.txt').write_text(content, encoding='utf-8')
     shutil.copytree(HERE, d / 'tools', ignore=shutil.ignore_patterns('__pycache__', 'test_*'))
     return d
@@ -71,29 +64,48 @@ class CheckText(unittest.TestCase):
         self.assertIn('{name}', summary.read_text(encoding='utf-8'))
 
 
+class Build(unittest.TestCase):
+    def test_build_bakes_text_into_index(self):
+        site = make_site(GOOD)
+        r = run(site, 'build.py')
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        html = (site / 'cv' / 'index.html').read_text(encoding='utf-8')
+        self.assertIn('<p>hello</p><a>source →</a>', html)
+        self.assertIn("g='hi {name}'", html)
+        self.assertNotIn('⟦', html)
+
+    def test_build_missing_key_fails_and_writes_nothing(self):
+        site = make_site(GOOD.replace('HOME | intro', 'HOME | intor'))
+        r = run(site, 'build.py')
+        self.assertEqual(r.returncode, 1)
+        self.assertIn('HOME | intro', r.stdout)
+        self.assertFalse((site / 'cv' / 'index.html').exists())
+
+    def test_build_out_leaves_sources_behind(self):
+        site = make_site(GOOD)
+        out = site / '_site'
+        r = run(site, 'build.py', '--out', str(out))
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertTrue((out / 'cv' / 'index.html').is_file())
+        for private in ('cv/page.html', 'cv/content.txt', 'tools'):
+            self.assertFalse((out / private).exists(), private)
+
+
 class Preview(unittest.TestCase):
-    def test_no_serve_refreshes_backup_and_reports(self):
-        site = make_site(GOOD, backup={'HOME | intro': 'old'})
+    def test_no_serve_builds_and_reports(self):
+        site = make_site(GOOD)
         r = run(site, 'preview.py', '--no-serve')
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
-        _, backup = tf.read_bundle((site / 'cv' / 'index.html').read_text(encoding='utf-8'))
-        self.assertEqual(backup['HOME | intro'], 'hello')
-        self.assertIn('backup', r.stdout.lower())
+        self.assertIn('<p>hello</p>', (site / 'cv' / 'index.html').read_text(encoding='utf-8'))
+        self.assertIn('content.txt is OK', r.stdout)
 
-    def test_no_serve_still_refreshes_when_there_are_problems(self):
-        site = make_site(GOOD.replace('hello', 'new hello').replace('GLOBAL | repo link', 'GLOBAL | repo lnk'),
-                         backup={'GLOBAL | repo link': 'source →', 'HOME | intro': 'old'})
+    def test_no_serve_still_builds_when_there_are_problems(self):
+        site = make_site(GOOD.replace('hello', 'new hello').replace('GLOBAL | repo link', 'GLOBAL | repo lnk'))
         r = run(site, 'preview.py', '--no-serve')
         self.assertIn('repo lnk', r.stdout)
-        _, backup = tf.read_bundle((site / 'cv' / 'index.html').read_text(encoding='utf-8'))
-        self.assertEqual(backup['HOME | intro'], 'new hello')
-        self.assertEqual(backup['GLOBAL | repo link'], 'source →')
-
-    def test_unchanged_backup_leaves_index_untouched(self):
-        site = make_site(GOOD, backup=tf.parse(GOOD).entries)
-        before = (site / 'cv' / 'index.html').read_bytes()
-        run(site, 'preview.py', '--no-serve')
-        self.assertEqual((site / 'cv' / 'index.html').read_bytes(), before)
+        html = (site / 'cv' / 'index.html').read_text(encoding='utf-8')
+        self.assertIn('<p>new hello</p>', html)
+        self.assertIn('<a>GLOBAL | repo link</a>', html)   # the gap shows as the header's name
 
 
 if __name__ == '__main__':

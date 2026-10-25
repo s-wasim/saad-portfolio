@@ -1,6 +1,6 @@
 # Editing the site's text
 
-Every word on the site lives in `cv/content.txt` in this repo. Each entry
+Every word on the CV lives in `cv/content.txt` in this repo. Each entry
 is a header line and the text under it:
 
 ```
@@ -19,8 +19,8 @@ spot the text belongs to. The notes at the top of `content.txt` cover lists
    minutes to show it everywhere.
 3. A **red ✗** next to the commit means the check found a problem, such as a
    header that no longer matches. Open it to see the line number and a
-   suggested fix. Until it's fixed, that one spot shows its backup text; the
-   rest of the site is unaffected.
+   suggested fix. Until it's fixed the site doesn't republish: visitors keep
+   seeing the last good version.
 
 ## On your computer
 
@@ -34,37 +34,37 @@ python3 tools/preview.py
 From the `Portfolio` folder above it, `python3 fe_design_complete/tools/preview.py`
 does the same.
 
-This checks `content.txt`, refreshes the backup copy inside `index.html`, and
-opens the site at http://localhost:8000. Edit `content.txt`, refresh the
-browser, and the change is there. Ctrl+C stops it. Commit `cv/content.txt` **and**
-`cv/index.html` afterwards (the backup copy changed).
+This checks `content.txt`, builds the site, and opens the CV at
+http://localhost:8000/cv/. Edit `content.txt`, refresh the browser, and the
+change is there (the preview rebuilds whenever a source changes). Ctrl+C stops
+it. Commit `cv/content.txt` **and** `cv/index.html` afterwards.
 
-Other options: `--no-open`, `--port 9000`, `--no-serve` (check and refresh the
-backup only). `python3 tools/check_text.py` runs the check on its own.
-
-Double-clicking `index.html` also works, but browsers block a file opened
-that way from reading `content.txt`, so it shows the backup copy as of the last
-preview.
+Other options: `--no-open`, `--port 9000`, `--no-serve` (check and build
+only). `python3 tools/check_text.py` runs the check on its own;
+`python3 tools/build.py` builds without serving.
 
 ## How it works
 
-`index.html` carries a marker wherever text goes. When the page loads, it
-downloads `content.txt` and puts each entry's text into its markers, escaped
-for where it lands, before anything is drawn. A header that `content.txt` is
-missing falls back to the backup copy stored in `index.html`, and so does the
-whole page if `content.txt` can't be downloaded.
+`cv/page.html` is the CV's source and carries a marker wherever text goes.
+`tools/build.py` puts each entry's text into its markers, escaped for where it
+lands, and writes `cv/index.html` — plain HTML that visitors and search
+engines read directly. It also regenerates the site's other generated files.
+On GitHub, `.github/workflows/deploy.yml` runs the same build on every push to
+`main` and publishes the result, so an edit made on github.com goes live by
+itself. A header that `content.txt` is missing stops the build, so a typo can
+never publish raw markers.
 
 | File | What it is |
 |---|---|
-| `textfile.py` | Reads `content.txt`, checks it, fills markers (same rules as the page) |
+| `textfile.py` | Reads `content.txt`, checks it, fills markers |
+| `build.py` | Bakes the text into `cv/index.html` and regenerates the other generated files |
 | `preview.py` | The local preview command |
 | `check_text.py` | The check; GitHub runs it from `.github/workflows/check-text.yml` |
 | `test_*.py` | Tests: `cd tools && python3 -m unittest` |
 
 ## Adding new text to the page
 
-New text needs a marker in the page template, which lives outside this repo in
-`build/work/template.html`:
+New text needs a marker in `cv/page.html`:
 
 - in markup: `⟦TAB | Section / part⟧`
 - inside a script string: `'⟦js:TAB | Section / part⟧'`; with live values,
@@ -73,8 +73,8 @@ New text needs a marker in the page template, which lives outside this repo in
 Then add the matching entry to `content.txt` and rebuild:
 
 ```bash
-python3 build/bundle.py seal && python3 fe_design_complete/tools/preview.py --no-serve
+python3 tools/build.py
 ```
 
-`./build/check.sh` runs every test, including a real-browser pass over
-`content.txt`.
+`./build/check.sh` (one folder up, outside this repo) runs the CV's behaviour
+and real-browser suites.
