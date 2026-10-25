@@ -26,5 +26,34 @@ class Routes(unittest.TestCase):
         self.assertRegex(html, r"['\"]/cv/['\"]\s*\+\s*location\.hash")
 
 
+class Landing(unittest.TestCase):
+    def doors(self):
+        html = read('index.html')
+        return re.findall(r'<a class="door"[^>]*data-door="(\w+)"[^>]*href="([^"]+)"[^>]*>(.*?)</a>', html, re.S)
+
+    def test_landing_links_without_js(self):
+        self.assertEqual([(d, h) for d, h, _ in self.doors()], [('cv', '/cv/'), ('services', '/services/')])
+
+    def test_landing_labels(self):
+        text = {d: re.sub(r'<[^>]+>', ' ', body) for d, _, body in self.doors()}
+        self.assertIn('CV', text['cv'])
+        self.assertIn('AI/ML engineer · agents in production', text['cv'])
+        self.assertIn('Services', text['services'])
+        self.assertIn('Websites &amp; systems for small businesses', text['services'])
+
+    def test_preview_assets_exist(self):
+        from PIL import Image
+        for name in ('cv', 'services'):
+            with Image.open(ROOT / 'assets/landing' / (name + '.webp')) as im:
+                self.assertGreaterEqual(im.width, 1600)
+
+    def test_landing_assets_linked(self):
+        html = read('index.html')
+        self.assertIn('/assets/landing/landing.css', html)
+        self.assertIn('/assets/landing/landing.js', html)
+        self.assertTrue((ROOT / 'assets/landing/landing.css').is_file())
+        self.assertTrue((ROOT / 'assets/landing/landing.js').is_file())
+
+
 if __name__ == '__main__':
     unittest.main()

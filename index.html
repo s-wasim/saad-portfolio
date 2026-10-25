@@ -2,9 +2,57 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Saad Waseem</title>
-<script>location.replace(location.hash ? '/cv/' + location.hash : '/cv/');</script>
-<meta http-equiv="refresh" content="0;url=/cv/">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saad Waseem — AI engineer &amp; small-business systems</title>
+<meta name="description" content="Saad Waseem, independent AI/ML engineer in Lahore. Read the CV, or see websites, business systems and AI automations for small businesses.">
+<meta name="theme-color" content="#E4E2EC">
+<link rel="canonical" href="https://saad-dev.com/">
+<!-- old links like saad-dev.com/#work belonged to the CV; send them there -->
+<script>if (location.hash.length > 1) location.replace('/cv/' + location.hash);</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Silkscreen&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="/assets/landing/cv.webp">
+<link rel="preload" as="image" href="/assets/landing/services.webp">
+<link rel="stylesheet" href="/assets/landing/landing.css">
 </head>
-<body><a href="/cv/">Saad Waseem — CV</a></body>
+<body>
+<div class="stage" aria-hidden="true">
+  <div class="preview" data-for="cv"><div class="tilt"><div class="img"></div></div></div>
+  <div class="preview" data-for="services"><div class="tilt"><div class="img"></div></div></div>
+  <div class="veil"></div>
+</div>
+
+<main class="doors">
+  <a class="door" data-door="cv" href="/cv/">
+    <span class="scan" aria-hidden="true"></span>
+    <span class="door-go" aria-hidden="true">&#8599;</span>
+    <span class="door-title">CV<span class="cursor" aria-hidden="true"></span></span>
+    <span class="door-sub">AI/ML engineer · agents in production</span>
+  </a>
+  <a class="door" data-door="services" href="/services/">
+    <span class="rim" aria-hidden="true"></span>
+    <span class="door-go" aria-hidden="true">&#8599;</span>
+    <span class="door-title">Services</span>
+    <span class="door-sub">Websites &amp; systems for small businesses</span>
+  </a>
+</main>
+
+<!-- liquid glass: an edge displacement map (drawn by landing.js) bends the backdrop, one channel per colour -->
+<svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
+  <filter id="glass" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+    <feImage id="glass-map" x="0" y="0" width="1" height="1" preserveAspectRatio="none" result="map"/>
+    <feDisplacementMap in="SourceGraphic" in2="map" scale="150" xChannelSelector="R" yChannelSelector="G" result="dr"/>
+    <feColorMatrix in="dr" type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result="r"/>
+    <feDisplacementMap in="SourceGraphic" in2="map" scale="135" xChannelSelector="R" yChannelSelector="G" result="dg"/>
+    <feColorMatrix in="dg" type="matrix" values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0" result="g"/>
+    <feDisplacementMap in="SourceGraphic" in2="map" scale="120" xChannelSelector="R" yChannelSelector="G" result="db"/>
+    <feColorMatrix in="db" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" result="b"/>
+    <feBlend in="r" in2="g" mode="screen" result="rg"/>
+    <feBlend in="rg" in2="b" mode="screen"/>
+  </filter>
+</svg>
+
+<script src="/assets/landing/landing.js" defer></script>
+</body>
 </html>

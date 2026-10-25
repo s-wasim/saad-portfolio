@@ -1,0 +1,256 @@
+/* saad-dev.com landing: two doors on lavender; hovering one turns the whole background into that page, alive and tilting.
+   landing.js drives body[data-active], body.leaving and the spring values --rx --ry (deg) and --tx --ty (vw/vh) on :root. */
+:root {
+  --bg: #E4E2EC;
+  --ink: #2B2838;
+  --ink-soft: #625D74;
+  --amber: #FFA845;
+  --amber-dim: #E08A3C;
+  --crt: #0A0503;
+  --rx: 0; --ry: 0; --tx: 0; --ty: 0;
+  --mx: 50%; --my: 50%;
+  color-scheme: light;
+}
+* { box-sizing: border-box; margin: 0; }
+html, body { height: 100%; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Hanken Grotesk', system-ui, sans-serif;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+.defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+/* ---------- the stage: full-bleed previews behind the doors ---------- */
+.stage {
+  position: fixed; inset: 0;
+  perspective: 1100px;
+  overflow: hidden;
+  background: transparent;
+  transition: background-color .5s ease;
+}
+body[data-active="cv"] .stage { background-color: #0B0604; }
+body[data-active="services"] .stage { background-color: #C8A985; }
+
+.preview {
+  position: absolute; inset: 0;
+  opacity: 0;
+  transform: scale(1.14);
+  transform-style: preserve-3d;
+  transition: opacity .45s ease, transform .9s cubic-bezier(.34, 1.56, .64, 1);
+}
+.preview .tilt {
+  position: absolute; inset: 0;
+  transform-style: preserve-3d;
+  transform:
+    translate3d(calc(var(--tx) * 1vw), calc(var(--ty) * 1vh), 0)
+    rotateX(calc(var(--rx) * 1deg))
+    rotateY(calc(var(--ry) * 1deg));
+  will-change: transform;
+}
+.preview .img {
+  position: absolute; inset: -32%;
+  background: center / cover no-repeat;
+  animation: drift 16s ease-in-out infinite alternate;
+  animation-play-state: paused;
+}
+.preview[data-for="cv"] .img { background-image: url('cv.webp'); }
+.preview[data-for="services"] .img { background-image: url('services.webp'); }
+
+body[data-active="cv"] .preview[data-for="cv"],
+body[data-active="services"] .preview[data-for="services"] { opacity: 1; transform: scale(1); }
+body[data-active="cv"] .preview[data-for="cv"] .img,
+body[data-active="services"] .preview[data-for="services"] .img { animation-play-state: running; }
+
+@keyframes drift {
+  0%   { transform: translate3d(-2.5%, -1.5%, 0) scale(1)    rotate(-.6deg); }
+  35%  { transform: translate3d(1.5%, -2.5%, 0)  scale(1.05) rotate(.4deg); }
+  70%  { transform: translate3d(2.5%, 1.5%, 0)   scale(1.02) rotate(.8deg); }
+  100% { transform: translate3d(-1%, 2.5%, 0)    scale(1.07) rotate(-.3deg); }
+}
+
+/* vignette for depth, and the colour wash the zoom-through ends on */
+.veil {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(120% 90% at 50% 50%, transparent 55%, rgba(0, 0, 0, .45));
+  transition: opacity .45s ease, background-color .3s ease;
+}
+body[data-active] .veil { opacity: 1; }
+body[data-active=""] .veil { opacity: 0; }
+
+/* ---------- doors ---------- */
+.doors {
+  position: relative; z-index: 2;
+  width: 60vw; height: 40vh;
+  display: flex; gap: clamp(14px, 1.6vw, 28px);
+  perspective: 900px;
+  transition: opacity .35s ease, transform .5s cubic-bezier(.7, 0, .2, 1);
+}
+.door {
+  position: relative; flex: 1 1 0;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: clamp(20px, 2.4vw, 42px);
+  border-radius: 30px;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--ink);
+  background: rgba(255, 255, 255, .5);
+  border: 1px solid rgba(255, 255, 255, .85);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, .9) inset, 0 24px 60px -28px rgba(54, 44, 92, .45), 0 2px 6px rgba(54, 44, 92, .06);
+  transition: background-color .35s ease, color .35s ease, border-color .35s ease, border-radius .35s ease, box-shadow .35s ease, transform .35s ease;
+  transform: rotateX(calc(var(--rx) * -.22deg)) rotateY(calc(var(--ry) * -.22deg));
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.door:not(.on):hover { background: rgba(255, 255, 255, .66); }
+.door-title {
+  font: 600 clamp(40px, 5vw, 88px)/1 'Hanken Grotesk', system-ui, sans-serif;
+  letter-spacing: -.025em;
+  transition: color .3s ease;
+}
+.door-sub {
+  margin-top: .7em;
+  font: 400 clamp(13px, 1.05vw, 18px)/1.4 'Hanken Grotesk', system-ui, sans-serif;
+  color: var(--ink-soft);
+  transition: color .3s ease;
+}
+.door-go {
+  position: absolute; top: clamp(18px, 2vw, 34px); right: clamp(20px, 2.2vw, 38px);
+  font: 400 clamp(18px, 1.6vw, 28px)/1 'Hanken Grotesk', system-ui, sans-serif;
+  color: var(--ink-soft);
+  transition: transform .35s ease, color .3s ease;
+}
+.door.on .door-go { transform: translate(3px, -3px); }
+.door:focus-visible:not(.on) { box-shadow: 0 0 0 3px var(--bg), 0 0 0 5px var(--ink); }
+.cursor, .scan, .rim { display: none; }
+
+/* the other door, while a preview is showing: smoked glass, so the preview stays the picture */
+body[data-active="cv"] .door[data-door="services"],
+body[data-active="services"] .door[data-door="cv"] {
+  background: rgba(20, 16, 28, .22);
+  border-color: rgba(255, 255, 255, .28);
+  color: rgba(255, 255, 255, .92);
+  -webkit-backdrop-filter: blur(8px) saturate(1.2);
+  backdrop-filter: blur(8px) saturate(1.2);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, .25) inset, 0 24px 60px -30px rgba(0, 0, 0, .6);
+}
+body[data-active="cv"] .door[data-door="services"] :is(.door-sub, .door-go),
+body[data-active="services"] .door[data-door="cv"] :is(.door-sub, .door-go) { color: rgba(255, 255, 255, .78); }
+body[data-active] .door:not(.on) .door-title { text-shadow: 0 1px 14px rgba(0, 0, 0, .3); }
+
+/* ---------- CV door: the CV's own terminal ---------- */
+.door[data-door="cv"].on {
+  background: var(--crt);
+  color: var(--amber);
+  border-color: transparent;
+  border-radius: 0;
+  /* stepped pixel border with notched corners, plus phosphor glow */
+  box-shadow:
+    6px 0 0 0 var(--amber), -6px 0 0 0 var(--amber), 0 6px 0 0 var(--amber), 0 -6px 0 0 var(--amber),
+    12px 0 0 0 var(--crt), -12px 0 0 0 var(--crt), 0 12px 0 0 var(--crt), 0 -12px 0 0 var(--crt),
+    0 0 60px 10px rgba(255, 140, 40, .32);
+}
+.door[data-door="cv"].on .door-title {
+  font-family: 'Silkscreen', monospace; font-weight: 400;
+  letter-spacing: .02em;
+  text-shadow: 0 0 6px rgba(255, 168, 69, .9), 0 0 22px rgba(255, 120, 30, .55);
+}
+.door[data-door="cv"].on .door-sub {
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase; letter-spacing: .14em;
+  font-size: clamp(11px, .85vw, 14px);
+  color: var(--amber-dim);
+}
+.door[data-door="cv"].on .door-go { color: var(--amber); font-family: 'Silkscreen', monospace; }
+.door[data-door="cv"].on .door-go::before { content: '[ENTER] '; font-size: .55em; vertical-align: middle; letter-spacing: .1em; }
+.door[data-door="cv"].on .cursor {
+  display: inline-block;
+  width: .5em; height: .82em; margin-left: .12em;
+  vertical-align: -.04em;
+  background: var(--amber);
+  box-shadow: 0 0 10px rgba(255, 168, 69, .8);
+  animation: blink 1s steps(1) infinite;
+}
+.door[data-door="cv"].on .scan {
+  display: block;
+  position: absolute; inset: 0;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(to bottom, transparent 0 2px, rgba(0, 0, 0, .42) 2px 4px),
+    radial-gradient(90% 80% at 50% 45%, rgba(255, 150, 60, .1), transparent 70%);
+  animation: flicker 3.2s steps(1) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+@keyframes flicker { 0%, 100% { opacity: 1; } 47% { opacity: .82; } 48% { opacity: 1; } 83% { opacity: .9; } }
+
+/* ---------- Services door: liquid glass ---------- */
+.door[data-door="services"].on {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, .05);
+  border-color: rgba(255, 255, 255, .45);
+  border-radius: 40px;
+  -webkit-backdrop-filter: blur(16px) saturate(1.9) brightness(1.08);
+  backdrop-filter: blur(16px) saturate(1.9) brightness(1.08);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, .12),
+    inset 0 18px 30px -18px rgba(255, 255, 255, .55),
+    inset 0 -18px 40px -24px rgba(255, 255, 255, .3),
+    0 30px 70px -30px rgba(0, 0, 0, .55);
+}
+/* Chromium: real refraction through the SVG filter (landing.js sets .glass-svg) */
+html.glass-svg .door[data-door="services"].on {
+  -webkit-backdrop-filter: url(#glass) saturate(1.5) brightness(1.06);
+  backdrop-filter: url(#glass) saturate(1.5) brightness(1.06);
+}
+.door[data-door="services"].on .door-title,
+.door[data-door="services"].on .door-sub,
+.door[data-door="services"].on .door-go { color: #FFFFFF; text-shadow: 0 1px 18px rgba(0, 0, 0, .35), 0 0 2px rgba(0, 0, 0, .25); }
+.door[data-door="services"].on .door-sub { color: rgba(255, 255, 255, .88); }
+.door[data-door="services"].on .rim {
+  display: block;
+  position: absolute; inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    radial-gradient(40% 50% at var(--mx) var(--my), rgba(255, 255, 255, .22), transparent 70%),
+    linear-gradient(135deg, rgba(255, 255, 255, .38), transparent 28%, transparent 70%, rgba(255, 255, 255, .16));
+  box-shadow:
+    inset 1.5px 1.5px 0 rgba(255, 255, 255, .85),
+    inset -1px -1px 0 rgba(255, 255, 255, .35),
+    inset 0 0 26px rgba(255, 255, 255, .22);
+  mix-blend-mode: screen;
+}
+
+/* ---------- click: zoom through into the page ---------- */
+body.leaving .doors { opacity: 0; transform: scale(.92); }
+body.leaving .preview { transition: opacity .3s ease, transform .55s cubic-bezier(.7, 0, .2, 1); }
+body.leaving[data-active="cv"] .preview[data-for="cv"],
+body.leaving[data-active="services"] .preview[data-for="services"] { transform: scale(1.35); }
+body.leaving .veil { transition: opacity .2s ease .3s, background-color .2s ease .3s; opacity: 1; }
+body.leaving[data-active="cv"] .veil { background-color: #0A0503; }
+body.leaving[data-active="services"] .veil { background-color: #D8BC98; }
+
+/* a tap only shows the preview for ~0.6 s, so everything settles faster */
+body.tap .preview, body.tap .door, body.tap .stage, body.tap .veil { transition-duration: .18s; }
+
+/* ---------- phones and touch: stacked ---------- */
+@media (max-width: 760px), (hover: none) and (max-width: 1024px) {
+  .doors { flex-direction: column; width: min(88vw, 560px); height: min(62vh, 560px); }
+  .door { border-radius: 26px; }
+  .door-title { font-size: clamp(38px, 11vw, 64px); }
+  .door-sub { font-size: 15px; }
+}
+
+/* ---------- reduced motion: same states, gentle ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .preview { transform: none !important; transition: opacity .25s ease; }
+  .preview .img { animation: none; inset: -8%; }
+  .door { transition-duration: .15s; transform: none; }
+  .door[data-door="cv"].on .cursor, .door[data-door="cv"].on .scan { animation: none; }
+  body.leaving .doors { transform: none; }
+}
