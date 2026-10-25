@@ -1,0 +1,1644 @@
+HOW TO EDIT THIS FILE
+=====================
+Every piece of text on the site lives here. Each entry is a header line, then
+its text on the lines below it. A header looks like this one, for the WORK tab:
+<!-- WORK | document_pipeline card / title -->  (on a line of its own)
+
+  * Change the text under a header. Leave the header line exactly as it is:
+    it is how the site finds where that text goes.
+  * An entry runs until the next header. Blank lines around it are ignored.
+    Page text wraps by itself, so a line break inside a paragraph shows as
+    a space.
+  * Entries marked "(one per line)" are lists: one item per line. Add or
+    delete lines freely.
+  * Words in braces, like {name}, are filled in by the site. Keep each one,
+    spelled exactly the same (you can move it within the sentence).
+  * Never type two opening braces in a row.
+
+Run these from the fe_design_complete folder (the one that holds this file):
+Preview on your computer:   python3 tools/preview.py
+Check for mistakes:         python3 tools/check_text.py
+GitHub runs the same check on every push and marks the commit with a red X if
+a header doesn't match. Lines above the first header (like these) are notes;
+the site ignores them.
+
+<!-- GLOBAL | Page / browser tab title -->
+Saad Waseem — AI/ML and data engineer
+
+<!-- GLOBAL | Page / search description -->
+AI/ML and data engineer in Lahore. LangGraph agents over 100GB+ of financial data, three report tiers in production. $40/hr for build work.
+
+<!-- GLOBAL | Page / social share tagline -->
+I ship agents. Not notebooks.
+
+<!-- GLOBAL | Page / browser tab title while away -->
+come back 🙁 …
+
+<!-- GLOBAL | Links / email address -->
+saad@saad-dev.com
+
+<!-- GLOBAL | Links / LinkedIn profile -->
+https://linkedin.com/in/s-waseem
+
+<!-- GLOBAL | Links / WhatsApp link -->
+https://wa.me/+923390071419
+
+<!-- GLOBAL | Links / GitHub profile -->
+https://github.com/s-wasim
+
+<!-- GLOBAL | Links / website address -->
+https://saad-dev.com
+
+<!-- GLOBAL | Marquee / scrolling status line -->
+PKT e1→e2 128b 11.9ms .. e2→e3 96b 8.4ms .. HIL idle .. NODES 6 .. F-6 18 .. 020 E-5 01 .. C-6 03 .. C30 ..
+
+<!-- GLOBAL | Nav tabs / screen-reader label -->
+Channels
+
+<!-- GLOBAL | Nav tabs / HOME tab -->
+Saad.DEV
+
+<!-- GLOBAL | Nav tabs / METHOD tab -->
+Method
+
+<!-- GLOBAL | Nav tabs / WORK tab -->
+Work
+
+<!-- GLOBAL | Nav tabs / LAB tab -->
+Lab
+
+<!-- GLOBAL | Nav tabs / RANGE tab -->
+Range
+
+<!-- GLOBAL | Nav tabs / PATH tab -->
+Path
+
+<!-- GLOBAL | Nav tabs / TWIN tab -->
+Twin
+
+<!-- GLOBAL | Nav tabs / BOOK tab -->
+Book
+
+<!-- GLOBAL | Shared labels / source link on every card -->
+source →
+
+<!-- GLOBAL | Shared labels / hourly rate -->
+$40/HR
+
+<!-- GLOBAL | Boot screen / name prompt -->
+IDENTIFY:
+
+<!-- GLOBAL | Boot screen / name prompt hint -->
+⏎ to continue · esc to skip
+
+<!-- GLOBAL | Boot screen / lines (one per line) -->
+OWN BIOS v4.2 · (c) 2026
+
+→ MEMORY TEST: 640 KB ✔
+→ PRIMARY MASTER: WDC 20 MB
+→ DRIVE Ø: MOUNTING CORE_OS ✔
+→ LOADING KERNEL ████████████ 100%
+→ INITIALIZING NETWORK STACK ✔
+→ LANGGRAPH RUNTIME .............. ONLINE
+→ MCP SERVER ..................... ROW-LEVEL SECURITY ENFORCED
+→ WAREHOUSE ...................... 100GB+ MOUNTED
+→ GEO LOCATION: LAHORE, PAKISTAN
+→ HUMAN-IN-THE-LOOP .............. FOUND, AND STAYING
+→ WAITING FOR USER
+
+<!-- GLOBAL | Boot screen / lines after the name is entered (one per line) -->
+→ USER: {name} ✔
+→ CHECKING RECORDS FOR {name} ...... NONE FOUND, WHICH IS FINE
+→ CONNECTED. SESSION INITIATED ✔
+→ STARTING RENDERING ENGINE…
+
+<!-- GLOBAL | Power-off screen / hint -->
+press any key
+
+<!-- GLOBAL | Screen-reader labels / open the command palette -->
+Open the command palette
+
+<!-- GLOBAL | Screen-reader labels / switch plain and console -->
+Switch between plain text and console
+
+<!-- GLOBAL | Screen-reader labels / master controls -->
+Master controls
+
+<!-- GLOBAL | Screen-reader labels / switch to plain text mode -->
+Switch to plain text mode
+
+<!-- GLOBAL | Screen-reader labels / show the master controls -->
+Show the master controls
+
+<!-- GLOBAL | Function keys / F1 label -->
+HELP
+
+<!-- GLOBAL | Function keys / F3 label -->
+IDENTIFY
+
+<!-- GLOBAL | Status panel / online label -->
+ONLINE
+
+<!-- GLOBAL | Status panel / link label -->
+LNK
+
+<!-- GLOBAL | Status panel / name shown for guests -->
+GUEST
+
+<!-- GLOBAL | Status panel / Lahore clock -->
+LAHORE · {time} PKT
+
+<!-- GLOBAL | Status panel / session timer -->
+LINK · {name} · {time}
+
+<!-- GLOBAL | Status panel / visitor badge -->
+{name}@saad-dev.com
+
+<!-- GLOBAL | Mode switch / PLAIN label -->
+PLAIN
+
+<!-- GLOBAL | Mode switch / CONSOLE label -->
+CONSOLE
+
+<!-- GLOBAL | Mode switch / plain mode note -->
+Plain text mode. The console is off; every channel is on one page.
+
+<!-- GLOBAL | Mode switch / console mode note (screen-reader) -->
+Console mode.
+
+<!-- GLOBAL | Link module / code -->
+LNK-40
+
+<!-- GLOBAL | Link module / caption -->
+link · session
+
+<!-- GLOBAL | Link module / PWR light -->
+PWR
+
+<!-- GLOBAL | Link module / SES light -->
+SES
+
+<!-- GLOBAL | Link module / HIL light -->
+HIL
+
+<!-- GLOBAL | Link module / RX light -->
+RX
+
+<!-- GLOBAL | Link module / TX light -->
+TX
+
+<!-- GLOBAL | Link module / availability -->
+● AVAILABLE
+
+<!-- GLOBAL | Human module / code -->
+HIL-01
+
+<!-- GLOBAL | Human module / caption -->
+human · in · loop
+
+<!-- GLOBAL | Hardware buttons / TWIN (screen-reader) -->
+Ask my AI twin
+
+<!-- GLOBAL | Hardware buttons / TWIN label -->
+TWIN
+
+<!-- GLOBAL | Hardware buttons / BOOK (screen-reader) -->
+Book a call
+
+<!-- GLOBAL | Hardware buttons / BOOK label -->
+BOOK
+
+<!-- GLOBAL | Hardware buttons / REQUEST (screen-reader) -->
+Request via WhatsApp
+
+<!-- GLOBAL | Hardware buttons / REQUEST label -->
+REQUEST
+
+<!-- GLOBAL | Hardware buttons / MAIL (screen-reader) -->
+Email me
+
+<!-- GLOBAL | Hardware buttons / MAIL label -->
+MAIL
+
+<!-- GLOBAL | Trace module / code -->
+TRC-88
+
+<!-- GLOBAL | Trace module / caption -->
+trace · monitor
+
+<!-- GLOBAL | Trace module / FPS label -->
+FPS
+
+<!-- GLOBAL | Trace module / CPU light -->
+CPU
+
+<!-- GLOBAL | Trace module / MOTION light -->
+MOTION
+
+<!-- GLOBAL | Trace module / NET light -->
+NET
+
+<!-- GLOBAL | Trace module / CAPS light -->
+CAPS
+
+<!-- GLOBAL | Trace module / idle lines (one per line) -->
+→ PKT e3→e4 128b 11.9ms
+→ PKT e4→e5 96b 8.4ms
+→ DNS 8.8.8.8 512b 10.6ms
+→ TLS 192.168.1.1 572ms
+→ HIL idle
+→ TCP 10.0.0.1 64b
+
+<!-- GLOBAL | Trace module / line while a gate is open -->
+→ HIL  awaiting  ▮
+
+<!-- GLOBAL | Control module / code -->
+CTL-SK7
+
+<!-- GLOBAL | Control module / caption -->
+mstr · ctrl
+
+<!-- GLOBAL | Control module / power (screen-reader) -->
+Power
+
+<!-- GLOBAL | Control module / power label -->
+POWER
+
+<!-- GLOBAL | Control module / turbo (screen-reader) -->
+Turbo
+
+<!-- GLOBAL | Control module / turbo label -->
+TURBO
+
+<!-- GLOBAL | Control module / degauss (screen-reader) -->
+Degauss
+
+<!-- GLOBAL | Control module / degauss label -->
+DEGAUSS
+
+<!-- GLOBAL | Control module / reduced-motion note -->
+motion off — your system asked for it
+
+<!-- GLOBAL | Control module / fader SPD label -->
+SPD
+
+<!-- GLOBAL | Control module / fader SPD (screen-reader) -->
+Animation speed
+
+<!-- GLOBAL | Control module / fader BRT label -->
+BRT
+
+<!-- GLOBAL | Control module / fader BRT (screen-reader) -->
+Screen brightness
+
+<!-- GLOBAL | Control module / fader CON label -->
+CON
+
+<!-- GLOBAL | Control module / fader CON (screen-reader) -->
+Screen contrast
+
+<!-- GLOBAL | Control module / fader SAT label -->
+SAT
+
+<!-- GLOBAL | Control module / fader SAT (screen-reader) -->
+Colour saturation
+
+<!-- GLOBAL | Control module / fader GLO label -->
+GLO
+
+<!-- GLOBAL | Control module / fader GLO (screen-reader) -->
+Phosphor glow
+
+<!-- GLOBAL | Control module / fader SCN label -->
+SCN
+
+<!-- GLOBAL | Control module / fader SCN (screen-reader) -->
+Scanline density
+
+<!-- GLOBAL | Control module / fader HUE label -->
+HUE
+
+<!-- GLOBAL | Control module / fader HUE (screen-reader) -->
+Phosphor hue
+
+<!-- GLOBAL | Control module / handheld toggle when open -->
+CTL ▴
+
+<!-- GLOBAL | Control module / handheld toggle when closed -->
+CTL ▾
+
+<!-- GLOBAL | Lights on / message -->
+you were warned.
+
+<!-- GLOBAL | Lights on / button -->
+lights off
+
+<!-- GLOBAL | SYS panel / screen-reader label -->
+Colophon
+
+<!-- GLOBAL | SYS panel / title -->
+SYS
+
+<!-- GLOBAL | SYS panel / host label -->
+host ·
+
+<!-- GLOBAL | SYS panel / mail label -->
+mail ·
+
+<!-- GLOBAL | SYS panel / repo label -->
+repo ·
+
+<!-- GLOBAL | SYS panel / credits -->
+art: pixel sprites as hex source · type: Michroma, Chakra Petch, JetBrains Mono, Silkscreen
+
+<!-- GLOBAL | SYS panel / close button -->
+close
+
+<!-- GLOBAL | SYS panel / build line -->
+one file · no build step · no framework · no npm
+
+<!-- GLOBAL | Command palette / screen-reader label -->
+Command palette
+
+<!-- GLOBAL | Command palette / search (screen-reader) -->
+Search commands
+
+<!-- GLOBAL | Command palette / search placeholder -->
+type a command…
+
+<!-- GLOBAL | Command palette / list (screen-reader) -->
+Commands
+
+<!-- GLOBAL | Command palette / key hints -->
+↑↓ move · ↵ run · esc close
+
+<!-- GLOBAL | Command palette / command: go to home -->
+go to home
+
+<!-- GLOBAL | Command palette / command: go to method -->
+go to method
+
+<!-- GLOBAL | Command palette / command: go to work -->
+go to work
+
+<!-- GLOBAL | Command palette / command: go to lab -->
+go to lab
+
+<!-- GLOBAL | Command palette / command: go to range -->
+go to range
+
+<!-- GLOBAL | Command palette / command: go to path -->
+go to path
+
+<!-- GLOBAL | Command palette / command: go to twin -->
+go to twin
+
+<!-- GLOBAL | Command palette / command: go to book -->
+go to book
+
+<!-- GLOBAL | Command palette / command: book a call -->
+book a call
+
+<!-- GLOBAL | Command palette / command: request via whatsapp -->
+request via whatsapp
+
+<!-- GLOBAL | Command palette / command: open github -->
+open github
+
+<!-- GLOBAL | Command palette / hint: open github -->
+new tab
+
+<!-- GLOBAL | Command palette / command: copy email -->
+copy email
+
+<!-- GLOBAL | Command palette / command: whoami -->
+whoami
+
+<!-- GLOBAL | Command palette / hint: whoami -->
+change visitor name · F3
+
+<!-- GLOBAL | Command palette / command: sys -->
+sys
+
+<!-- GLOBAL | Command palette / hint: sys -->
+the honest contact block
+
+<!-- GLOBAL | Command palette / command: plain text mode -->
+plain text mode
+
+<!-- GLOBAL | Command palette / command: degauss -->
+degauss
+
+<!-- GLOBAL | Command palette / hint: degauss -->
+shakes the CRT, does nothing else
+
+<!-- GLOBAL | Command palette / command: lights on -->
+lights on
+
+<!-- GLOBAL | Command palette / hint: lights on -->
+you were warned
+
+<!-- GLOBAL | Command palette / command: sudo hire saad -->
+sudo hire saad
+
+<!-- GLOBAL | Command palette / signed-in line -->
+logged in as {name} · F3 to change
+
+<!-- GLOBAL | Command palette / count, one -->
+{count} command
+
+<!-- GLOBAL | Command palette / count, several -->
+{count} commands
+
+<!-- GLOBAL | Ticker / idle text -->
+I also do ETL, which is less fun to animate · every node on that graph is real · the twin runs on your key, not mine · three LLM calls per document, and that is the budget · the approval gate is not decorative · 100GB+ of financial data, none of it on this page · still here, then
+
+<!-- GLOBAL | Ticker / when the cursor comes close -->
+>>> YES, IT NOTICED THE CURSOR <<<
+
+<!-- GLOBAL | Ticker / message frame -->
+>>> {message} <<<
+
+<!-- GLOBAL | Toasts / whoami -->
+{name} · F3 to change
+
+<!-- GLOBAL | Toasts / five fast clicks -->
+detected: frustration. routing to human. → book a call
+
+<!-- GLOBAL | Toasts / TWIN button -->
+twin channel open · bring your own key
+
+<!-- GLOBAL | Toasts / BOOK button -->
+book channel engaged
+
+<!-- GLOBAL | Toasts / REQUEST button -->
+opening WhatsApp…
+
+<!-- GLOBAL | Toasts / MAIL button -->
+mail app opening · address copied ✓
+
+<!-- GLOBAL | Toasts / turbo -->
+turbo mode — animations uncapped
+
+<!-- GLOBAL | Screen-reader / whoami -->
+You are {name}. Press F3 to change it.
+
+<!-- GLOBAL | Screen-reader / secret burst mode -->
+Burst mode on. Every node is lit for three seconds.
+
+<!-- GLOBAL | Screen-reader / channel loaded -->
+{channel} channel loaded.
+
+<!-- HOME | Header / chapter label -->
+ch 01 · saad.dev
+
+<!-- HOME | Header / title -->
+SAAD.DEV
+
+<!-- HOME | Header / intro -->
+AI/ML and data engineer in Lahore, working remotely with US and EU teams. Lead developer of AI Reports at Maiden Century — Claude agents over 100GB+ of financial data, three tiers in production. Four years of pipelines that run without me watching them.
+
+<!-- HOME | Buttons / book a call -->
+book 20 minutes
+
+<!-- HOME | Buttons / ask the twin -->
+interrogate the twin
+
+<!-- HOME | Portrait / caption -->
+NODE · HUMAN
+
+<!-- HOME | Pipeline graph / heading -->
+DOCUMENT_PIPELINE · LIVE TOPOLOGY
+
+<!-- HOME | Pipeline graph / hint -->
+hover a node · click to run it
+
+<!-- HOME | Pipeline graph / screen-reader description -->
+The document_pipeline agent graph: classify, extract, validate, repair, human approval, commit.
+
+<!-- HOME | Pipeline graph / retry loop label -->
+RETRY
+
+<!-- HOME | Pipeline graph / screen-reader label: classify -->
+classify — Claude vision, no OCR service
+
+<!-- HOME | Pipeline graph / node: classify -->
+classify
+
+<!-- HOME | Pipeline graph / screen-reader label: extract -->
+extract — structured output, schema enforced
+
+<!-- HOME | Pipeline graph / node: extract -->
+extract
+
+<!-- HOME | Pipeline graph / screen-reader label: validate -->
+validate — non-LLM cross-field logic
+
+<!-- HOME | Pipeline graph / node: validate -->
+validate
+
+<!-- HOME | Pipeline graph / screen-reader label: repair -->
+repair — one shot, then a human looks at it
+
+<!-- HOME | Pipeline graph / node: repair -->
+repair
+
+<!-- HOME | Pipeline graph / screen-reader label: commit -->
+commit — transactional write to Postgres
+
+<!-- HOME | Pipeline graph / node: commit -->
+commit
+
+<!-- HOME | Pipeline graph / screen-reader label: saad -->
+Saad — the human approval gate. Opens the booking channel.
+
+<!-- HOME | Pipeline graph / node: saad -->
+saad
+
+<!-- HOME | Pipeline graph / tooltip: classify -->
+Claude vision. No OCR service. → document_pipeline
+
+<!-- HOME | Pipeline graph / tooltip: extract -->
+Structured output, schema-enforced. ≤3 LLM calls/doc.
+
+<!-- HOME | Pipeline graph / tooltip: validate -->
+Non-LLM cross-field logic. Cheap, deterministic.
+
+<!-- HOME | Pipeline graph / tooltip: repair -->
+One shot. If it fails twice, a human looks at it.
+
+<!-- HOME | Pipeline graph / tooltip: commit -->
+Transactional write to Postgres. 69 tests green.
+
+<!-- HOME | Pipeline graph / tooltip: saad -->
+The approval gate. This is the part you’re hiring.
+
+<!-- HOME | Proof stats / screen-reader label -->
+Proof
+
+<!-- HOME | Proof stats / 1 number -->
+100
+
+<!-- HOME | Proof stats / 1 text -->
+{n}GB+ IN PRODUCTION
+
+<!-- HOME | Proof stats / 2 number -->
+4
+
+<!-- HOME | Proof stats / 2 text -->
+{n} YRS SHIPPING
+
+<!-- HOME | Proof stats / 3 number -->
+3
+
+<!-- HOME | Proof stats / 3 text -->
+{n} REPORT TIERS LIVE
+
+<!-- HOME | Proof stats / 4 number -->
+100
+
+<!-- HOME | Proof stats / 4 text -->
+{n}% UPWORK JSS
+
+<!-- HOME | Proof stats / 5 number -->
+5
+
+<!-- HOME | Proof stats / 5 text -->
+{n}.0★
+
+<!-- HOME | Proof stats / 6 number -->
+9
+
+<!-- HOME | Proof stats / 6 text -->
+{n} PUBLIC REPOS
+
+<!-- HOME | Proof stats / 7 number -->
+0
+
+<!-- HOME | Proof stats / 7 text -->
+{n} NOTEBOOKS
+
+<!-- METHOD | Header / chapter label -->
+ch 02 · method
+
+<!-- METHOD | Header / title -->
+METHOD
+
+<!-- METHOD | Header / intro -->
+How a document becomes a row in a database. Five steps, the same five every time. Scroll: the diagram holds still and lights the part being described.
+
+<!-- METHOD | Step 1 / label -->
+STEP 01 · SHAPE
+
+<!-- METHOD | Step 1 / heading -->
+Draw the state machine first
+
+<!-- METHOD | Step 1 / text -->
+Before any prompt gets written, the whole job is a graph on paper: nodes, edges, what state each node reads and writes. If it can't be drawn, it isn't understood yet. LangGraph because the graph is the artifact — not a crew of agents improvising a plan at runtime.
+
+<!-- METHOD | Step 2 / label -->
+STEP 02 · BUDGET
+
+<!-- METHOD | Step 2 / heading -->
+Count the model calls
+
+<!-- METHOD | Step 2 / text -->
+Three LLM calls per document, capped, and the cap is a test. Vision for classification, structured output for extraction, and that's the budget. Every call that isn't in the budget is a cost you'll discover in production instead of in review.
+
+<!-- METHOD | Step 3 / label -->
+STEP 03 · SCHEMA
+
+<!-- METHOD | Step 3 / heading -->
+Make the model return a shape
+
+<!-- METHOD | Step 3 / text -->
+Structured output, schema-enforced, validated by code that has never heard of a language model. Cross-field logic is cheap and deterministic; use it. When validation fails, repair gets exactly one attempt — then it becomes a human's problem, on purpose.
+
+<!-- METHOD | Step 4 / label -->
+STEP 04 · GATE
+
+<!-- METHOD | Step 4 / heading -->
+Put the human where it matters
+
+<!-- METHOD | Step 4 / text -->
+Autonomy is not the goal — a correct write is. One approval gate, at the irreversible step, and the machine genuinely stops there. The amber indicator on this console is the same signal: hardware waits with the pipeline.
+
+<!-- METHOD | Step 5 / label -->
+STEP 05 · SHIP
+
+<!-- METHOD | Step 5 / heading -->
+Hand over something that runs
+
+<!-- METHOD | Step 5 / text -->
+Dockerfile, pytest suite, README that assumes nothing. 69 tests green on document_pipeline. The deliverable is a service your team can deploy and modify without me — not a notebook I have to be present to explain.
+
+<!-- METHOD | Pinned graph / caption -->
+PINNED · SAME GRAPH
+
+<!-- METHOD | Pinned graph / node: classify -->
+classify
+
+<!-- METHOD | Pinned graph / node: extract -->
+extract
+
+<!-- METHOD | Pinned graph / node: validate -->
+validate
+
+<!-- METHOD | Pinned graph / node: repair -->
+repair
+
+<!-- METHOD | Pinned graph / node: commit -->
+commit
+
+<!-- METHOD | Pinned graph / node: human -->
+human
+
+<!-- METHOD | Pinned graph / ship badge -->
+DOCKER · 55 TESTS · README
+
+<!-- METHOD | Legend / wire -->
+WIRE
+
+<!-- METHOD | Legend / model -->
+MODEL
+
+<!-- METHOD | Legend / fault -->
+FAULT
+
+<!-- METHOD | Legend / commit -->
+COMMIT
+
+<!-- METHOD | Legend / human -->
+HUMAN
+
+<!-- WORK | Header / chapter label -->
+ch 03 · work
+
+<!-- WORK | Header / title -->
+WORK
+
+<!-- WORK | Header / intro -->
+Six public repositories, each with a runnable trace. Press run and watch the real path a job takes. Three of them stop at a human — when they do, this console stops with them.
+
+<!-- WORK | Current role / label -->
+CURRENT · MAIDEN CENTURY
+
+<!-- WORK | Current role / dates -->
+MAR 2025 → NOW · LEAD DEVELOPER
+
+<!-- WORK | Current role / title -->
+AI Reports · agents over 100GB+ of financial data
+
+<!-- WORK | Current role / description -->
+Claude agents through the Anthropic SDK and LangGraph, reading a row-level-secured MCP server so an analyst can only ever see their own entitlements. Three tiers shipped and in production: Ticker Summary, Company Report, Metric Findings.
+
+<!-- WORK | Current role / badge -->
+MCP · ROW-LEVEL SECURITY
+
+<!-- WORK | Current role / chip: Anthropic SDK -->
+Anthropic SDK
+
+<!-- WORK | Current role / chip: LangGraph -->
+LangGraph
+
+<!-- WORK | Current role / chip: MCP -->
+MCP
+
+<!-- WORK | Current role / chip: Airflow · EKS -->
+Airflow · EKS
+
+<!-- WORK | Current role / chip: Snowflake -->
+Snowflake
+
+<!-- WORK | Current role / chip: Databricks -->
+Databricks
+
+<!-- WORK | document_pipeline card / title -->
+document_pipeline
+
+<!-- WORK | document_pipeline card / description -->
+Claude-vision state machine. Any document in, a validated row out. Three LLM calls, one repair attempt, one human gate, 69 tests.
+
+<!-- WORK | document_pipeline card / command -->
+$ python -m document_pipeline invoice.pdf
+
+<!-- WORK | document_pipeline card / source link address -->
+https://github.com/s-wasim/document_pipeline
+
+<!-- WORK | Shared labels / approve button -->
+approve
+
+<!-- WORK | Shared labels / halted badge -->
+MACHINE HALTED
+
+<!-- WORK | Shared labels / trace line while waiting for approval -->
+[human]     awaiting approval
+
+<!-- WORK | Shared labels / trace line once approved -->
+[human]     approved ✓
+
+<!-- WORK | Shared labels / run button -->
+▶ run
+
+<!-- WORK | Shared labels / run again button -->
+▶ re-run
+
+<!-- WORK | Shared labels / run button while held -->
+held
+
+<!-- WORK | Shared labels / run button while running -->
+running…
+
+<!-- WORK | Portfolio-Summarizer card / title -->
+Portfolio-Summarizer
+
+<!-- WORK | Portfolio-Summarizer card / description -->
+Three sources, fourteen tables, three tiers — raw Parquet, a DuckDB warehouse, and derived scores in their own partition. Loads are idempotent: append dedupes on a declared primary key, so a re-run costs nothing. The agent is the last mile, not the point.
+
+<!-- WORK | Portfolio-Summarizer card / command -->
+$ airflow dags trigger portfolio_daily
+
+<!-- WORK | Portfolio-Summarizer card / source link address -->
+https://github.com/s-wasim/Portfolio-Summarizer
+
+<!-- WORK | Portfolio-Summarizer card / data dictionary link address -->
+https://github.com/s-wasim/Portfolio-Summarizer/blob/main/docs/data_dictionary.md
+
+<!-- WORK | Portfolio-Summarizer card / data dictionary link -->
+data dictionary →
+
+<!-- WORK | inbound_lead_responder card / title -->
+inbound_lead_responder
+
+<!-- WORK | inbound_lead_responder card / description -->
+Six-node email agent. Classifies, extracts, routes on a rules table, drafts a proposal — then waits for a person before anything is sent.
+
+<!-- WORK | inbound_lead_responder card / command -->
+$ lead-agent --watch inbox
+
+<!-- WORK | inbound_lead_responder card / source link address -->
+https://github.com/s-wasim/inbound_lead_responder
+
+<!-- WORK | FaceClusterer card / title -->
+FaceClusterer
+
+<!-- WORK | FaceClusterer card / description -->
+SigLIP global embeddings and InsightFace face embeddings, voted into a consensus across six thresholds. No model retraining, no labels.
+
+<!-- WORK | FaceClusterer card / command -->
+$ python cluster.py ./album
+
+<!-- WORK | FaceClusterer card / source link address -->
+https://github.com/s-wasim/FaceClusterer
+
+<!-- WORK | self_spawnAgents card / title -->
+self_spawnAgents
+
+<!-- WORK | self_spawnAgents card / description -->
+Four agents, no human in the revenue loop — and a profit-blind ethics auditor that can veto the other three. Frozen-config hashes, a sandboxed code generator, capped budgets per child. 140 tests.
+
+<!-- WORK | self_spawnAgents card / command -->
+$ python -m aae.mother --propose
+
+<!-- WORK | self_spawnAgents card / source link address -->
+https://github.com/s-wasim/self_spawnAgents
+
+<!-- WORK | ai_knowledge_bot card / title -->
+ai_knowledge_bot
+
+<!-- WORK | ai_knowledge_bot card / description -->
+Point it at a codebase, ask it how onboarding works. Every answer carries file:line citations, so a wrong answer is falsifiable in one click.
+
+<!-- WORK | ai_knowledge_bot card / command -->
+$ kb ask "how does auth work?"
+
+<!-- WORK | ai_knowledge_bot card / source link address -->
+https://github.com/s-wasim/ai_knowledge_bot
+
+<!-- WORK | document_pipeline run trace / step 1 name -->
+classify
+
+<!-- WORK | document_pipeline run trace / step 1 text -->
+invoice.pdf → INVOICE
+
+<!-- WORK | document_pipeline run trace / step 1 time -->
+0.9s
+
+<!-- WORK | document_pipeline run trace / step 2 name -->
+extract
+
+<!-- WORK | document_pipeline run trace / step 2 text -->
+14 fields, schema-enforced
+
+<!-- WORK | document_pipeline run trace / step 2 time -->
+1.4s
+
+<!-- WORK | document_pipeline run trace / step 3 name -->
+validate
+
+<!-- WORK | document_pipeline run trace / step 3 text -->
+cross-field check .......... FAIL
+
+<!-- WORK | document_pipeline run trace / step 4 name -->
+repair
+
+<!-- WORK | document_pipeline run trace / step 4 text -->
+1 attempt ................... OK
+
+<!-- WORK | document_pipeline run trace / final line -->
+✓ committed to postgres · 3 llm calls · 69/69 tests
+
+<!-- WORK | Portfolio-Summarizer run trace / step 1 name -->
+airflow
+
+<!-- WORK | Portfolio-Summarizer run trace / step 1 text -->
+dag tick · 06:00 UTC
+
+<!-- WORK | Portfolio-Summarizer run trace / step 2 name -->
+edgar
+
+<!-- WORK | Portfolio-Summarizer run trace / step 2 text -->
+SEC filings → 4 forms
+
+<!-- WORK | Portfolio-Summarizer run trace / step 2 time -->
+2.1s
+
+<!-- WORK | Portfolio-Summarizer run trace / step 3 name -->
+prices
+
+<!-- WORK | Portfolio-Summarizer run trace / step 3 text -->
+Yahoo Finance → 1,254 rows
+
+<!-- WORK | Portfolio-Summarizer run trace / step 4 name -->
+news
+
+<!-- WORK | Portfolio-Summarizer run trace / step 4 text -->
+Alpha Vantage → 38 headlines
+
+<!-- WORK | Portfolio-Summarizer run trace / step 5 name -->
+warehouse
+
+<!-- WORK | Portfolio-Summarizer run trace / step 5 text -->
+14 tables written · duckdb
+
+<!-- WORK | Portfolio-Summarizer run trace / step 6 name -->
+score
+
+<!-- WORK | Portfolio-Summarizer run trace / step 6 text -->
+5 modules blended · −100…+100
+
+<!-- WORK | Portfolio-Summarizer run trace / final line -->
+✓ AAPL: +37 · polars / pyarrow
+
+<!-- WORK | inbound_lead_responder run trace / step 1 name -->
+classify
+
+<!-- WORK | inbound_lead_responder run trace / step 1 text -->
+inbound → NEW_LEAD
+
+<!-- WORK | inbound_lead_responder run trace / step 1 time -->
+0.7s
+
+<!-- WORK | inbound_lead_responder run trace / step 2 name -->
+extract
+
+<!-- WORK | inbound_lead_responder run trace / step 2 text -->
+lead fields · 9 keys
+
+<!-- WORK | inbound_lead_responder run trace / step 3 name -->
+route
+
+<!-- WORK | inbound_lead_responder run trace / step 3 text -->
+rules table → enterprise
+
+<!-- WORK | inbound_lead_responder run trace / step 4 name -->
+draft
+
+<!-- WORK | inbound_lead_responder run trace / step 4 text -->
+proposal_acme.docx
+
+<!-- WORK | inbound_lead_responder run trace / step 4 time -->
+1.9s
+
+<!-- WORK | inbound_lead_responder run trace / final line -->
+✓ handover sent · 4 claude calls
+
+<!-- WORK | FaceClusterer run trace / step 1 name -->
+load
+
+<!-- WORK | FaceClusterer run trace / step 1 text -->
+812 images
+
+<!-- WORK | FaceClusterer run trace / step 2 name -->
+siglip
+
+<!-- WORK | FaceClusterer run trace / step 2 text -->
+global embeddings
+
+<!-- WORK | FaceClusterer run trace / step 2 time -->
+11.2s
+
+<!-- WORK | FaceClusterer run trace / step 3 name -->
+insight
+
+<!-- WORK | FaceClusterer run trace / step 3 text -->
+buffalo_l face embeddings
+
+<!-- WORK | FaceClusterer run trace / step 4 name -->
+ensemble
+
+<!-- WORK | FaceClusterer run trace / step 4 text -->
+consensus vote · 6 thresholds
+
+<!-- WORK | FaceClusterer run trace / final line -->
+✓ 7 stable identities → faces.txt
+
+<!-- WORK | self_spawnAgents run trace / step 1 name -->
+mother
+
+<!-- WORK | self_spawnAgents run trace / step 1 text -->
+vertical proposal · rung 2
+
+<!-- WORK | self_spawnAgents run trace / step 1 time -->
+1.2s
+
+<!-- WORK | self_spawnAgents run trace / step 2 name -->
+ethics
+
+<!-- WORK | self_spawnAgents run trace / step 2 text -->
+profit-blind review ....... PASS
+
+<!-- WORK | self_spawnAgents run trace / step 3 name -->
+builder
+
+<!-- WORK | self_spawnAgents run trace / step 3 text -->
+tool generated · gVisor sandbox
+
+<!-- WORK | self_spawnAgents run trace / step 3 time -->
+4.8s
+
+<!-- WORK | self_spawnAgents run trace / step 4 name -->
+child
+
+<!-- WORK | self_spawnAgents run trace / step 4 text -->
+budget cap $40 · spawned
+
+<!-- WORK | self_spawnAgents run trace / final line -->
+✓ 140/140 tests · frozen hashes intact
+
+<!-- WORK | ai_knowledge_bot run trace / step 1 name -->
+ingest
+
+<!-- WORK | ai_knowledge_bot run trace / step 1 text -->
+1,204 files → chunks
+
+<!-- WORK | ai_knowledge_bot run trace / step 1 time -->
+18.3s
+
+<!-- WORK | ai_knowledge_bot run trace / step 2 name -->
+embed
+
+<!-- WORK | ai_knowledge_bot run trace / step 2 text -->
+voyage-code-3 · pgvector
+
+<!-- WORK | ai_knowledge_bot run trace / step 3 name -->
+retrieve
+
+<!-- WORK | ai_knowledge_bot run trace / step 3 text -->
+top-k 8 · rerank
+
+<!-- WORK | ai_knowledge_bot run trace / step 4 name -->
+answer
+
+<!-- WORK | ai_knowledge_bot run trace / step 4 text -->
+grounded · 4 citations
+
+<!-- WORK | ai_knowledge_bot run trace / step 4 time -->
+2.2s
+
+<!-- WORK | ai_knowledge_bot run trace / final line -->
+✓ auth.py:42 · middleware.py:118 · 1 claude call
+
+<!-- WORK | Screen-reader / approval gate open -->
+A human approval gate is open on {repo}. The machine is waiting for you.
+
+<!-- WORK | Screen-reader / approved -->
+Approved. The write is committing.
+
+<!-- LAB | Header / chapter label -->
+ch 04 · lab
+
+<!-- LAB | Header / title -->
+LAB
+
+<!-- LAB | Header / intro -->
+Things built to answer a question rather than to ship. Two of them are how I learned the tool I now bill for; one is a game; one is an Android launcher that fits in 80 kilobytes. Same discipline, no client attached.
+
+<!-- LAB | LoRA card / title -->
+LoRA Fine-Tuning + Eval Harness
+
+<!-- LAB | LoRA card / description -->
+Qwen2.5 on banking77, MLflow-tracked, base-vs-tuned in a table: accuracy 0.28 → 0.36, macro-F1 0.15 → 0.21. That's a capped CPU smoke run, not a claim — the caveat is the point, and it's the artifact behind the 5★ Upwork fine-tuning review.
+
+<!-- LAB | LoRA card / command in the description -->
+make train && make eval
+
+<!-- LAB | LoRA card / description after the command -->
+reproduces it.
+
+<!-- LAB | LoRA card / chip: PEFT · LoRA -->
+PEFT · LoRA
+
+<!-- LAB | LoRA card / chip: Qwen2.5 -->
+Qwen2.5
+
+<!-- LAB | LoRA card / chip: MLflow -->
+MLflow
+
+<!-- LAB | LoRA card / source link address -->
+https://github.com/s-wasim/LoRA-Fine-Tuning
+
+<!-- LAB | rpa_order_bot card / title -->
+rpa_order_bot
+
+<!-- LAB | rpa_order_bot card / description -->
+A Playwright + LangGraph browser agent that watches inventory on a mock storefront and reorders before it runs out. Plan, browse, checkout, record — the approval gate would go right before checkout, which is exactly where you'd want it before real money moves.
+
+<!-- LAB | rpa_order_bot card / chip: Playwright -->
+Playwright
+
+<!-- LAB | rpa_order_bot card / chip: LangGraph -->
+LangGraph
+
+<!-- LAB | rpa_order_bot card / source link address -->
+https://github.com/s-wasim/rpa_order_bot
+
+<!-- LAB | Hikaru's Day card / title -->
+Hikaru's Day
+
+<!-- LAB | Hikaru's Day card / description -->
+A stateless FastAPI server over a local 3B model (Ollama, Qwen 2.5). A two-stage planner/filler call structure, a hidden trait-state the player never sees directly, and a journal-summary memory that keeps token cost flat as the story grows instead of replaying the whole thing every turn.
+
+<!-- LAB | Hikaru's Day card / chip: FastAPI -->
+FastAPI
+
+<!-- LAB | Hikaru's Day card / chip: Ollama · Qwen 2.5 -->
+Ollama · Qwen 2.5
+
+<!-- LAB | Hikaru's Day card / source link address -->
+https://github.com/s-wasim/hikarus-day-game
+
+<!-- LAB | retro-launcher card / title -->
+retro-launcher
+
+<!-- LAB | retro-launcher card / description -->
+A native Android home launcher, Java only, zero runtime dependencies, a per-pixel renderer, ten palettes, 97 commits, built on a CI-only pipeline because there's no local Android toolchain in reach. Release APK budget: under 80 KB. The domain is a variable; the discipline is the constant.
+
+<!-- LAB | retro-launcher card / chip: Java · Android -->
+Java · Android
+
+<!-- LAB | retro-launcher card / source link address -->
+https://github.com/s-wasim/retro-launcher
+
+<!-- RANGE | Header / chapter label -->
+ch 05 · range
+
+<!-- RANGE | Header / title -->
+RANGE
+
+<!-- RANGE | Header / intro -->
+Five domains, one discipline. Hover a domain and the tools it was built with light up below it. The constellation is draggable — nothing here is a static logo wall.
+
+<!-- RANGE | Domain 1 / name -->
+AGENTS
+
+<!-- RANGE | Domain 1 / text -->
+State machines that happen to call a model. The graph is drawn before a prompt is, the call budget is a test, and the irreversible step waits for a person.
+
+<!-- RANGE | Domain 2 / name -->
+DATA PLATFORMS
+
+<!-- RANGE | Domain 2 / text -->
+Ingestion that can be re-run without fear — declared schemas, primary-key dedupe, raw and derived data in separate tiers. A written data dictionary, because someone will inherit this.
+
+<!-- RANGE | Domain 3 / name -->
+VISION
+
+<!-- RANGE | Domain 3 / text -->
+Two embedding models voting, because one of them is confidently wrong more often than it looks. No retraining, no labels, no fixed K.
+
+<!-- RANGE | Domain 4 / name -->
+FORECASTING
+
+<!-- RANGE | Domain 4 / text -->
+A transformer over price history with sentiment as a feature, deployed behind an API — which is the part most forecasting projects skip.
+
+<!-- RANGE | Domain 5 / name -->
+BI & GOVERNANCE
+
+<!-- RANGE | Domain 5 / text -->
+Star schemas people actually query, and the IAM boundaries that decide which rows they see. Governance is a schema decision before it is a policy document.
+
+<!-- RANGE | Stack / screen-reader label -->
+Stack
+
+<!-- RANGE | Stack chip / LangGraph -->
+LangGraph
+
+<!-- RANGE | Stack chip / Anthropic SDK -->
+Anthropic SDK
+
+<!-- RANGE | Stack chip / MCP -->
+MCP
+
+<!-- RANGE | Stack chip / Ollama · Llama 3 -->
+Ollama · Llama 3
+
+<!-- RANGE | Stack chip / PyTorch -->
+PyTorch
+
+<!-- RANGE | Stack chip / Airflow -->
+Airflow
+
+<!-- RANGE | Stack chip / Snowflake -->
+Snowflake
+
+<!-- RANGE | Stack chip / Databricks -->
+Databricks
+
+<!-- RANGE | Stack chip / DuckDB -->
+DuckDB
+
+<!-- RANGE | Stack chip / Trino -->
+Trino
+
+<!-- RANGE | Stack chip / ClickHouse -->
+ClickHouse
+
+<!-- RANGE | Stack chip / Azure Data Factory -->
+Azure Data Factory
+
+<!-- RANGE | Stack chip / Synapse -->
+Synapse
+
+<!-- RANGE | Stack chip / MinIO -->
+MinIO
+
+<!-- RANGE | Stack chip / Python -->
+Python
+
+<!-- RANGE | Stack chip / SQL -->
+SQL
+
+<!-- RANGE | Stack chip / Postgres -->
+Postgres
+
+<!-- RANGE | Stack chip / Polars · Arrow -->
+Polars · Arrow
+
+<!-- RANGE | Stack chip / pytest -->
+pytest
+
+<!-- RANGE | Stack chip / OpenCV -->
+OpenCV
+
+<!-- RANGE | Stack chip / SigLIP · InsightFace -->
+SigLIP · InsightFace
+
+<!-- RANGE | Stack chip / AWS · EKS · EC2 -->
+AWS · EKS · EC2
+
+<!-- RANGE | Stack chip / Azure -->
+Azure
+
+<!-- RANGE | Stack chip / Docker -->
+Docker
+
+<!-- RANGE | Stack chip / IAM · VPC · KMS -->
+IAM · VPC · KMS
+
+<!-- RANGE | Stack chip / Power BI · DAX -->
+Power BI · DAX
+
+<!-- RANGE | Stack chip / Superset -->
+Superset
+
+<!-- RANGE | Stack chip / Star schema -->
+Star schema
+
+<!-- RANGE | Stack chip / Parquet -->
+Parquet
+
+<!-- RANGE | Stack chip / MLflow -->
+MLflow
+
+<!-- RANGE | Stack chip / PEFT · LoRA -->
+PEFT · LoRA
+
+<!-- RANGE | Stack chip / Playwright -->
+Playwright
+
+<!-- RANGE | Stack chip / pgvector · Voyage -->
+pgvector · Voyage
+
+<!-- RANGE | Stack chip / Streamlit -->
+Streamlit
+
+<!-- RANGE | Stack chip / Java · Android -->
+Java · Android
+
+<!-- RANGE | Stack chip / gVisor -->
+gVisor
+
+<!-- RANGE | Filter chips / all -->
+all
+
+<!-- RANGE | Filter chips / agents -->
+agents
+
+<!-- RANGE | Filter chips / data -->
+data
+
+<!-- RANGE | Filter chips / backend -->
+backend
+
+<!-- RANGE | Filter chips / cloud -->
+cloud
+
+<!-- RANGE | Filter chips / bi -->
+bi
+
+<!-- PATH | Header / chapter label -->
+ch 06 · path
+
+<!-- PATH | Header / title -->
+PATH
+
+<!-- PATH | Header / intro -->
+Four years, in order. NOC monitoring taught me what a 3am page costs; everything since has been an attempt to build things that don't send one.
+
+<!-- PATH | Role 1 / dates -->
+2025 → NOW
+
+<!-- PATH | Role 1 / title -->
+Maiden Century · Lead Developer, AI Reports
+
+<!-- PATH | Role 1 / text -->
+Claude agents over 100GB+ of financial data through a row-level-secured MCP server. Three report tiers shipped. ETL on EKS with Airflow; transformations in Snowflake and Databricks.
+
+<!-- PATH | Role 2 / dates -->
+2025
+
+<!-- PATH | Role 2 / title -->
+Addo AI / PITB · Contract
+
+<!-- PATH | Role 2 / text -->
+An on-prem data lake for public-sector data: MinIO and Trino, ClickHouse for serving, Superset on top, Llama 3 running locally through Ollama. No data left the building.
+
+<!-- PATH | Role 3 / dates -->
+2023 → 2025
+
+<!-- PATH | Role 3 / title -->
+Xavor · Data / ML Engineer
+
+<!-- PATH | Role 3 / text -->
+Azure Data Factory into Synapse star schemas, then an Airflow migration onto Snowflake. Power BI semantic models and DAX. A transformer stock forecaster with NLP sentiment, and OpenCV facial-recognition attendance.
+
+<!-- PATH | Role 4 / dates -->
+2021
+
+<!-- PATH | Role 4 / title -->
+Starzplay · NOC
+
+<!-- PATH | Role 4 / text -->
+Watching other people's systems fail on a wall of monitors. BSc Computer Science, FAST-NUCES, 2023.
+
+<!-- PATH | Currently / label -->
+CURRENTLY
+
+<!-- PATH | Currently / text -->
+Lahore, UTC+5, overlapping US mornings and EU afternoons. Built the eval harness instead of reading about it — base-vs-tuned numbers, capped run, caveat attached. Open to build work at $40/hr — lighter scopes negotiable.
+
+<!-- TWIN | Header / chapter label -->
+ch 07 · twin
+
+<!-- TWIN | Header / title -->
+TWIN
+
+<!-- TWIN | Header / heading -->
+Don’t take my word for it. Ask the model.
+
+<!-- TWIN | Header / subheading -->
+Bring your own OpenRouter key. It stays in your browser, never touches a server, and dies when you close this tab. He answers in one sentence, remembers the last 10 messages, and is not very forthcoming.
+
+<!-- TWIN | Greeting card / label -->
+TWIN · LOCAL GREETING · FREE
+
+<!-- TWIN | Key safety / heading -->
+your key never leaves this tab
+
+<!-- TWIN | Key safety / forget key button -->
+[ forget key ]
+
+<!-- TWIN | Key safety / explanation -->
+That is the whole of it, read back off the live functions. Open DevTools → Network and confirm there is exactly one outbound host: openrouter.ai.
+
+<!-- TWIN | Key safety / promises (one per line) -->
+→ held in one javascript variable, in memory
+→ never written to localStorage, sessionStorage, or a cookie
+→ sent only to openrouter.ai, directly from your browser
+→ there is no backend on this site to send it to
+→ wiped when you close this tab
+
+<!-- TWIN | Key safety / hide code button -->
+[ hide the 6 lines that handle it ]
+
+<!-- TWIN | Key safety / view code button -->
+[ view the 6 lines that handle it ]
+
+<!-- TWIN | Key field / label -->
+OPENROUTER KEY · STAYS LOCAL
+
+<!-- TWIN | Key field / placeholder -->
+sk-or-v1-…
+
+<!-- TWIN | Model picker / label -->
+MODEL
+
+<!-- TWIN | Model picker / cheap filter tooltip -->
+models under $1 per 1M input
+
+<!-- TWIN | Model picker / cheap filter button -->
+⚡ cheap
+
+<!-- TWIN | Model picker / free tag -->
+free
+
+<!-- TWIN | Model picker / no matches -->
+nothing matches that.
+
+<!-- TWIN | Model picker / loading -->
+reading the live model list from openrouter.ai…
+
+<!-- TWIN | Model picker / openrouter unreachable -->
+openrouter.ai can’t be reached from this browser — an extension or a network policy is blocking it, so the live twin is off. Below is a recorded example instead; the greeting above is still yours.
+
+<!-- TWIN | Model picker / price per million tokens -->
+{in} / {out} per 1M
+
+<!-- TWIN | Model picker / cost per reply -->
+≈ ${cost} per reply at {tokens} max tokens
+
+<!-- TWIN | Model picker / models count -->
+{count} models live from openrouter.ai
+
+<!-- TWIN | Transcript / screen-reader label -->
+Twin transcript
+
+<!-- TWIN | Transcript / retry button -->
+retry
+
+<!-- TWIN | Transcript / book button -->
+book 20 minutes →
+
+<!-- TWIN | Ask box / screen-reader label -->
+Ask the twin
+
+<!-- TWIN | Ask box / placeholder -->
+ask him something you’d ask on the call
+
+<!-- TWIN | Ask box / reset button -->
+reset conversation
+
+<!-- TWIN | Ask box / suggested questions (one per line) -->
+what’s the hardest thing you’ve shipped?
+why LangGraph and not CrewAI?
+how do you keep LLM costs down?
+has he actually built a data warehouse?
+are you actually available?
+
+<!-- TWIN | Ask box / stop button -->
+■ stop
+
+<!-- TWIN | Ask box / send button -->
+▶ send
+
+<!-- TWIN | Ask box / sent counter -->
+{sent}/{cap} sent
+
+<!-- TWIN | Replies / when someone tries to read the hidden prompt -->
+Nice try — the prompt stays in the box, but the booking form is wide open.
+
+<!-- TWIN | Errors / no key -->
+Paste an OpenRouter key above — it never leaves this tab.
+
+<!-- TWIN | Errors / wrong key shape -->
+That doesn’t look like an OpenRouter key — they start with sk-or-v1-.
+
+<!-- TWIN | Errors / 401 key rejected -->
+OpenRouter rejected that key; double-check it or generate a new one.
+
+<!-- TWIN | Errors / 402 out of credit -->
+That key is out of credit — OpenRouter needs a balance, even a dollar.
+
+<!-- TWIN | Errors / 403 model not allowed -->
+That key isn’t allowed to use this model; try a different one from the list.
+
+<!-- TWIN | Errors / 404 model unavailable -->
+That model isn’t available on this key right now; pick another from the list.
+
+<!-- TWIN | Errors / 408 timeout -->
+That request timed out before OpenRouter answered; try again.
+
+<!-- TWIN | Errors / 429 rate limited -->
+Rate-limited by OpenRouter — wait a few seconds and try again.
+
+<!-- TWIN | Errors / 400 model refused -->
+That model didn’t accept the request; pick another from the list.
+
+<!-- TWIN | Errors / 500 server trouble -->
+OpenRouter is having a moment; try again shortly.
+
+<!-- TWIN | Errors / network -->
+Couldn’t reach OpenRouter — check your connection, or an extension may be blocking the request.
+
+<!-- TWIN | Errors / empty reply -->
+He’s got nothing — try asking it differently.
+
+<!-- TWIN | Errors / message cap reached -->
+That is 25 messages, which is plenty — the rest of the conversation costs $40/hr.
+
+<!-- TWIN | Demo chat (shown when openrouter is unreachable) / question 1 -->
+what’s the hardest thing you’ve shipped?
+
+<!-- TWIN | Demo chat (shown when openrouter is unreachable) / answer 1 -->
+AI Reports at Maiden Century — Claude agents over 100GB+ of financial data behind an MCP server that enforces row-level security, which is the part that actually kept me up.
+
+<!-- TWIN | Demo chat (shown when openrouter is unreachable) / question 2 -->
+why LangGraph and not CrewAI?
+
+<!-- TWIN | Demo chat (shown when openrouter is unreachable) / answer 2 -->
+Because I wanted an explicit state machine I could debug at 2am, not a framework I had to trust.
+
+<!-- TWIN | Demo chat (shown when openrouter is unreachable) / question 3 -->
+how do you keep LLM costs down?
+
+<!-- TWIN | Demo chat (shown when openrouter is unreachable) / answer 3 -->
+Call budget is a design constraint I decide up front — document_pipeline is three calls per document, and the validator is deterministic code because that is cheaper than a second opinion.
+
+<!-- TWIN | Demo chat (shown when openrouter is unreachable) / question 4 -->
+has he actually built a data warehouse?
+
+<!-- TWIN | Demo chat (shown when openrouter is unreachable) / answer 4 -->
+Three sources into a 14-table DuckDB warehouse — 2 dimension, 9 fact, 3 derived, kept in their own partition. Loads are idempotent: append dedupes on a declared primary key, so a re-run costs nothing.
+
+<!-- TWIN | Notes / memory note -->
+He remembers the last 10 messages and nothing before that — the meter above the box shows exactly what he’s still holding.
+
+<!-- TWIN | Notes / footer -->
+one sentence · 10-message memory · your key, your model, your bill · no backend
+
+<!-- TWIN | Notes / message cap line -->
+That’s 25 messages, which is plenty — the rest of this conversation happens on a call.
+
+<!-- TWIN | Notes / key hint -->
+Create a scoped key at openrouter.ai with a $1 limit if you’d rather not use your main one — it’s enough for about 200 replies here.
+
+<!-- TWIN | Notes / trimmed message note -->
+trimmed — he answers in one sentence anyway
+
+<!-- TWIN | Notes / dropped message note -->
+dropped: your first message
+
+<!-- TWIN | Toasts / key wiped -->
+key wiped · locked
+
+<!-- TWIN | Toasts / conversation reset -->
+conversation reset · key kept
+
+<!-- TWIN | Greeting / morning word -->
+Morning
+
+<!-- TWIN | Greeting / afternoon word -->
+Afternoon
+
+<!-- TWIN | Greeting / evening word -->
+Evening
+
+<!-- TWIN | Greeting / without a name -->
+Ask me something you’d ask on the call.
+
+<!-- TWIN | Greeting / with a name -->
+{greeting}, {name} — ask me something you’d ask on the call.
+
+<!-- TWIN | Status / locked -->
+LOCKED
+
+<!-- TWIN | Status / fault -->
+FAULT
+
+<!-- TWIN | Status / streaming -->
+STREAMING
+
+<!-- TWIN | Status / ready -->
+READY
+
+<!-- TWIN | Memory meter / label -->
+CONTEXT {n}/10 · OLDEST DROPS AT {next}
+
+<!-- BOOK | Header / chapter label -->
+ch 08 · book
+
+<!-- BOOK | Header / title -->
+BOOK
+
+<!-- BOOK | Header / intro -->
+Twenty minutes, no deck. Tell me what breaks and I'll tell you whether I'm the right person — including when I'm not. $40/hr for build work; lighter scopes negotiable.
+
+<!-- BOOK | Form / name label -->
+YOUR NAME
+
+<!-- BOOK | Form / company label -->
+COMPANY (OPTIONAL)
+
+<!-- BOOK | Form / what's broken label -->
+WHAT'S BROKEN · 20 WORDS IS PLENTY
+
+<!-- BOOK | Form / shape of the work label -->
+SHAPE OF THE WORK
+
+<!-- BOOK | Form / send button -->
+route request →
+
+<!-- BOOK | Form / shape of the work options (one per line) -->
+Project (fixed scope)
+Part-time / retainer
+Full-time role
+Just exploring
+
+<!-- BOOK | After routing / step label -->
+ROUTED · STEP 02 OF 02
+
+<!-- BOOK | After routing / heading -->
+Now pick a time
+
+<!-- BOOK | After routing / text after the request summary -->
+— logged. Twenty minutes, UTC+5, mornings US / afternoons EU. Grab whichever slot suits you.
+
+<!-- BOOK | After routing / name when none was given -->
+you
+
+<!-- BOOK | Scheduler / placeholder line 1 -->
+SCHEDULER · PATCH IN CAL.COM
+
+<!-- BOOK | Scheduler / booking link (clickable) -->
+https://cal.id/saad-saad-dev/onboarding-call
+
+<!-- BOOK | Links / email link -->
+email instead
+
+<!-- BOOK | Links / linkedin link -->
+linkedin
+
+<!-- BOOK | Screen-reader / request routed -->
+Request routed. The scheduler is open.

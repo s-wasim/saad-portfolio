@@ -1,0 +1,6 @@
+__pycache__/
+Gemfile
+Gemfile.lock
+vendor/
+_site/
+.bundle/

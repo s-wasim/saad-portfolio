@@ -1,0 +1,23 @@
+# Checks content.txt against the page on every push that touches it.
+# A red ✗ on the commit means a header in content.txt doesn't match a place on
+# the page (the site then shows its backup text there) — open the run to see
+# which line. This only checks; it never changes, commits or deploys anything.
+name: Check content.txt
+
+on:
+  push:
+    paths: ['cv/content.txt', 'cv/index.html', 'tools/**', '.github/workflows/check-text.yml']
+  pull_request:
+    paths: ['cv/content.txt', 'cv/index.html', 'tools/**', '.github/workflows/check-text.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check content.txt
+        run: python3 tools/check_text.py
