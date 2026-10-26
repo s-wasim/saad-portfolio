@@ -371,11 +371,13 @@ async function start() {
   if (window.SW3D) window.SW3D.ok('hands');
 }
 
-// wait for the engine (it creates window.__sw), then load in idle time so the first paint is not held up
+// wait for the engine (it creates window.__sw), then load in idle time so the first paint is not held up;
+// behind the loading glass there is no first paint to protect, so start at once (the glass waits for every hand)
 (function wait(t0) {
   if (window.__sw && window.gsap) {
     const go = () => start();
-    if ('requestIdleCallback' in window) requestIdleCallback(go, { timeout: 1500 }); else setTimeout(go, 300);
+    if (window.SWGate && !window.SWGate.done) go();
+    else if ('requestIdleCallback' in window) requestIdleCallback(go, { timeout: 1500 }); else setTimeout(go, 300);
   } else if (performance.now() - t0 < 20000) setTimeout(() => wait(t0), 100);
 })(performance.now());
 

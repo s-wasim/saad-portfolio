@@ -69,9 +69,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Hanken+Grotesk:wght@300..800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!-- the 3D hands start downloading with the page, not after the engine boots; crossorigin matches three's own fetch and image requests so the preloads are reused -->
+<link rel="preload" href="assets/hands/handshake.glb" as="fetch" crossorigin>
+<link rel="preload" href="assets/hands/hand_open.glb" as="fetch" crossorigin>
+<link rel="preload" href="assets/hands/hand_fall.glb" as="fetch" crossorigin>
+<link rel="preload" href="assets/hands/skin_detail_n.jpg" as="image" crossorigin>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Observer.min.js" defer></script>
-<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.158.0/examples/jsm/"}}</script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.module.min.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.158.0/examples/jsm/"}}</script>
 <script type="module">import * as THREE from 'three'; window.THREE = THREE;</script>
 <script type="module" src="site/hands3d.js"></script>
 <script type="module" src="site/reach3d.js"></script>

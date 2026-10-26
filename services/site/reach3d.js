@@ -404,10 +404,12 @@ async function start() {
   if (window.SW3D) window.SW3D.ok('reach');
 }
 
-// wait for the engine (it creates window.__sw); frame 1 is the first thing seen, so load soon after the first paint
+// wait for the engine (it creates window.__sw); frame 1 is the first thing seen, so load soon after the first paint,
+// or at once behind the loading glass
 (function wait(t0) {
   if (window.__sw && window.gsap) {
     const go = () => start();
-    if ('requestIdleCallback' in window) requestIdleCallback(go, { timeout: 600 }); else setTimeout(go, 200);
+    if (window.SWGate && !window.SWGate.done) go();
+    else if ('requestIdleCallback' in window) requestIdleCallback(go, { timeout: 600 }); else setTimeout(go, 200);
   } else if (performance.now() - t0 < 20000) setTimeout(() => wait(t0), 100);
 })(performance.now());

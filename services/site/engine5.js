@@ -10,7 +10,7 @@
   class Engine {
     constructor(stage) {
       this.stage = stage; this.F = window.SWFrames;
-      this.cur = 1; this.g = { g1: false, g4: false, g5: false }; this.p = 0; this.pt = 0; this.edgeAt = 0; this.lastW = 0; this.reached = 1;
+      this.cur = 1; this.g = { g1: false, g4: false, g5: false }; this.p = 0; this.pt = 0; this.edgeAt = 0; this.lastW = 0; this.wh = []; this.reached = 1;
       this.busy = false; this.last = 0; this.endT = 0; this.tl = null; this.pending = 0;
       this.popOpen = false; this.soundOn = false; this.offs = []; this.own = new Set(); this.reach = { v: 0 };
       this.mqR = matchMedia('(prefers-reduced-motion: reduce)');
@@ -140,6 +140,7 @@
       if (!e || e.ctrlKey) return;
       const k = e.deltaMode === 1 ? 16 : e.deltaMode === 2 ? this.dims.vh : 1;
       const dy = e.deltaY * k, dx = e.deltaX * k;
+      this.wh.push(Math.abs(dy)); if (this.wh.length > 6) this.wh.shift();
       if (Math.abs(dy) < MIN_WHEEL || Math.abs(dx) > Math.abs(dy)) return;
       if (this.cur === 4 && this.g.g4 && !this.tl) return this.scrubIn(dy, gap);
       this.gesture(dy > 0 ? 1 : -1);
@@ -444,9 +445,16 @@
       this.sc = tl; tl.progress(this.p);
     }
     setP(v) { this.p = this.pt = v; if (this.sc) this.sc.progress(v); this.ensureCrack(false); }
+    // a fresh swipe inside a trackpad's momentum tail (macOS sends wheel events every ~16 ms for a second or more after
+    // the fingers lift, so there is no 180 ms pause): the tail only ever slows down, a new swipe speeds up again
+    freshWheel() {
+      const w = this.wh; if (w.length < 6) return false;
+      const a = (w[3] + w[4] + w[5]) / 3, b = (w[0] + w[1] + w[2]) / 3;
+      return a > 8 && a > b * 1.5;
+    }
     scrubIn(d, gap, touch) {
       const dir = d > 0 ? 1 : -1, edge = dir > 0 ? this.pt >= 1 : this.pt <= 0;
-      if (edge) { if (!touch && gap > 180) this.gesture(dir, 'wheel'); return; }
+      if (edge) { if (!touch && (gap > 180 || (this.freshWheel() && now() - this.edgeAt > 250))) this.gesture(dir, 'wheel'); return; }
       this.pt = clamp(this.pt + d / SCRUB);
       if (this.pt === 0 || this.pt === 1) this.edgeAt = now();
     }

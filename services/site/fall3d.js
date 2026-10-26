@@ -199,11 +199,12 @@ async function start() {
   if (window.SW3D) window.SW3D.ok('fall');
 }
 
-// wait for the engine and its fall (frame 4 is a few frames in, so load in idle time)
+// wait for the engine and its fall (frame 4 is a few frames in, so load in idle time, or at once behind the loading glass)
 (function wait(t0) {
   const eng = window.__sw;
   if (eng && eng.fall && eng.fall.ext && window.gsap) {
     const go = () => start();
-    if ('requestIdleCallback' in window) requestIdleCallback(go, { timeout: 3000 }); else setTimeout(go, 800);
+    if (window.SWGate && !window.SWGate.done) go();
+    else if ('requestIdleCallback' in window) requestIdleCallback(go, { timeout: 3000 }); else setTimeout(go, 800);
   } else if (performance.now() - t0 < 30000) setTimeout(() => wait(t0), 200);
 })(performance.now());
