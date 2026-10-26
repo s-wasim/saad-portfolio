@@ -28,6 +28,7 @@
     if (!eng || open || seen() || !el()) return;
     if (!broken()) { if (NAMES.some(n => state[n] !== 'ok')) timer = setTimeout(check, 1000); return; }
     if (eng.L !== 'm') return;   // re-checked on resize
+    if (window.SWGate && !window.SWGate.done) { timer = setTimeout(check, 500); return; }   // never behind the loading glass
     if (eng.tl || eng.holdTw || eng.busy) { timer = setTimeout(check, 500); return; }
     show();
   }
@@ -36,8 +37,9 @@
     const p = el(); open = true; mark();
     back = document.activeElement;
     p.style.display = 'flex';
-    gsap.fromTo(p, { autoAlpha: 0 }, { autoAlpha: 1, duration: eng.reduced ? 0.01 : 0.3, ease: 'power2.out' });
-    const b = p.querySelector('[data-pop3d-skip]'); if (b) b.focus();
+    // focus once the card is visible: autoAlpha starts it at visibility:hidden, which cannot take focus
+    const b = p.querySelector('[data-pop3d-skip]');
+    gsap.fromTo(p, { autoAlpha: 0 }, { autoAlpha: 1, duration: eng.reduced ? 0.01 : 0.3, ease: 'power2.out', onComplete: () => { if (b && open) b.focus(); } });
   }
 
   function hide() {
