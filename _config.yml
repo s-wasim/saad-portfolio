@@ -1,0 +1,13 @@
+# Only used if GitHub Pages is still set to "Deploy from a branch".
+# The normal path is .github/workflows/deploy.yml, which publishes a clean build.
+# Either way, sources and tooling are never served.
+exclude:
+  - docs
+  - tools
+  - tests
+  - data
+  - cv/page.html
+  - cv/content.txt
+  - Gemfile
+  - Gemfile.lock
+  - vendor

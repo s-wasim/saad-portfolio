@@ -1,0 +1,43 @@
+# Publishes the site on every push to main. It checks content.txt, runs the build
+# (which bakes content.txt into the CV and regenerates every generated page), and
+# deploys the result — so a text edit made on github.com goes live by itself.
+# One-time setup: repo Settings → Pages → Build and deployment → Source: "GitHub Actions".
+name: Publish site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check content.txt
+        run: python3 tools/check_text.py
+      - name: Build the site
+        run: python3 tools/build.py --out _site
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

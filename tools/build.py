@@ -19,6 +19,7 @@ an edit to content.txt made on github.com goes live with no local step.
 Exits 1, writing nothing, if content.txt is missing a header the page needs.
 """
 import argparse
+import html as htmllib
 import json
 import re
 import shutil
@@ -65,6 +66,13 @@ def fill_region(html, name, content):
     return pat.sub(lambda m: m.group(1) + content + m.group(2), html)
 
 
+def head_text(page):
+    """A hand-written page's own title and description, as plain text."""
+    title = re.search(r'<title>(.*?)</title>', page).group(1)
+    desc = re.search(r'<meta name="description" content="(.*?)">', page).group(1)
+    return htmllib.unescape(title), htmllib.unescape(desc)
+
+
 def person_ld(site):
     p = site['person']
     return {'@context': 'https://schema.org', '@type': 'Person', '@id': site['origin'] + '/#saad',
@@ -108,16 +116,14 @@ def build(allow_missing=False):
               'mainEntity': {'@id': site['origin'] + '/#saad'}}, person_ld(site)]
     html = html.replace('<!--@seo-->', pages.seo_head(site, '/cv/', text['GLOBAL | Page / browser tab title'],
                                                          text['GLOBAL | Page / search description'],
-                                                         '/cv/assets/og-card.png', None, cv_ld)
-                        + '\n<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">', 1)
+                                                         '/cv/assets/og-card.png', None, cv_ld), 1)
     write(CV / 'index.html', html)
 
     for rel, page in generate(site, text).items():
         write(ROOT / rel, page)
 
     landing = read(ROOT / 'index.html')
-    title = re.search(r'<title>(.*?)</title>', landing).group(1)
-    desc = re.search(r'<meta name="description" content="(.*?)">', landing).group(1)
+    title, desc = head_text(landing)
     site_ld = {'@context': 'https://schema.org', '@type': 'WebSite', 'url': site['origin'] + '/',
                'name': 'Saad Waseem', 'publisher': {'@id': site['origin'] + '/#saad'}}
     landing = fill_region(landing, 'seo', '\n' + pages.seo_head(site, '/', title, desc, '/assets/og.jpg',
@@ -125,8 +131,7 @@ def build(allow_missing=False):
     write(ROOT / 'index.html', landing)
 
     hub = read(ROOT / 'services' / 'index.html')
-    title = re.search(r'<title>(.*?)</title>', hub).group(1)
-    desc = re.search(r'<meta name="description" content="(.*?)">', hub).group(1)
+    title, desc = head_text(hub)
     catalog = {'@context': 'https://schema.org', '@type': 'ItemList', 'name': 'Services for small businesses',
                'itemListElement': [{'@type': 'ListItem', 'position': i, 'url': '%s/services/%s/' % (site['origin'], s['slug']),
                                     'name': s['name']} for i, s in enumerate(site['services'], 1)]}
