@@ -80,7 +80,11 @@ h3 { font: 700 19px/1.3 'Hanken Grotesk', sans-serif; margin-bottom: 6px; }
 
 .faq { display: grid; gap: 10px; max-width: 860px; }
 .faq details { border: 1px solid var(--line); border-radius: 16px; background: var(--panel); }
-.faq summary { cursor: pointer; padding: 18px 22px; font-weight: 600; font-size: 18px; list-style-position: outside; }
+.faq summary { cursor: pointer; padding: 18px 22px; font-weight: 600; font-size: 18px; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: '+'; flex: none; color: var(--cyan); font: 400 22px/1 'Audiowide', sans-serif; }
+.faq details[open] summary::after { content: '\2212'; }
+.more { margin-top: 20px; }
 .faq details p { padding: 0 22px 20px; color: var(--soft); }
 
 .foot { width: min(1080px, 100% - 32px); margin: 40px auto 0; padding: 28px 0 48px; border-top: 1px solid var(--line); color: var(--soft); font-size: 15px; }

@@ -1642,3 +1642,48 @@ linkedin
 
 <!-- BOOK | Screen-reader / request routed -->
 Request routed. The scheduler is open.
+
+<!-- FAQ | Header / chapter label -->
+faq · plain text
+
+<!-- FAQ | Header / title -->
+QUESTIONS
+
+<!-- FAQ | Header / intro -->
+The short answers people ask for most often, in one place.
+
+<!-- FAQ | 1 question -->
+Who is Saad Waseem?
+
+<!-- FAQ | 1 answer -->
+An independent AI/ML and data engineer in Lahore, Pakistan, working remotely with US and EU teams. Lead developer of AI Reports at Maiden Century: Claude agents over 100GB+ of financial data, three report tiers in production.
+
+<!-- FAQ | 2 question -->
+What does he build?
+
+<!-- FAQ | 2 answer -->
+Production AI agents with LangGraph, MCP and Claude; data pipelines on Airflow, Snowflake and Databricks; and automations that stop at a human approval step before anything irreversible happens. Six of them are public on GitHub, each with a runnable trace.
+
+<!-- FAQ | 3 question -->
+Can I hire him to build an AI agent for my team?
+
+<!-- FAQ | 3 answer -->
+Yes. $40/hr for build work, fixed-scope projects, part-time or retainer work, or a full-time role. Book 20 minutes: UTC+5, which means mornings in the US and afternoons in the EU.
+
+<!-- FAQ | 4 question -->
+How does he keep agents safe in production?
+
+<!-- FAQ | 4 answer -->
+The graph is drawn before any prompt is written. Data access goes through a row-level-secured MCP server, every agent has a budget of model calls, checks that don't need a model are plain code, and anything a person should sign off on waits at an approval gate.
+
+<!-- FAQ | 5 question -->
+Does he work with small businesses too?
+
+<!-- FAQ | 5 answer -->
+Yes: websites, business systems, AI assistants and automations, at fixed prices from $200 after a free 20-minute audit. See saad-dev.com/services.
+
+<!-- FAQ | 6 question -->
+How do I reach him?
+
+<!-- FAQ | 6 answer -->
+Email saad@saad-dev.com, book a call from the BOOK channel, or find him on LinkedIn (linkedin.com/in/s-waseem) and GitHub (github.com/s-wasim).

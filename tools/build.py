@@ -7,11 +7,11 @@
 
 Sources → generated:
   cv/page.html + cv/content.txt  →  cv/index.html            the CV, its text baked in so crawlers can read it
-  data/site.json                 →  services/<slug>/index.html   one page per service, in the /services look
+  data/site.json                 →  services/<slug>/index.html, services/faq/index.html   in the /services look
   data/site.json + content.txt   →  cv/work/index.html, cv/work/<slug>/index.html   case studies, in the CV look
   data/site.json                 →  regions <!--@seo-->…<!--/@seo--> and <!--@svc:slug-->…<!--/@svc-->
                                     inside index.html and services/index.html (the rest of those files is hand-written)
-  all of the above               →  sitemap.xml, robots.txt
+  all of the above               →  sitemap.xml, robots.txt, llms.txt, llms-full.txt (for AI assistants)
 
 Generated files are committed, so the site works straight from the branch; the
 Pages workflow (.github/workflows/deploy.yml) runs this again on every push, so
@@ -89,6 +89,7 @@ def generate(site, text):
     cases = {c['slug']: c for c in site['cases']}
     for svc in site['services']:
         out['services/%s/index.html' % svc['slug']] = pages.service_page(site, svc, cases)
+    out['services/faq/index.html'] = pages.services_faq_page(site)
     out['cv/work/index.html'] = pages.work_index(site, text)
     for c in site['cases']:
         out['cv/work/%s/index.html' % c['slug']] = pages.case_page(site, c, text)
@@ -97,7 +98,7 @@ def generate(site, text):
 
 def public_paths(site):
     return (['/', '/cv/', '/cv/work/'] + ['/cv/work/%s/' % c['slug'] for c in site['cases']]
-            + ['/services/'] + ['/services/%s/' % s['slug'] for s in site['services']])
+            + ['/services/'] + ['/services/%s/' % s['slug'] for s in site['services']] + ['/services/faq/'])
 
 
 def build(allow_missing=False):
@@ -113,7 +114,7 @@ def build(allow_missing=False):
     text = tf.parse(read(CV / 'content.txt')).entries
 
     cv_ld = [{'@context': 'https://schema.org', '@type': 'ProfilePage', 'url': site['origin'] + '/cv/',
-              'mainEntity': {'@id': site['origin'] + '/#saad'}}, person_ld(site)]
+              'mainEntity': {'@id': site['origin'] + '/#saad'}}, person_ld(site), pages.faq_ld(pages.cv_faqs(text))]
     html = html.replace('<!--@seo-->', pages.seo_head(site, '/cv/', text['GLOBAL | Page / browser tab title'],
                                                          text['GLOBAL | Page / search description'],
                                                          '/cv/assets/og-card.png', None, cv_ld), 1)
@@ -127,7 +128,8 @@ def build(allow_missing=False):
     site_ld = {'@context': 'https://schema.org', '@type': 'WebSite', 'url': site['origin'] + '/',
                'name': 'Saad Waseem', 'publisher': {'@id': site['origin'] + '/#saad'}}
     landing = fill_region(landing, 'seo', '\n' + pages.seo_head(site, '/', title, desc, '/assets/og.jpg',
-                                                                'website', [site_ld, person_ld(site)]) + '\n')
+                                                                'website', [site_ld, person_ld(site),
+                                                                            pages.business_ld(site)]) + '\n')
     write(ROOT / 'index.html', landing)
 
     hub = read(ROOT / 'services' / 'index.html')
@@ -136,13 +138,15 @@ def build(allow_missing=False):
                'itemListElement': [{'@type': 'ListItem', 'position': i, 'url': '%s/services/%s/' % (site['origin'], s['slug']),
                                     'name': s['name']} for i, s in enumerate(site['services'], 1)]}
     hub = fill_region(hub, 'seo', '\n' + pages.seo_head(site, '/services/', title, desc, '/services/assets/og.jpg',
-                                                        'website', [catalog]) + '\n')
+                                                        'website', [catalog, pages.business_ld(site)]) + '\n')
     for svc in site['services']:
         hub = fill_region(hub, 'svc:' + svc['slug'], pages.price_line(svc))
     write(ROOT / 'services' / 'index.html', hub)
 
     write(ROOT / 'sitemap.xml', pages.sitemap(site, public_paths(site)))
     write(ROOT / 'robots.txt', pages.robots(site))
+    write(ROOT / 'llms.txt', pages.llms_txt(site, text))
+    write(ROOT / 'llms-full.txt', pages.llms_full_txt(site, text))
     return []
 
 

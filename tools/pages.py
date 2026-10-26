@@ -57,6 +57,43 @@ def seo_head(site, path, title, description, image, kind='website', ld=()):
     return '\n'.join(tags)
 
 
+# ---------------------------------------------------------------- FAQs
+
+def faq_items(faqs):
+    return ''.join('<details><summary>%s</summary><p>%s</p></details>' % (esc(q), esc(a)) for q, a in faqs)
+
+
+def faq_html(faqs, title='Questions', label='FAQ'):
+    """Visible questions and answers; the same pairs go into faq_ld()."""
+    return ('<section class="block"><p class="label">%s</p><h2>%s</h2><div class="faq">%s</div></section>'
+            % (esc(label), esc(title), faq_items(faqs)))
+
+
+def faq_ld(faqs):
+    return {'@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': [
+        {'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': a}} for q, a in faqs]}
+
+
+def business_ld(site):
+    """The small-business practice: who runs it, where, and the offer catalogue with 'from' prices."""
+    p = site['person']
+    return {
+        '@context': 'https://schema.org', '@type': 'ProfessionalService', '@id': url(site, '/services/#business'),
+        'name': 'Saad Waseem: websites, systems and AI for small businesses', 'url': url(site, '/services/'),
+        'description': ('Websites, business systems, AI assistants, AI automations, mobile control panels and '
+                        'growth marketing for small businesses, at fixed prices after a free 20-minute audit.'),
+        'founder': person_ref(site), 'email': p['email'], 'image': url(site, '/services/assets/og.jpg'),
+        'address': {'@type': 'PostalAddress', 'addressLocality': p['city'], 'addressCountry': p['country_code']},
+        'areaServed': ['United States', 'Pakistan', 'Worldwide'], 'priceRange': 'From $200',
+        'sameAs': p['same_as'],
+        'hasOfferCatalog': {'@type': 'OfferCatalog', 'name': 'Services for small businesses', 'itemListElement': [
+            {'@type': 'Offer', 'priceCurrency': 'USD', 'price': svc['from_usd'],
+             'priceSpecification': {'@type': 'PriceSpecification', 'minPrice': svc['from_usd'], 'priceCurrency': 'USD'},
+             'itemOffered': {'@type': 'Service', 'name': svc['name'], 'url': url(site, '/services/%s/' % svc['slug'])}}
+            for svc in site['services']]},
+    }
+
+
 # ---------------------------------------------------------------- services
 
 def service_ld(site, svc):
@@ -150,15 +187,40 @@ def service_page(site, svc, cases_by_slug):
 <section class="block"><p class="label">What's included</p><h2>Pick what fits; the quote is fixed</h2><ul class="cards">%(included)s</ul></section>
 %(proof)s
 %(process)s
+%(faq)s
+<p class="more"><a href="/services/faq/">All questions about prices, ownership and support &#8594;</a></p>
 <section class="block"><p class="label">All services</p><ul class="others">%(nav)s</ul></section>
 </article>''' % {'card': svc['card'], 'short': esc(svc['name'].split(' (')[0].upper()),
                  'name': esc(svc['name'].split(' (')[0]), 'h1_sub': esc(svc.get('h1_sub', 'for small businesses')),
                  'headline': esc(svc['headline']),
                  'summary': esc(svc['summary']), 'price': svc['from_usd'], 'booking': esc(site['booking_url']),
                  'email': esc(site['person']['email']), 'who': esc(svc['for_who']), 'included': included,
-                 'proof': proof, 'process': process_html(site), 'nav': services_nav(site, svc['slug'])}
-    ld = [service_ld(site, svc), breadcrumbs(site, [('Home', '/'), ('Services', '/services/'), (svc['name'], path)])]
+                 'proof': proof, 'process': process_html(site), 'nav': services_nav(site, svc['slug']),
+                 'faq': faq_html(svc['faqs'], 'Common question')}
+    ld = [service_ld(site, svc), faq_ld(svc['faqs']),
+          breadcrumbs(site, [('Home', '/'), ('Services', '/services/'), (svc['name'], path)])]
     return services_shell(site, title, svc['description'], path, body, ld)
+
+
+def services_faq_page(site):
+    path = '/services/faq/'
+    title = 'Small business websites, AI and automation: prices and questions | Saad Waseem'
+    description = ('Straight answers on what websites, AI assistants and AI automations cost a small business, who owns '
+                   'what, how payment and support work, and how to start with a free 20-minute audit.')
+    body = '''<article class="svc">
+<section class="hero">
+  <p class="label">Questions</p>
+  <h1>Prices, ownership and support <span>the questions small businesses ask first</span></h1>
+  <p class="lead">Fixed quotes, from $200, after a free 20-minute audit. If your question is not here, ask it on the call.</p>
+  <p class="actions"><a class="cta big" href="%(booking)s" target="_blank" rel="noopener">Book a free 20-minute audit <span aria-hidden="true">&#8599;</span></a></p>
+</section>
+%(faq)s
+<section class="block"><p class="label">All services</p><ul class="others">%(nav)s</ul></section>
+</article>''' % {'booking': esc(site['booking_url']), 'faq': faq_html(site['faqs'], 'Before you book'),
+                 'nav': services_nav(site)}
+    ld = [faq_ld(site['faqs']), business_ld(site),
+          breadcrumbs(site, [('Home', '/'), ('Services', '/services/'), ('Questions', path)])]
+    return services_shell(site, title, description, path, body, ld)
 
 
 def price_line(svc):
@@ -220,8 +282,20 @@ def cv_shell(site, title, description, path, body, ld, image='/cv/assets/og-card
        'body': body, 'email': esc(site['person']['email'])}
 
 
+def case_faqs(site, case, t):
+    src = t['source'] or 'https://github.com/s-wasim/' + case['repo']
+    return [
+        ('Can I run %s myself?' % t['title'],
+         'Yes. It is open source at %s, and the README walks through running it locally.' % src),
+        ('Can Saad Waseem build something like %s for my team?' % t['title'],
+         'Yes. He builds production AI agents and automations like this one, remotely from Lahore for teams in the '
+         'US and EU, at $40/hr for build work. Book 20 minutes from the CV, or email %s.' % site['person']['email']),
+    ]
+
+
 def case_page(site, case, text):
     t = case_text(text, case['repo'])
+    faqs = case_faqs(site, case, t)
     path = '/cv/work/%s/' % case['slug']
     title = '%s: %s | Saad Waseem' % (t['title'], case['kind'])
     description = case['summary'] if len(case['summary']) <= 300 else case['summary'][:297] + '…'
@@ -242,14 +316,16 @@ def case_page(site, case, text):
 <section><h2>How it works</h2><ul class="how">%(how)s</ul></section>
 <section><h2>By the numbers</h2><ul class="nums">%(nums)s</ul></section>
 <section><h2>Stack</h2><ul class="chips">%(stack)s</ul></section>
+<section><h2>Questions</h2><div class="faq">%(faq)s</div></section>
 <p class="links"><a class="primary" href="%(source)s">Source on GitHub &#8599;</a>%(extra)s<a href="/cv/#work">Back to the CV</a><a href="/services/automations/">Want one built for you?</a></p>
 </article>''' % {'slug': esc(case['repo']), 'kind': esc(case['kind']), 'title': esc(t['title']),
                  'cvdesc': esc(t['description']), 'command': esc(t['command']), 'trace': trace, 'final': final,
                  'summary': esc(case['summary']), 'how': ''.join('<li>%s</li>' % esc(h) for h in case['how']),
                  'nums': ''.join('<li>%s</li>' % esc(n) for n in case['numbers']),
                  'stack': ''.join('<li>%s</li>' % esc(s) for s in case['stack']),
-                 'source': esc(t['source'] or 'https://github.com/s-wasim/' + case['repo']), 'extra': extra}
-    ld = [{'@context': 'https://schema.org', '@type': 'SoftwareSourceCode', '@id': url(site, path) + '#code',
+                 'source': esc(t['source'] or 'https://github.com/s-wasim/' + case['repo']), 'extra': extra,
+                 'faq': faq_items(faqs)}
+    ld = [faq_ld(faqs), {'@context': 'https://schema.org', '@type': 'SoftwareSourceCode', '@id': url(site, path) + '#code',
            'name': t['title'], 'description': case['summary'], 'url': url(site, path),
            'codeRepository': t['source'] or 'https://github.com/s-wasim/' + case['repo'],
            'programmingLanguage': 'Python', 'keywords': case['stack'], 'author': person_ref(site)},
@@ -286,5 +362,88 @@ def sitemap(site, paths):
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n%s</urlset>\n' % rows)
 
 
+AI_CRAWLERS = ['GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-SearchBot', 'Claude-User',
+               'PerplexityBot', 'Perplexity-User', 'Google-Extended', 'Applebot-Extended', 'CCBot']
+
+
 def robots(site):
-    return 'User-agent: *\nAllow: /\n\nSitemap: %s\n' % url(site, '/sitemap.xml')
+    """Everything is public. AI crawlers are named one by one: many sites block them,
+    and an explicit Allow leaves no doubt this one wants to be read and cited."""
+    ai = ''.join('User-agent: %s\nAllow: /\n\n' % bot for bot in AI_CRAWLERS)
+    return ('# saad-dev.com: everything here is public and may be indexed, quoted and cited.\n'
+            '# Plain-text summaries for language models: %s and %s\n\n'
+            'User-agent: *\nAllow: /\n\n%sSitemap: %s\n'
+            % (url(site, '/llms.txt'), url(site, '/llms-full.txt'), ai, url(site, '/sitemap.xml')))
+
+
+# ---------------------------------------------------------------- llms.txt (https://llmstxt.org)
+
+def cv_faqs(text):
+    """The CV's FAQ, as content.txt holds it (shown in the CV's PLAIN view)."""
+    out = []
+    for i in range(1, 50):
+        q = text.get('FAQ | %d question' % i)
+        if not q:
+            break
+        out.append((q, text.get('FAQ | %d answer' % i, '')))
+    return out
+
+
+def llms_txt(site, text):
+    """A short, linked index: who this is, what is on offer, where the detail lives."""
+    p = site['person']
+    lines = ['# Saad Waseem', '', '> ' + p['positioning'], '',
+             'Based in %s, %s; works remotely with %s. Email: %s. %s.'
+             % (p['city'], p['country'], p['works_with'], p['email'], p['role']), '',
+             'Book a free 20-minute call: ' + site['booking_url'], '',
+             '## Services for small businesses', '',
+             'Fixed quotes after a free 20-minute audit; 50% up front, 50% on delivery; two months of support included.', '']
+    for s in site['services']:
+        lines.append('- [%s](%s): from $%d. %s' % (s['name'], url(site, '/services/%s/' % s['slug']),
+                                                  s['from_usd'], s['summary']))
+    lines += ['- [Prices and questions](%s): costs, ownership, payment and support' % url(site, '/services/faq/'), '',
+              '## AI/ML engineering for tech teams', '',
+              '- [CV](%s): %s' % (url(site, '/cv/'), text.get('GLOBAL | Page / search description', '')),
+              '- [Work](%s): six public repositories, each with a runnable trace' % url(site, '/cv/work/')]
+    for c in site['cases']:
+        lines.append('- [%s](%s): %s. %s' % (case_text(text, c['repo'])['title'], url(site, '/cv/work/%s/' % c['slug']),
+                                             c['kind'], case_text(text, c['repo'])['description']))
+    lines += ['', '## Profiles', ''] + ['- %s' % u for u in p['same_as']]
+    lines += ['', '## Optional', '',
+              '- [Full text](%s): every service, price, question and project in one file' % url(site, '/llms-full.txt'), '']
+    return '\n'.join(lines)
+
+
+def llms_full_txt(site, text):
+    """Everything an assistant needs to answer questions about Saad and his services, as plain text."""
+    p = site['person']
+    out = ['# Saad Waseem: profile, services and work', '', p['positioning'], '',
+           '- Location: %s, %s (UTC+5). Works remotely with %s.' % (p['city'], p['country'], p['works_with']),
+           '- Email: %s' % p['email'],
+           '- Book a free 20-minute call: %s' % site['booking_url'],
+           '- Website: %s' % site['origin'],
+           '- Profiles: %s' % ', '.join(p['same_as']),
+           '- Current role: %s' % p['role'],
+           '- Rate for engineering work: %s' % p['rate'],
+           '- Knows: %s' % ', '.join(p['knows_about']), '',
+           '## About (from the CV)', '', text.get('HOME | Header / intro', ''), '',
+           '%s: %s' % (text.get('WORK | Current role / title', ''), text.get('WORK | Current role / description', '')), '',
+           '## Questions about Saad', '']
+    out += ['Q: %s\nA: %s\n' % tuple(qa) for qa in cv_faqs(text)]
+    out += ['## Services for small businesses', '',
+            'How every job works: ' + ' '.join('%s: %s' % (a, b) for a, b in site['process']),
+            site['subscriptions_note'], '']
+    for s in site['services']:
+        out += ['### %s, from $%d' % (s['name'], s['from_usd']), '', url(site, '/services/%s/' % s['slug']), '',
+                s['description'], '', 'Who it is for: ' + s['for_who'], '', "What's included:"]
+        out += ['- %s: %s' % tuple(item) for item in s['included']]
+        out += [''] + ['Q: %s\nA: %s\n' % tuple(qa) for qa in s['faqs']]
+    out += ['## Questions small businesses ask', ''] + ['Q: %s\nA: %s\n' % tuple(qa) for qa in site['faqs']]
+    out += ['## Public work', '']
+    for c in site['cases']:
+        t = case_text(text, c['repo'])
+        out += ['### %s: %s' % (t['title'], c['kind']), '',
+                '%s (source: %s)' % (url(site, '/cv/work/%s/' % c['slug']), t['source']), '',
+                t['description'], '', c['summary'], ''] + ['- ' + h for h in c['how']]
+        out += ['', 'Stack: ' + ', '.join(c['stack']), 'By the numbers: ' + ', '.join(c['numbers']), '']
+    return '\n'.join(out)

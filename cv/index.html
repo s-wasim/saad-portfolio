@@ -22,6 +22,7 @@
 <meta name="twitter:image" content="https://saad-dev.com/cv/assets/og-card.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfilePage","url":"https://saad-dev.com/cv/","mainEntity":{"@id":"https://saad-dev.com/#saad"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://saad-dev.com/#saad","name":"Saad Waseem","jobTitle":"Independent AI/ML engineer","description":"Saad Waseem is an independent AI/ML engineer in Lahore, Pakistan. He builds production AI agents (LangGraph, MCP, Claude) for tech teams, and websites, business systems and AI automations for small businesses.","url":"https://saad-dev.com/","email":"mailto:saad@saad-dev.com","image":"https://saad-dev.com/cv/assets/og-card.png","address":{"@type":"PostalAddress","addressLocality":"Lahore","addressCountry":"PK"},"sameAs":["https://github.com/s-wasim","https://linkedin.com/in/s-waseem"],"knowsAbout":["AI agents","LangGraph","Model Context Protocol (MCP)","Anthropic Claude","Retrieval-augmented generation (RAG)","Human-in-the-loop automation","Data engineering","Apache Airflow","Snowflake","Databricks","Python","Web development"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Who is Saad Waseem?","acceptedAnswer":{"@type":"Answer","text":"An independent AI/ML and data engineer in Lahore, Pakistan, working remotely with US and EU teams. Lead developer of AI Reports at Maiden Century: Claude agents over 100GB+ of financial data, three report tiers in production."}},{"@type":"Question","name":"What does he build?","acceptedAnswer":{"@type":"Answer","text":"Production AI agents with LangGraph, MCP and Claude; data pipelines on Airflow, Snowflake and Databricks; and automations that stop at a human approval step before anything irreversible happens. Six of them are public on GitHub, each with a runnable trace."}},{"@type":"Question","name":"Can I hire him to build an AI agent for my team?","acceptedAnswer":{"@type":"Answer","text":"Yes. $40/hr for build work, fixed-scope projects, part-time or retainer work, or a full-time role. Book 20 minutes: UTC+5, which means mornings in the US and afternoons in the EU."}},{"@type":"Question","name":"How does he keep agents safe in production?","acceptedAnswer":{"@type":"Answer","text":"The graph is drawn before any prompt is written. Data access goes through a row-level-secured MCP server, every agent has a budget of model calls, checks that don't need a model are plain code, and anything a person should sign off on waits at an approval gate."}},{"@type":"Question","name":"Does he work with small businesses too?","acceptedAnswer":{"@type":"Answer","text":"Yes: websites, business systems, AI assistants and automations, at fixed prices from $200 after a free 20-minute audit. See saad-dev.com/services."}},{"@type":"Question","name":"How do I reach him?","acceptedAnswer":{"@type":"Answer","text":"Email saad@saad-dev.com, book a call from the BOOK channel, or find him on LinkedIn (linkedin.com/in/s-waseem) and GitHub (github.com/s-wasim)."}}]}</script>
 <script>window.__resources = {"https://unpkg.com/react@18.3.1/umd/react.production.min.js": "vendor/react.production.min.js", "https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js": "vendor/react-dom.production.min.js"};</script>
 <script src="vendor/dc-runtime.js"></script>
 </head>
@@ -387,6 +388,8 @@
      piece of chrome and every sprite slot it was written to strip. */
   [data-mode="plain"] section[data-channel] div:not([data-chrome]):not([data-sprite]),
   [data-mode="plain"] section[data-channel] form { display: block !important; }
+  /* the FAQ exists only here: hidden in the console, one more section of the plain document */
+  [data-mode="plain"] [data-plain-faq] { display: block !important; box-sizing: border-box; width: 100% !important; max-width: 46rem !important; margin: 0 auto !important; padding: 2.6rem 1.4rem 3rem !important; color: #14110D !important; }
   [data-mode="plain"] [data-step] { border-left: 0 !important; padding-left: 0 !important; }
   [data-mode="plain"] *::before { content: none !important; }
   [data-mode="plain"] [data-sheet] { background-color: #FFF !important; border: 1px solid #14110D !important; }
@@ -1117,6 +1120,26 @@
                   <span style="font-family:Silkscreen,monospace; font-size:16px; letter-spacing:.14em; color:#FFC08A; text-shadow:0 0 calc(4px * var(--f-glow)) rgba(255,138,61,.55);" data-comment-anchor="e4f0f4a824-span">$40/HR</span>
                 </div>
               </div>
+            </section>
+
+            <!-- FAQ: plain text only. Hidden in the console (inline display:none); the PLAIN stylesheet shows it,
+                 so the questions people and assistants ask are answered in the one-column document. -->
+            <section data-plain-faq="" aria-labelledby="faq-title" style="display:none;">
+              <p style="font-size:12px; letter-spacing:.12em; text-transform:uppercase; margin:0 0 6px;">faq · plain text</p>
+              <h1 id="faq-title">QUESTIONS</h1>
+              <p>The short answers people ask for most often, in one place.</p>
+              <h2 style="font-size:17px; font-weight:600; margin:22px 0 6px;">Who is Saad Waseem?</h2>
+              <p style="margin:0;">An independent AI/ML and data engineer in Lahore, Pakistan, working remotely with US and EU teams. Lead developer of AI Reports at Maiden Century: Claude agents over 100GB+ of financial data, three report tiers in production.</p>
+              <h2 style="font-size:17px; font-weight:600; margin:22px 0 6px;">What does he build?</h2>
+              <p style="margin:0;">Production AI agents with LangGraph, MCP and Claude; data pipelines on Airflow, Snowflake and Databricks; and automations that stop at a human approval step before anything irreversible happens. Six of them are public on GitHub, each with a runnable trace.</p>
+              <h2 style="font-size:17px; font-weight:600; margin:22px 0 6px;">Can I hire him to build an AI agent for my team?</h2>
+              <p style="margin:0;">Yes. $40/hr for build work, fixed-scope projects, part-time or retainer work, or a full-time role. Book 20 minutes: UTC+5, which means mornings in the US and afternoons in the EU.</p>
+              <h2 style="font-size:17px; font-weight:600; margin:22px 0 6px;">How does he keep agents safe in production?</h2>
+              <p style="margin:0;">The graph is drawn before any prompt is written. Data access goes through a row-level-secured MCP server, every agent has a budget of model calls, checks that don&#39;t need a model are plain code, and anything a person should sign off on waits at an approval gate.</p>
+              <h2 style="font-size:17px; font-weight:600; margin:22px 0 6px;">Does he work with small businesses too?</h2>
+              <p style="margin:0;">Yes: websites, business systems, AI assistants and automations, at fixed prices from $200 after a free 20-minute audit. See saad-dev.com/services.</p>
+              <h2 style="font-size:17px; font-weight:600; margin:22px 0 6px;">How do I reach him?</h2>
+              <p style="margin:0;">Email saad@saad-dev.com, book a call from the BOOK channel, or find him on LinkedIn (linkedin.com/in/s-waseem) and GitHub (github.com/s-wasim).</p>
             </section>
 
           </div>

@@ -99,3 +99,49 @@ class Publish(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class AIVisibility(unittest.TestCase):
+    def test_robots_allows_each_ai_crawler_by_name(self):
+        robots = (ROOT / 'robots.txt').read_text()
+        for bot in ('GPTBot', 'OAI-SearchBot', 'ClaudeBot', 'Claude-SearchBot', 'PerplexityBot', 'Google-Extended'):
+            self.assertIn('User-agent: %s\nAllow: /\n' % bot, robots)
+        self.assertNotIn('Disallow', robots)
+
+    def test_llms_txt_covers_every_service_and_case(self):
+        llms = (ROOT / 'llms.txt').read_text(encoding='utf-8')
+        self.assertTrue(llms.startswith('# Saad Waseem\n\n> '))
+        for svc in SITE['services']:
+            self.assertIn('(%s/services/%s/): from $%d.' % (SITE['origin'], svc['slug'], svc['from_usd']), llms)
+        for case in SITE['cases']:
+            self.assertIn('%s/cv/work/%s/' % (SITE['origin'], case['slug']), llms)
+        public = {SITE['origin'] + p for p in build.public_paths(SITE)}
+        for link in re.findall(r'\]\((https://saad-dev\.com[^)]*)\)', llms):
+            self.assertIn(link, public | {SITE['origin'] + '/llms-full.txt'})
+
+    def test_llms_full_has_every_faq_and_price(self):
+        full = (ROOT / 'llms-full.txt').read_text(encoding='utf-8')
+        for q, a in SITE['faqs']:
+            self.assertIn('Q: %s\nA: %s' % (q, a), full)
+        for svc in SITE['services']:
+            self.assertIn('### %s, from $%d' % (svc['name'], svc['from_usd']), full)
+
+    def test_faq_markup_matches_visible_questions(self):
+        for path in ['/services/faq/', '/cv/'] + ['/services/%s/' % s['slug'] for s in SITE['services']] \
+                + ['/cv/work/%s/' % c['slug'] for c in SITE['cases']]:
+            with self.subTest(path=path):
+                html = page(path)
+                faq = [b for b in ld_blocks(html) if b.get('@type') == 'FAQPage']
+                self.assertEqual(len(faq), 1)
+                visible = unescape(re.sub(r'<[^>]+>', ' ', html))
+                for item in faq[0]['mainEntity']:
+                    self.assertIn(item['name'], visible)
+                    self.assertIn(item['acceptedAnswer']['text'], visible)
+
+    def test_business_and_person_described_consistently(self):
+        for path in ('/', '/services/'):
+            types = {b['@type'] for b in ld_blocks(page(path))}
+            self.assertIn('ProfessionalService', types)
+        person = [b for b in ld_blocks(page('/')) if b['@type'] == 'Person'][0]
+        self.assertEqual(person['sameAs'], ['https://github.com/s-wasim', 'https://linkedin.com/in/s-waseem'])
+        self.assertEqual(person['description'], SITE['person']['positioning'])

@@ -376,6 +376,8 @@
      piece of chrome and every sprite slot it was written to strip. */
   [data-mode="plain"] section[data-channel] div:not([data-chrome]):not([data-sprite]),
   [data-mode="plain"] section[data-channel] form { display: block !important; }
+  /* the FAQ exists only here: hidden in the console, one more section of the plain document */
+  [data-mode="plain"] [data-plain-faq] { display: block !important; box-sizing: border-box; width: 100% !important; max-width: 46rem !important; margin: 0 auto !important; padding: 2.6rem 1.4rem 3rem !important; color: #14110D !important; }
   [data-mode="plain"] [data-step] { border-left: 0 !important; padding-left: 0 !important; }
   [data-mode="plain"] *::before { content: none !important; }
   [data-mode="plain"] [data-sheet] { background-color: #FFF !important; border: 1px solid #14110D !important; }
@@ -1106,6 +1108,26 @@
                   <span style="font-family:Silkscreen,monospace; font-size:16px; letter-spacing:.14em; color:#FFC08A; text-shadow:0 0 calc(4px * var(--f-glow)) rgba(255,138,61,.55);" data-comment-anchor="e4f0f4a824-span">⟦GLOBAL | Shared labels / hourly rate⟧</span>
                 </div>
               </div>
+            </section>
+
+            <!-- FAQ: plain text only. Hidden in the console (inline display:none); the PLAIN stylesheet shows it,
+                 so the questions people and assistants ask are answered in the one-column document. -->
+            <section data-plain-faq="" aria-labelledby="faq-title" style="display:none;">
+              <p style="font-size:12px; letter-spacing:.12em; text-transform:uppercase; margin:0 0 6px;">⟦FAQ | Header / chapter label⟧</p>
+              <h1 id="faq-title">⟦FAQ | Header / title⟧</h1>
+              <p>⟦FAQ | Header / intro⟧</p>
+              <h2 style="font-size:17px; font-weight:600; margin:22px 0 6px;">⟦FAQ | 1 question⟧</h2>
+              <p style="margin:0;">⟦FAQ | 1 answer⟧</p>
+              <h2 style="font-size:17px; font-weight:600; margin:22px 0 6px;">⟦FAQ | 2 question⟧</h2>
+              <p style="margin:0;">⟦FAQ | 2 answer⟧</p>
+              <h2 style="font-size:17px; font-weight:600; margin:22px 0 6px;">⟦FAQ | 3 question⟧</h2>
+              <p style="margin:0;">⟦FAQ | 3 answer⟧</p>
+              <h2 style="font-size:17px; font-weight:600; margin:22px 0 6px;">⟦FAQ | 4 question⟧</h2>
+              <p style="margin:0;">⟦FAQ | 4 answer⟧</p>
+              <h2 style="font-size:17px; font-weight:600; margin:22px 0 6px;">⟦FAQ | 5 question⟧</h2>
+              <p style="margin:0;">⟦FAQ | 5 answer⟧</p>
+              <h2 style="font-size:17px; font-weight:600; margin:22px 0 6px;">⟦FAQ | 6 question⟧</h2>
+              <p style="margin:0;">⟦FAQ | 6 answer⟧</p>
             </section>
 
           </div>

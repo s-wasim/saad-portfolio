@@ -1,0 +1,39 @@
+# Saad Waseem
+
+> Saad Waseem is an independent AI/ML engineer in Lahore, Pakistan. He builds production AI agents (LangGraph, MCP, Claude) for tech teams, and websites, business systems and AI automations for small businesses.
+
+Based in Lahore, Pakistan; works remotely with teams in the US and EU. Email: saad@saad-dev.com. Lead developer of AI Reports at Maiden Century (Claude agents over 100GB+ of financial data, three report tiers in production).
+
+Book a free 20-minute call: https://cal.id/saad-saad-dev/onboarding-call?duration=20
+
+## Services for small businesses
+
+Fixed quotes after a free 20-minute audit; 50% up front, 50% on delivery; two months of support included.
+
+- [Websites & online stores](https://saad-dev.com/services/websites/): from $200. A fast site that books, sells and answers while you sleep.
+- [Business systems](https://saad-dev.com/services/business-systems/): from $600. Orders, stock, invoices and customers on one screen, not in a box under the counter.
+- [AI assistant (Claude for Small Business setup)](https://saad-dev.com/services/ai-assistant/): from $250. An assistant that knows your shop replies day and night, and hands you the tricky ones.
+- [AI automations & custom agents](https://saad-dev.com/services/automations/): from $400. Inquiries turn into drafted quotes, reminders and follow-ups. You read them and press Approve.
+- [Mobile control panel](https://saad-dev.com/services/mobile/): from $600. Sales, bookings, messages and even the lights, all from your phone.
+- [Growth & marketing automation](https://saad-dev.com/services/growth/): from $300. Better search rankings, more five-star reviews and customers who come back.
+- [Prices and questions](https://saad-dev.com/services/faq/): costs, ownership, payment and support
+
+## AI/ML engineering for tech teams
+
+- [CV](https://saad-dev.com/cv/): AI/ML and data engineer in Lahore. LangGraph agents over 100GB+ of financial data, three report tiers in production. $40/hr for build work.
+- [Work](https://saad-dev.com/cv/work/): six public repositories, each with a runnable trace
+- [document_pipeline](https://saad-dev.com/cv/work/document-pipeline/): Document AI · human-in-the-loop. Claude-vision state machine. Any document in, a validated row out. Three LLM calls, one repair attempt, one human gate, 69 tests.
+- [Portfolio-Summarizer](https://saad-dev.com/cv/work/portfolio-summarizer/): Data platform · MCP · agent. Three sources, fourteen tables, three tiers — raw Parquet, a DuckDB warehouse, and derived scores in their own partition. Loads are idempotent: append dedupes on a declared primary key, so a re-run costs nothing. The agent is the last mile, not the point.
+- [inbound_lead_responder](https://saad-dev.com/cv/work/inbound-lead-responder/): Email agent · approval before send. Six-node email agent. Classifies, extracts, routes on a rules table, drafts a proposal — then waits for a person before anything is sent.
+- [FaceClusterer](https://saad-dev.com/cv/work/face-clusterer/): Computer vision · clustering. SigLIP global embeddings and InsightFace face embeddings, voted into a consensus across six thresholds. No model retraining, no labels.
+- [self_spawnAgents](https://saad-dev.com/cv/work/self-spawn-agents/): Multi-agent system · guardrails. Four agents, no human in the revenue loop — and a profit-blind ethics auditor that can veto the other three. Frozen-config hashes, a sandboxed code generator, capped budgets per child. 140 tests.
+- [ai_knowledge_bot](https://saad-dev.com/cv/work/ai-knowledge-bot/): RAG · cited answers. Point it at a codebase, ask it how onboarding works. Every answer carries file:line citations, so a wrong answer is falsifiable in one click.
+
+## Profiles
+
+- https://github.com/s-wasim
+- https://linkedin.com/in/s-waseem
+
+## Optional
+
+- [Full text](https://saad-dev.com/llms-full.txt): every service, price, question and project in one file
