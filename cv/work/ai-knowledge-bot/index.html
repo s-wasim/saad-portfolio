@@ -26,17 +26,17 @@
 <body>
 <div class="crt">
 <header class="bar">
-  <a class="home" href="/cv/">SAAD.DEV</a>
+  <a class="home" href="/cv/">SAAD-DEV</a>
   <nav aria-label="Site"><a href="/cv/work/">WORK</a><a href="/cv/#book">BOOK</a><a href="/services/">SERVICES</a></nav>
 </header>
 <main>
 <article class="case">
-<p class="crumbs"><a href="/cv/">saad.dev</a> / <a href="/cv/work/">work</a> / ai_knowledge_bot</p>
+<p class="crumbs"><a href="/cv/">saad-dev.com</a> / <a href="/cv/work/">work</a> / ai_knowledge_bot</p>
 <p class="label">RAG · cited answers</p>
 <h1>ai_knowledge_bot</h1>
 <p class="lead">Point it at a codebase, ask it how onboarding works. Every answer carries file:line citations, so a wrong answer is falsifiable in one click.</p>
 <pre class="cmd"><code>$ kb ask &quot;how does auth work?&quot;</code></pre>
-<ol class="trace" aria-label="A sample run"><li><b>[ingest]</b> 1,204 files → chunks <i>18.3s</i></li><li><b>[embed]</b> voyage-code-3 · pgvector</li><li><b>[retrieve]</b> top-k 8 · rerank</li><li><b>[answer]</b> grounded · 4 citations <i>2.2s</i></li><li class="ok">✓ auth.py:42 · middleware.py:118 · 1 claude call</li></ol>
+<ol class="trace" aria-label="A sample run"><li><b>[ingest]</b> 1,204 files → chunks <i>18.3s</i></li><li><b>[embed]</b> voyage-code-3 · pgvector</li><li><b>[retrieve]</b> top-k 8 · graded</li><li><b>[answer]</b> grounded · 2 citations <i>2.2s</i></li><li class="ok">✓ auth.py:42 · middleware.py:118 · 3 claude calls</li></ol>
 <section><h2>What it does</h2><p>A retrieval-augmented (RAG) app for getting up to speed on an unfamiliar codebase: ingest a repository, ask questions in plain English, and get answers grounded in the code with clickable file:line citations. When the code does not answer the question, it says so instead of guessing.</p></section>
 <section><h2>How it works</h2><ul class="how"><li>Ingests a local folder or a public GitHub repo, chunked with a line-window chunker.</li><li>Two retrieval modes: Postgres full-text search, or voyage-code-3 embeddings with pgvector.</li><li>A LangGraph flow rewrites the question, grades the retrieved chunks, then answers with citations.</li><li>At most three Claude calls per question.</li><li>An explicit &#x27;not found&#x27; path, and every retrieved chunk and grade visible in the UI.</li></ul></section>
 <section><h2>By the numbers</h2><ul class="nums"><li>≤3 Claude calls per question</li><li>file:line citations</li><li>2 retrieval modes</li></ul></section>
@@ -46,7 +46,7 @@
 </article>
 </main>
 <footer class="foot">
-  <p>Saad Waseem · AI/ML engineer · Lahore, Pakistan · <a href="mailto:saad@saad-dev.com">saad@saad-dev.com</a> · <a href="https://github.com/s-wasim">GitHub</a> · <a href="https://linkedin.com/in/s-waseem">LinkedIn</a></p>
+  <p>Saad Waseem · AI/ML and data engineer · Lahore, Pakistan · <a href="mailto:saad@saad-dev.com">saad@saad-dev.com</a> · <a href="https://github.com/s-wasim">GitHub</a> · <a href="https://linkedin.com/in/s-waseem">LinkedIn</a></p>
 </footer>
 </div>
 </body>

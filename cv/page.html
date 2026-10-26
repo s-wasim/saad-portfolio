@@ -451,7 +451,7 @@
         <div data-screen="1" ref="{{ screenRef }}" style="order:2; flex:1 1 auto; min-height:0; overflow-y:auto; overflow-x:hidden; overscroll-behavior:contain; scrollbar-width:none; animation: {{ degaussAnim }};">
           <div style="min-height:100%; transform-origin:50% 50%; will-change:transform; animation: {{ wipe }};">
 
-            <section data-channel="home" data-screen-label="SAAD.DEV" role="tabpanel" id="p-home" aria-labelledby="t-home" hidden="{{ notHome }}" style="display:{{ dHome }}; padding:{{ screenPad }};">
+            <section data-channel="home" data-screen-label="SAAD-DEV" role="tabpanel" id="p-home" aria-labelledby="t-home" hidden="{{ notHome }}" style="display:{{ dHome }}; padding:{{ screenPad }};">
               <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:#8A3D16; margin-bottom:16px;">⟦HOME | Header / chapter label⟧<span data-chrome="idx" style="color:#5EEAD4; padding-left:10px;">{{ chIdx }}</span></div>
               <h1 tabindex="-1" style="margin:0 0 22px; font-family:Michroma,'Arial Narrow',system-ui; font-weight:400; font-size:clamp(30px,3.4vw,46px); letter-spacing:.08em; color:transparent; -webkit-text-stroke:1.5px #FFC08A; text-shadow:0 0 calc(6px * var(--f-glow)) rgba(255,168,103,.7), 0 0 calc(26px * var(--f-glow)) rgba(255,138,61,.38), 0 0 calc(64px * var(--f-glow)) rgba(255,110,30,.2); outline:none;" data-comment-anchor="bbc9a64a46-h1">⟦HOME | Header / title⟧</h1>
               <div style="display:flex; gap:38px; align-items:flex-start; flex-wrap:wrap;">
@@ -477,39 +477,39 @@
                   <canvas id="pfield" aria-hidden="true" style="position:absolute; inset:0; width:100%; height:100%; display:block;"></canvas>
                   <svg sc-camel-view-box="{{ dagBox }}" sc-camel-preserve-aspect-ratio="xMidYMid meet" role="img" aria-label="⟦HOME | Pipeline graph / screen-reader description⟧" style="position:absolute; inset:0; width:100%; height:100%;" data-comment-anchor="0896d6e261-svg">
                     <g fill="none" stroke-width="1.5" stroke-linecap="round">
-                      <path id="e1" d="{{ dE1 }}" display="{{ showE1 }}" stroke="rgba(94,234,212,.4)"></path>
-                      <path id="e2" d="{{ dE2 }}" display="{{ showE2 }}" stroke="rgba(94,234,212,.4)"></path>
-                      <path id="e3" d="{{ dE3 }}" display="{{ showE3 }}" stroke="rgba(94,234,212,.4)"></path>
-                      <path id="e4" d="{{ dE4 }}" display="{{ showE4 }}" stroke="rgba(94,234,212,.4)"></path>
-                      <path id="e5" d="{{ dE5 }}" display="{{ showE5 }}" stroke="rgba(251,113,133,.42)" stroke-dasharray="5 4"></path>
-                      <path id="e6" d="{{ dE6 }}" display="{{ showE6 }}" stroke="rgba(251,113,133,.42)" stroke-dasharray="5 4"></path>
+                      <path id="e1" sc-camel-d="{{ dE1 }}" display="{{ showE1 }}" stroke="rgba(94,234,212,.4)"></path>
+                      <path id="e2" sc-camel-d="{{ dE2 }}" display="{{ showE2 }}" stroke="rgba(94,234,212,.4)"></path>
+                      <path id="e3" sc-camel-d="{{ dE3 }}" display="{{ showE3 }}" stroke="rgba(94,234,212,.4)"></path>
+                      <path id="e4" sc-camel-d="{{ dE4 }}" display="{{ showE4 }}" stroke="rgba(94,234,212,.4)"></path>
+                      <path id="e5" sc-camel-d="{{ dE5 }}" display="{{ showE5 }}" stroke="rgba(251,113,133,.42)" stroke-dasharray="5 4"></path>
+                      <path id="e6" sc-camel-d="{{ dE6 }}" display="{{ showE6 }}" stroke="rgba(251,113,133,.42)" stroke-dasharray="5 4"></path>
                     </g>
                     <text x="504" y="212" text-anchor="middle" hidden="{{ noRetry }}" font-family="Silkscreen, monospace" font-size="8" fill="#8A3D16" letter-spacing="1">⟦HOME | Pipeline graph / retry loop label⟧</text>
                     <circle id="pk-dot" cx="158" cy="76" r="4" fill="#5EEAD4" opacity=".95"></circle>
                     <g font-family="'Chakra Petch', system-ui" font-size="13" letter-spacing="1.4">
                       <g data-node="classify" tabindex="0" role="button" aria-label="⟦HOME | Pipeline graph / screen-reader label: classify⟧" sc-camel-on-mouse-enter="{{ onNodeEnter }}" sc-camel-on-mouse-leave="{{ onNodeLeave }}" sc-camel-on-focus="{{ onNodeEnter }}" sc-camel-on-blur="{{ onNodeLeave }}" sc-camel-on-click="{{ onNodeClick }}" style="cursor:pointer;">
-                        <rect x="{{ nxClassify }}" y="{{ nyClassify }}" width="120" height="44" rx="4" fill="rgba(20,8,3,.72)" stroke="{{ sClassify }}" stroke-width="1.5"></rect>
-                        <text x="{{ txClassify }}" y="{{ tyClassify }}" text-anchor="middle" fill="{{ sClassify }}">⟦HOME | Pipeline graph / node: classify⟧</text>
+                        <rect sc-camel-x="{{ nxClassify }}" sc-camel-y="{{ nyClassify }}" width="120" height="44" rx="4" fill="rgba(20,8,3,.72)" stroke="{{ sClassify }}" stroke-width="1.5"></rect>
+                        <text sc-camel-x="{{ txClassify }}" sc-camel-y="{{ tyClassify }}" text-anchor="middle" fill="{{ sClassify }}">⟦HOME | Pipeline graph / node: classify⟧</text>
                       </g>
                       <g data-node="extract" tabindex="0" role="button" aria-label="⟦HOME | Pipeline graph / screen-reader label: extract⟧" sc-camel-on-mouse-enter="{{ onNodeEnter }}" sc-camel-on-mouse-leave="{{ onNodeLeave }}" sc-camel-on-focus="{{ onNodeEnter }}" sc-camel-on-blur="{{ onNodeLeave }}" sc-camel-on-click="{{ onNodeClick }}" style="cursor:pointer;">
-                        <rect x="{{ nxExtract }}" y="{{ nyExtract }}" width="120" height="44" rx="4" fill="rgba(20,8,3,.72)" stroke="{{ sExtract }}" stroke-width="1.5"></rect>
-                        <text x="{{ txExtract }}" y="{{ tyExtract }}" text-anchor="middle" fill="{{ sExtract }}">⟦HOME | Pipeline graph / node: extract⟧</text>
+                        <rect sc-camel-x="{{ nxExtract }}" sc-camel-y="{{ nyExtract }}" width="120" height="44" rx="4" fill="rgba(20,8,3,.72)" stroke="{{ sExtract }}" stroke-width="1.5"></rect>
+                        <text sc-camel-x="{{ txExtract }}" sc-camel-y="{{ tyExtract }}" text-anchor="middle" fill="{{ sExtract }}">⟦HOME | Pipeline graph / node: extract⟧</text>
                       </g>
                       <g data-node="validate" tabindex="0" role="button" aria-label="⟦HOME | Pipeline graph / screen-reader label: validate⟧" sc-camel-on-mouse-enter="{{ onNodeEnter }}" sc-camel-on-mouse-leave="{{ onNodeLeave }}" sc-camel-on-focus="{{ onNodeEnter }}" sc-camel-on-blur="{{ onNodeLeave }}" sc-camel-on-click="{{ onNodeClick }}" style="cursor:pointer;">
-                        <rect x="{{ nxValidate }}" y="{{ nyValidate }}" width="120" height="44" rx="4" fill="rgba(20,8,3,.72)" stroke="{{ sValidate }}" stroke-width="1.5"></rect>
-                        <text x="{{ txValidate }}" y="{{ tyValidate }}" text-anchor="middle" fill="{{ sValidate }}">⟦HOME | Pipeline graph / node: validate⟧</text>
+                        <rect sc-camel-x="{{ nxValidate }}" sc-camel-y="{{ nyValidate }}" width="120" height="44" rx="4" fill="rgba(20,8,3,.72)" stroke="{{ sValidate }}" stroke-width="1.5"></rect>
+                        <text sc-camel-x="{{ txValidate }}" sc-camel-y="{{ tyValidate }}" text-anchor="middle" fill="{{ sValidate }}">⟦HOME | Pipeline graph / node: validate⟧</text>
                       </g>
                       <g data-node="repair" display="{{ dnRepair }}" hidden="{{ nnRepair }}" tabindex="{{ fxRepair }}" role="button" aria-label="⟦HOME | Pipeline graph / screen-reader label: repair⟧" sc-camel-on-mouse-enter="{{ onNodeEnter }}" sc-camel-on-mouse-leave="{{ onNodeLeave }}" sc-camel-on-focus="{{ onNodeEnter }}" sc-camel-on-blur="{{ onNodeLeave }}" sc-camel-on-click="{{ onNodeClick }}" style="cursor:pointer;">
-                        <rect x="{{ nxRepair }}" y="{{ nyRepair }}" width="120" height="44" rx="4" fill="rgba(20,8,3,.72)" stroke="{{ sRepair }}" stroke-width="1.5"></rect>
-                        <text x="{{ txRepair }}" y="{{ tyRepair }}" text-anchor="middle" fill="{{ sRepair }}">⟦HOME | Pipeline graph / node: repair⟧</text>
+                        <rect sc-camel-x="{{ nxRepair }}" sc-camel-y="{{ nyRepair }}" width="120" height="44" rx="4" fill="rgba(20,8,3,.72)" stroke="{{ sRepair }}" stroke-width="1.5"></rect>
+                        <text sc-camel-x="{{ txRepair }}" sc-camel-y="{{ tyRepair }}" text-anchor="middle" fill="{{ sRepair }}">⟦HOME | Pipeline graph / node: repair⟧</text>
                       </g>
                       <g data-node="commit" display="{{ dnCommit }}" hidden="{{ nnCommit }}" tabindex="{{ fxCommit }}" role="button" aria-label="⟦HOME | Pipeline graph / screen-reader label: commit⟧" sc-camel-on-mouse-enter="{{ onNodeEnter }}" sc-camel-on-mouse-leave="{{ onNodeLeave }}" sc-camel-on-focus="{{ onNodeEnter }}" sc-camel-on-blur="{{ onNodeLeave }}" sc-camel-on-click="{{ onNodeClick }}" style="cursor:pointer;">
-                        <rect x="{{ nxCommit }}" y="{{ nyCommit }}" width="120" height="44" rx="4" fill="rgba(20,8,3,.72)" stroke="{{ sCommit }}" stroke-width="1.5"></rect>
-                        <text x="{{ txCommit }}" y="{{ tyCommit }}" text-anchor="middle" fill="{{ sCommit }}">⟦HOME | Pipeline graph / node: commit⟧</text>
+                        <rect sc-camel-x="{{ nxCommit }}" sc-camel-y="{{ nyCommit }}" width="120" height="44" rx="4" fill="rgba(20,8,3,.72)" stroke="{{ sCommit }}" stroke-width="1.5"></rect>
+                        <text sc-camel-x="{{ txCommit }}" sc-camel-y="{{ tyCommit }}" text-anchor="middle" fill="{{ sCommit }}">⟦HOME | Pipeline graph / node: commit⟧</text>
                       </g>
                       <g data-node="saad" tabindex="0" role="button" aria-label="⟦HOME | Pipeline graph / screen-reader label: saad⟧" sc-camel-on-mouse-enter="{{ onNodeEnter }}" sc-camel-on-mouse-leave="{{ onNodeLeave }}" sc-camel-on-focus="{{ onNodeEnter }}" sc-camel-on-blur="{{ onNodeLeave }}" sc-camel-on-click="{{ onNodeClick }}" style="cursor:pointer;">
-                        <rect x="{{ nxSaad }}" y="{{ nySaad }}" width="120" height="44" rx="22" fill="rgba(255,138,61,.10)" stroke="{{ sSaad }}" stroke-width="1.5" stroke-dasharray="3 3"></rect>
-                        <text x="{{ txSaad }}" y="{{ tySaad }}" text-anchor="middle" fill="{{ sSaad }}">⟦HOME | Pipeline graph / node: saad⟧</text>
+                        <rect sc-camel-x="{{ nxSaad }}" sc-camel-y="{{ nySaad }}" width="120" height="44" rx="22" fill="rgba(255,138,61,.10)" stroke="{{ sSaad }}" stroke-width="1.5" stroke-dasharray="3 3"></rect>
+                        <text sc-camel-x="{{ txSaad }}" sc-camel-y="{{ tySaad }}" text-anchor="middle" fill="{{ sSaad }}">⟦HOME | Pipeline graph / node: saad⟧</text>
                       </g>
                     </g>
                   </svg>
@@ -686,10 +686,6 @@
                     <sc-for list="{{ lrLines }}" as="l" hint-placeholder-count="0">
                       <div style="color: {{ l.c }}; opacity: {{ l.o }}; animation: slide-in 180ms ease-out both;">{{ l.t }}</div>
                     </sc-for>
-                    <div style="display:{{ lrWait }}; align-items:center; gap:10px; margin-top:8px;">
-                      <button data-case="lr" sc-camel-on-click="{{ onApprove }}" style="border:1px solid #FFB020; border-radius:3px; background:rgba(255,176,32,.16); cursor:pointer; padding:6px 13px; font-family:'Chakra Petch',system-ui; font-size:11px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:#FFF0DE; animation: pulse-ring calc(1200ms / var(--f-speed)) ease-in-out infinite;" style-hover="background:#FFB020; color:#160A05;" style-focus-visible="outline:2px solid #FFC08A; outline-offset:2px;">⟦WORK | Shared labels / approve button⟧</button>
-                      <span style="font-family:Silkscreen,monospace; font-size:8px; letter-spacing:.14em; color:#FFB020;">⟦WORK | Shared labels / halted badge⟧</span>
-                    </div>
                   </div>
                   <div style="display:flex; gap:10px; align-items:center;">
                     <button data-case="lr" data-run="1" sc-camel-on-click="{{ onRun }}" style="border:1px solid #4A230F; border-radius:4px; background:#1A0D07; cursor:pointer; padding:8px 15px; font-family:'Chakra Petch',system-ui; font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:#FF8A3D;" style-hover="background:#251208; color:#FFC08A;" style-focus-visible="outline:2px solid #FF8A3D; outline-offset:2px;">{{ lrLabel }}</button>
@@ -1096,7 +1092,7 @@
                     <div style="font-family:Silkscreen,monospace; font-size:9px; letter-spacing:.16em; color:#4ADE80; margin-bottom:10px;">⟦BOOK | After routing / step label⟧</div>
                     <h2 style="margin:0 0 10px; font-family:Michroma,'Arial Narrow',system-ui; font-weight:400; font-size:20px; letter-spacing:.04em; color:#FFF0DE;">⟦BOOK | After routing / heading⟧</h2>
                     <p style="margin:0 0 16px; font-family:'Chakra Petch',system-ui; font-size:15px; line-height:1.6; text-wrap:pretty; color:#FFC08A;">{{ bkSummary }} ⟦BOOK | After routing / text after the request summary⟧</p>
-                    <div style="border:1px solid #2A1409; border-radius:5px; background:rgba(6,20,17,.5); padding:18px; margin-bottom:16px; font-family:'JetBrains Mono',monospace; font-size:11px; line-height:1.7; letter-spacing:.06em; color:#3FE0C0;">⟦BOOK | Scheduler / placeholder line 1⟧<br><a href="⟦BOOK | Scheduler / booking link (clickable)⟧" target="_blank" rel="noopener noreferrer" style="color:#5EEAD4; text-decoration:underline; text-underline-offset:3px; word-break:break-all;" style-hover="color:#FFF0DE;" style-focus-visible="outline:2px solid #5EEAD4; outline-offset:2px;">⟦BOOK | Scheduler / booking link (clickable)⟧</a></div>
+                    <div style="border:1px solid #2A1409; border-radius:5px; background:rgba(6,20,17,.5); padding:18px; margin-bottom:16px; font-family:'JetBrains Mono',monospace; font-size:11px; line-height:1.7; letter-spacing:.06em; color:#3FE0C0;">⟦BOOK | Scheduler / placeholder line 1⟧<br><a href="⟦BOOK | Scheduler / booking link (clickable)⟧" sc-camel-on-click="{{ onBookLink }}" target="_blank" rel="noopener noreferrer" style="color:#5EEAD4; text-decoration:underline; text-underline-offset:3px; word-break:break-all;" style-hover="color:#FFF0DE;" style-focus-visible="outline:2px solid #5EEAD4; outline-offset:2px;">⟦BOOK | Scheduler / booking link (clickable)⟧</a></div>
                     <div style="display:flex; gap:12px; flex-wrap:wrap;">
                       <a href="mailto:⟦GLOBAL | Links / email address⟧" style="border:1px solid #FF8A3D; border-radius:4px; background:rgba(255,138,61,.12); padding:11px 19px; font-family:'Chakra Petch',system-ui; font-size:12px; font-weight:600; letter-spacing:.2em; text-transform:uppercase; text-decoration:none;" style-hover="background:#FF8A3D; color:#160A05;">⟦BOOK | Links / email link⟧</a>
                       <a href="⟦GLOBAL | Links / LinkedIn profile⟧" target="_blank" rel="noreferrer noopener" style="border:1px solid #4A230F; border-radius:4px; padding:11px 19px; font-family:'Chakra Petch',system-ui; font-size:12px; letter-spacing:.2em; text-transform:uppercase; text-decoration:none;" style-hover="background:#251208;">⟦BOOK | Links / linkedin link⟧</a>
@@ -3031,7 +3027,6 @@ const CASES = {
     { g: '⟦js:WORK | inbound_lead_responder run trace / step 2 name⟧', t: '⟦js:WORK | inbound_lead_responder run trace / step 2 text⟧' },
     { g: '⟦js:WORK | inbound_lead_responder run trace / step 3 name⟧', t: '⟦js:WORK | inbound_lead_responder run trace / step 3 text⟧' },
     { g: '⟦js:WORK | inbound_lead_responder run trace / step 4 name⟧', t: '⟦js:WORK | inbound_lead_responder run trace / step 4 text⟧', r: '⟦js:WORK | inbound_lead_responder run trace / step 4 time⟧' },
-    { human: true },
     { rule: true },
     { done: '⟦js:WORK | inbound_lead_responder run trace / final line⟧' }
   ],
@@ -3197,7 +3192,7 @@ setting. You are never bubbly, never corporate, never a salesperson, and you
 never use exclamation marks or emoji.
 
 Good:
-  "Four LangGraph agents in production, and exactly zero of them live in a notebook."
+  "Three report tiers in production, and exactly zero of them live in a notebook."
   "LangGraph, because I wanted a state machine I could debug at 2am, not a framework I had to trust."
   "Yes — though 'available' is doing some load-bearing work in that sentence."
   "That one took 69 tests, and I wrote them because I didn't trust myself either."
@@ -3216,25 +3211,37 @@ every time; a twin that only sells is a twin nobody talks to.
 ===========================  FACTS ABOUT SAAD  ===========================
 
 IDENTITY
-- Saad Waseem, AI/ML & Data Engineer, based in Lahore, Pakistan (UTC+5).
+- Saad Waseem, AI/ML and Data Engineer, based in Lahore, Pakistan (UTC+5).
 - Works remotely with US and EU clients.
 - BSc Computer Science, FAST-NUCES Lahore, 2023.
-- GitHub: github.com/s-wasim · LinkedIn: linkedin.com/in/saad-waseem-aab48a210
-- Email: s.w150700@hotmail.com
+- GitHub: github.com/s-wasim · LinkedIn: linkedin.com/in/s-waseem
+- Email: saad@saad-dev.com
+- Website: saad-dev.com (CV at /cv, small-business services at /services)
 
 RATE AND AVAILABILITY
 - $40/hr for build work; lighter or part-time scopes are negotiable.
 - Open to project work, part-time retainers, and full-time roles.
 - Anything more specific than that happens on a call — send them to the
   booking form on the BOOK channel of this page.
+- Questions about timing, notice periods, or his current role's future also
+  happen on that call; say so in one sentence.
+
+SERVICES FOR SMALL BUSINESSES (saad-dev.com/services)
+- Websites and online stores from $200, business systems from $600, AI
+  assistant (Claude for Small Business) setup from $250, AI automations and
+  custom agents from $400, mobile control panel from $600, growth and
+  marketing automation from $300.
+- Fixed quote after a free 20-minute audit; 50% up front, 50% on delivery;
+  two months of support included, then $30/hr.
+- Everything drafts first and waits: nothing reaches a customer until a
+  person approves it.
 
 CURRENT ROLE — Maiden Century, US fintech, March 2025 to present
 - Lead developer of "AI Reports": a production application generating
   company-performance research using Claude agents (Anthropic SDK + LangGraph)
   over large-scale financial data, reached through an MCP server that enforces
   row-level security.
-- Three report tiers shipped: Ticker Summary (cross-ticker screening combining
-  the internal IDEA Estimate, QTIP Score, and Consensus/Street estimates),
+- Three report tiers shipped: Ticker Summary (cross-ticker screening),
   Company Report (single-ticker deep dive), Metric Findings (drill-down into an
   individual ticker's metrics).
 - Built scalable ETL on Amazon EKS/EC2 orchestrated with Airflow.
@@ -3242,7 +3249,7 @@ CURRENT ROLE — Maiden Century, US fintech, March 2025 to present
   built AI-assisted validation of derived financial formulas.
 - Enforced cloud governance across AWS: IAM, encryption, VPC.
 
-PREVIOUS — Xavor Pvt. Ltd, Data Engineer & Analyst, Jul 2023 to Jan 2025
+PREVIOUS — Xavor Pvt. Ltd, Data / ML Engineer, Jul 2023 to Jan 2025
 - Azure Data Factory pipelines into a star-schema Azure Synapse warehouse,
   with incremental refreshes automated via Power Automate.
 - Migrated metrics from Agile/SQL Server to S3 via Airflow, staged in
@@ -3302,9 +3309,9 @@ PUBLIC PROJECTS (all inspectable on github.com/s-wasim)
   banking77, MLflow-tracked, base-vs-tuned in a table: accuracy 0.28 → 0.36,
   macro-F1 0.15 → 0.21, on a capped CPU smoke run — and it says so; the
   caveat is part of the result, not an omission.
-- retro-launcher — a native Android home launcher, Java only, zero runtime
-  dependencies, a per-pixel renderer, ten palettes, a CI-only build pipeline,
-  97 commits, release APK under 80 KB.
+- retro-launcher (repo: retro-launcher-open) — a native Android home launcher
+  in plain Java (no Kotlin, Compose or Material), a per-pixel animated sky, and
+  a CI-only build pipeline; the public repo is the open-source edition.
 - hikarus-day-game — a stateless FastAPI service on a local 3B model via
   Ollama and Qwen 2.5, with two-stage planner and filler calls, structured
   JSON conversation trees, a hidden trait-state system, and journal-summary
@@ -3383,11 +3390,11 @@ WHAT YOU DO NOT KNOW
 
 WHAT YOU NEVER DISCUSS, EVEN IF ASKED DIRECTLY
 - Any business, venture, product, investment, or income plan of his outside the
-  work described above. Any job search, interview, or intention to leave his
-  current role. Any opinion about his employer, colleagues, or clients.
-- If a visitor asks about any of this — "are you leaving?", "what else are you
-  building?", "what's your side project?" — decline in one dry sentence and
-  return to the work, without confirming or denying that anything exists.
+  work and services described above. Any opinion about his employer,
+  colleagues, or clients, and anything about Maiden Century beyond the facts
+  above.
+- If a visitor asks about any of this, decline in one dry sentence and return
+  to the work.
 - His personal life beyond exactly two facts: he went back through design
   patterns and data structures this year, and he keeps a twelve-week training
   log. Both are answerable, both framed as instrumentation rather than as
@@ -5112,6 +5119,17 @@ class Component extends DCLogic {
     }, 900);
   }
 
+  /* No backend here, so the request rides into the scheduler itself: cal.id
+     fills its name and notes fields from the link. Rewritten on click, from
+     the fixed base, so a second click never stacks parameters. */
+  onBookLink = (e) => {
+    const b = this.state.bk;
+    const base = '⟦js:BOOK | Scheduler / booking link (clickable)⟧';
+    const notes = [b.brief.trim(), [b.co.trim(), b.shape].filter(Boolean).join(' \u00b7 ')].filter(Boolean).join('\n\n');
+    e.currentTarget.href = base + (base.includes('?') ? '&' : '?')
+      + 'name=' + encodeURIComponent(b.name.trim()) + '&notes=' + encodeURIComponent(notes);
+  }
+
   /* ── keys ───────────────────────────────────────────────────── */
   handleKey = (e) => {
     this.syncCaps(e);
@@ -5723,7 +5741,7 @@ class Component extends DCLogic {
       sentLabel: fillSlots('⟦js{sent,cap}:TWIN | Ask box / sent counter⟧', { sent: s.tsent, cap: CONFIG.SESSION_CAP }),
 
       /* ── BOOK ── */
-      onField: this.onField, onShape: this.onShape, onRoute: this.onRoute,
+      onField: this.onField, onShape: this.onShape, onRoute: this.onRoute, onBookLink: this.onBookLink,
       bkName: s.bk.name, bkCo: s.bk.co, bkBrief: s.bk.brief,
       bn1: bn[0], bn2: bn[1], bn3: bn[2], bn4: bn[3],
       shapes: SHAPES.map(k => ({

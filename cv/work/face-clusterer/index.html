@@ -26,17 +26,17 @@
 <body>
 <div class="crt">
 <header class="bar">
-  <a class="home" href="/cv/">SAAD.DEV</a>
+  <a class="home" href="/cv/">SAAD-DEV</a>
   <nav aria-label="Site"><a href="/cv/work/">WORK</a><a href="/cv/#book">BOOK</a><a href="/services/">SERVICES</a></nav>
 </header>
 <main>
 <article class="case">
-<p class="crumbs"><a href="/cv/">saad.dev</a> / <a href="/cv/work/">work</a> / FaceClusterer</p>
+<p class="crumbs"><a href="/cv/">saad-dev.com</a> / <a href="/cv/work/">work</a> / FaceClusterer</p>
 <p class="label">Computer vision · clustering</p>
 <h1>FaceClusterer</h1>
 <p class="lead">SigLIP global embeddings and InsightFace face embeddings, voted into a consensus across six thresholds. No model retraining, no labels.</p>
 <pre class="cmd"><code>$ python cluster.py ./album</code></pre>
-<ol class="trace" aria-label="A sample run"><li><b>[load]</b> 812 images</li><li><b>[siglip]</b> global embeddings <i>11.2s</i></li><li><b>[insight]</b> buffalo_l face embeddings</li><li><b>[ensemble]</b> consensus vote · 6 thresholds</li><li class="ok">✓ 7 stable identities → faces.txt</li></ol>
+<ol class="trace" aria-label="A sample run"><li><b>[load]</b> 812 images</li><li><b>[siglip]</b> global embeddings <i>11.2s</i></li><li><b>[insight]</b> buffalo_l face embeddings</li><li><b>[ensemble]</b> consensus vote · 6 thresholds</li><li class="ok">✓ 7 stable identities → folders + faces.txt</li></ol>
 <section><h2>What it does</h2><p>Point it at a folder of photos and it groups them by who is in them: SigLIP image embeddings and InsightFace face embeddings are clustered by a consensus vote across six thresholds, giving stable identity labels with no retraining, no labels and no fixed number of clusters.</p></section>
 <section><h2>How it works</h2><ul class="how"><li>Global image embeddings from SigLIP (google/siglip-so400m-patch14-384), batched and GPU-accelerated when available.</li><li>Face detection and face embeddings from InsightFace (buffalo_l).</li><li>Ensemble and consensus clustering across six thresholds, so identities stay stable on noisy photo sets.</li><li>Results are written into browsable folders and zipped.</li></ul></section>
 <section><h2>By the numbers</h2><ul class="nums"><li>6 thresholds</li><li>0 labels needed</li><li>0 retraining</li></ul></section>
@@ -46,7 +46,7 @@
 </article>
 </main>
 <footer class="foot">
-  <p>Saad Waseem · AI/ML engineer · Lahore, Pakistan · <a href="mailto:saad@saad-dev.com">saad@saad-dev.com</a> · <a href="https://github.com/s-wasim">GitHub</a> · <a href="https://linkedin.com/in/s-waseem">LinkedIn</a></p>
+  <p>Saad Waseem · AI/ML and data engineer · Lahore, Pakistan · <a href="mailto:saad@saad-dev.com">saad@saad-dev.com</a> · <a href="https://github.com/s-wasim">GitHub</a> · <a href="https://linkedin.com/in/s-waseem">LinkedIn</a></p>
 </footer>
 </div>
 </body>

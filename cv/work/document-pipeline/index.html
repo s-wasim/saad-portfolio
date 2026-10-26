@@ -26,17 +26,17 @@
 <body>
 <div class="crt">
 <header class="bar">
-  <a class="home" href="/cv/">SAAD.DEV</a>
+  <a class="home" href="/cv/">SAAD-DEV</a>
   <nav aria-label="Site"><a href="/cv/work/">WORK</a><a href="/cv/#book">BOOK</a><a href="/services/">SERVICES</a></nav>
 </header>
 <main>
 <article class="case">
-<p class="crumbs"><a href="/cv/">saad.dev</a> / <a href="/cv/work/">work</a> / document_pipeline</p>
+<p class="crumbs"><a href="/cv/">saad-dev.com</a> / <a href="/cv/work/">work</a> / document_pipeline</p>
 <p class="label">Document AI · human-in-the-loop</p>
 <h1>document_pipeline</h1>
 <p class="lead">Claude-vision state machine. Any document in, a validated row out. Three LLM calls, one repair attempt, one human gate, 69 tests.</p>
 <pre class="cmd"><code>$ python -m document_pipeline invoice.pdf</code></pre>
-<ol class="trace" aria-label="A sample run"><li><b>[classify]</b> invoice.pdf → INVOICE <i>0.9s</i></li><li><b>[extract]</b> 14 fields, schema-enforced <i>1.4s</i></li><li><b>[validate]</b> cross-field check .......... FAIL</li><li><b>[repair]</b> 1 attempt ................... OK</li><li class="ok">✓ committed to postgres · 3 llm calls · 69/69 tests</li></ol>
+<ol class="trace" aria-label="A sample run"><li><b>[classify]</b> invoice.pdf → INVOICE <i>0.9s</i></li><li><b>[extract]</b> 14 fields, schema-enforced <i>1.4s</i></li><li><b>[validate]</b> cross-field check .......... FAIL</li><li><b>[repair]</b> 1 attempt ................... OK</li><li><b>[human]</b> approved ✓</li><li class="ok">✓ committed to postgres · 3 llm calls · 69/69 tests</li></ol>
 <section><h2>What it does</h2><p>Upload a PDF or a photo of a document; Claude classifies it, extracts the fields into a schema, a non-AI check validates the numbers, one repair attempt runs if they do not add up, and a person approves before anything is written to the database.</p></section>
 <section><h2>How it works</h2><ul class="how"><li>LangGraph pipeline: load → classify → extract → validate → (one repair loop) → review queue.</li><li>Claude&#x27;s native PDF and vision input, so there is no separate OCR service.</li><li>Cross-field validation is plain code, not an LLM: cheap and deterministic.</li><li>At most three LLM calls per document: classify, extract and an optional repair.</li><li>A review queue shows the document next to the extracted fields; Approve &amp; Commit writes the rows in one transaction.</li></ul></section>
 <section><h2>By the numbers</h2><ul class="nums"><li>69 tests</li><li>≤3 LLM calls per document</li><li>1 repair attempt</li><li>1 human approval gate</li></ul></section>
@@ -46,7 +46,7 @@
 </article>
 </main>
 <footer class="foot">
-  <p>Saad Waseem · AI/ML engineer · Lahore, Pakistan · <a href="mailto:saad@saad-dev.com">saad@saad-dev.com</a> · <a href="https://github.com/s-wasim">GitHub</a> · <a href="https://linkedin.com/in/s-waseem">LinkedIn</a></p>
+  <p>Saad Waseem · AI/ML and data engineer · Lahore, Pakistan · <a href="mailto:saad@saad-dev.com">saad@saad-dev.com</a> · <a href="https://github.com/s-wasim">GitHub</a> · <a href="https://linkedin.com/in/s-waseem">LinkedIn</a></p>
 </footer>
 </div>
 </body>

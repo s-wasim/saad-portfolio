@@ -145,7 +145,7 @@ def services_shell(site, title, description, path, body, ld, extra_head=''):
 %(body)s
 </main>
 <footer class="foot">
-  <p><strong>Saad Waseem</strong> · independent software engineer · Lahore, Pakistan · working with businesses in the US and worldwide</p>
+  <p><strong>Saad Waseem</strong> · independent AI/ML and data engineer · Lahore, Pakistan · working with businesses in the US and worldwide</p>
   <p><a href="mailto:%(email)s">%(email)s</a> · <a href="https://github.com/s-wasim">GitHub</a> · <a href="https://linkedin.com/in/s-waseem">LinkedIn</a> · <a href="/cv/">CV</a> · <a href="/">saad-dev.com</a></p>
 </footer>
 </body>
@@ -265,14 +265,14 @@ def cv_shell(site, title, description, path, body, ld, image='/cv/assets/og-card
 <body>
 <div class="crt">
 <header class="bar">
-  <a class="home" href="/cv/">SAAD.DEV</a>
+  <a class="home" href="/cv/">SAAD-DEV</a>
   <nav aria-label="Site"><a href="/cv/work/">WORK</a><a href="/cv/#book">BOOK</a><a href="/services/">SERVICES</a></nav>
 </header>
 <main>
 %(body)s
 </main>
 <footer class="foot">
-  <p>Saad Waseem · AI/ML engineer · Lahore, Pakistan · <a href="mailto:%(email)s">%(email)s</a> · <a href="https://github.com/s-wasim">GitHub</a> · <a href="https://linkedin.com/in/s-waseem">LinkedIn</a></p>
+  <p>Saad Waseem · AI/ML and data engineer · Lahore, Pakistan · <a href="mailto:%(email)s">%(email)s</a> · <a href="https://github.com/s-wasim">GitHub</a> · <a href="https://linkedin.com/in/s-waseem">LinkedIn</a></p>
 </footer>
 </div>
 </body>
@@ -301,12 +301,16 @@ def case_page(site, case, text):
     description = case['summary'] if len(case['summary']) <= 300 else case['summary'][:297] + '…'
     trace = ''.join('<li><b>[%s]</b> %s%s</li>' % (esc(n), esc(x), (' <i>%s</i>' % esc(tm)) if tm else '')
                     for n, x, tm in t['steps'])
+    if case.get('gate'):
+        # the CV's console halts here for a person; the static page shows the approval it waited for
+        approved = text.get('WORK | Shared labels / trace line once approved', '').split(']', 1)[-1].strip()
+        trace += '<li><b>[human]</b> %s</li>' % esc(approved)
     final = '<li class="ok">%s</li>' % esc(t['final']) if t['final'] else ''
     extra = ''
     if case.get('extra_link'):
         extra = '<a href="%s">%s &#8599;</a>' % (esc(case['extra_link'][1]), esc(case['extra_link'][0]))
     body = '''<article class="case">
-<p class="crumbs"><a href="/cv/">saad.dev</a> / <a href="/cv/work/">work</a> / %(slug)s</p>
+<p class="crumbs"><a href="/cv/">saad-dev.com</a> / <a href="/cv/work/">work</a> / %(slug)s</p>
 <p class="label">%(kind)s</p>
 <h1>%(title)s</h1>
 <p class="lead">%(cvdesc)s</p>
@@ -339,9 +343,9 @@ def work_index(site, text):
         t = case_text(text, c['repo'])
         items.append('<li><a href="/cv/work/%s/"><span class="label">%s</span><strong>%s</strong><span>%s</span></a></li>'
                      % (c['slug'], esc(c['kind']), esc(t['title']), esc(t['description'])))
-    intro = text.get('WORK | Header / intro', '')
+    intro = site['work_intro']  # the CV's own intro talks about its console, which this page doesn't have
     body = '''<article class="case">
-<p class="crumbs"><a href="/cv/">saad.dev</a> / work</p>
+<p class="crumbs"><a href="/cv/">saad-dev.com</a> / work</p>
 <p class="label">ch 03 · work</p>
 <h1>WORK</h1>
 <p class="lead">%s</p>
@@ -404,7 +408,7 @@ def llms_txt(site, text):
     lines += ['- [Prices and questions](%s): costs, ownership, payment and support' % url(site, '/services/faq/'), '',
               '## AI/ML engineering for tech teams', '',
               '- [CV](%s): %s' % (url(site, '/cv/'), text.get('GLOBAL | Page / search description', '')),
-              '- [Work](%s): six public repositories, each with a runnable trace' % url(site, '/cv/work/')]
+              '- [Work](%s): six public repositories, each with a case study and a sample run' % url(site, '/cv/work/')]
     for c in site['cases']:
         lines.append('- [%s](%s): %s. %s' % (case_text(text, c['repo'])['title'], url(site, '/cv/work/%s/' % c['slug']),
                                              c['kind'], case_text(text, c['repo'])['description']))

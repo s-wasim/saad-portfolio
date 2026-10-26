@@ -1,6 +1,6 @@
 # Saad Waseem
 
-> Saad Waseem is an independent AI/ML engineer in Lahore, Pakistan. He builds production AI agents (LangGraph, MCP, Claude) for tech teams, and websites, business systems and AI automations for small businesses.
+> Saad Waseem is an independent AI/ML and data engineer in Lahore, Pakistan. He builds production AI agents (LangGraph, MCP, Claude) for tech teams, and websites, business systems and AI automations for small businesses.
 
 Based in Lahore, Pakistan; works remotely with teams in the US and EU. Email: saad@saad-dev.com. Lead developer of AI Reports at Maiden Century (Claude agents over 100GB+ of financial data, three report tiers in production).
 
@@ -21,10 +21,10 @@ Fixed quotes after a free 20-minute audit; 50% up front, 50% on delivery; two mo
 ## AI/ML engineering for tech teams
 
 - [CV](https://saad-dev.com/cv/): AI/ML and data engineer in Lahore. LangGraph agents over 100GB+ of financial data, three report tiers in production. $40/hr for build work.
-- [Work](https://saad-dev.com/cv/work/): six public repositories, each with a runnable trace
+- [Work](https://saad-dev.com/cv/work/): six public repositories, each with a case study and a sample run
 - [document_pipeline](https://saad-dev.com/cv/work/document-pipeline/): Document AI · human-in-the-loop. Claude-vision state machine. Any document in, a validated row out. Three LLM calls, one repair attempt, one human gate, 69 tests.
 - [Portfolio-Summarizer](https://saad-dev.com/cv/work/portfolio-summarizer/): Data platform · MCP · agent. Three sources, fourteen tables, three tiers — raw Parquet, a DuckDB warehouse, and derived scores in their own partition. Loads are idempotent: append dedupes on a declared primary key, so a re-run costs nothing. The agent is the last mile, not the point.
-- [inbound_lead_responder](https://saad-dev.com/cv/work/inbound-lead-responder/): Email agent · approval before send. Six-node email agent. Classifies, extracts, routes on a rules table, drafts a proposal — then waits for a person before anything is sent.
+- [inbound_lead_responder](https://saad-dev.com/cv/work/inbound-lead-responder/): Email agent · human handover. Six-node email agent. Classifies, extracts, routes on a rules table, drafts a proposal — then hands it to the right team. Nothing goes back to the lead without a person.
 - [FaceClusterer](https://saad-dev.com/cv/work/face-clusterer/): Computer vision · clustering. SigLIP global embeddings and InsightFace face embeddings, voted into a consensus across six thresholds. No model retraining, no labels.
 - [self_spawnAgents](https://saad-dev.com/cv/work/self-spawn-agents/): Multi-agent system · guardrails. Four agents, no human in the revenue loop — and a profit-blind ethics auditor that can veto the other three. Frozen-config hashes, a sandboxed code generator, capped budgets per child. 140 tests.
 - [ai_knowledge_bot](https://saad-dev.com/cv/work/ai-knowledge-bot/): RAG · cited answers. Point it at a codebase, ask it how onboarding works. Every answer carries file:line citations, so a wrong answer is falsifiable in one click.

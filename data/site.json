@@ -4,8 +4,8 @@
   "booking_url": "https://cal.id/saad-saad-dev/onboarding-call?duration=20",
   "person": {
     "name": "Saad Waseem",
-    "job_title": "Independent AI/ML engineer",
-    "positioning": "Saad Waseem is an independent AI/ML engineer in Lahore, Pakistan. He builds production AI agents (LangGraph, MCP, Claude) for tech teams, and websites, business systems and AI automations for small businesses.",
+    "job_title": "AI/ML and Data Engineer",
+    "positioning": "Saad Waseem is an independent AI/ML and data engineer in Lahore, Pakistan. He builds production AI agents (LangGraph, MCP, Claude) for tech teams, and websites, business systems and AI automations for small businesses.",
     "email": "saad@saad-dev.com",
     "city": "Lahore",
     "country": "Pakistan",
@@ -43,7 +43,7 @@
     ],
     [
       "50% up front, 50% on delivery",
-      "Half to start, half when it is live and you are happy with it."
+      "Half to start, half on delivery, after a 7-day review against the agreed scope."
     ],
     [
       "Two months of support",
@@ -88,7 +88,7 @@
       "faqs": [
         [
           "Can you add online booking, or move my old site over?",
-          "Yes. Online booking, moving your existing site, and a Spanish version are add-ons to any website package, included in the same fixed quote."
+          "Yes. Online booking, moving your existing site, and a Spanish version are add-ons to any website package, priced into the same fixed quote."
         ]
       ]
     },
@@ -101,12 +101,12 @@
       "headline": "Shoeboxes, sorted.",
       "summary": "Orders, stock, invoices and customers on one screen, not in a box under the counter.",
       "title_tag": "CRM, invoicing and inventory systems for small business, from $600",
-      "description": "A CRM, invoicing and stock system for your small business, set up on your own computer with open-source tools and customised to how you work. From $600.",
+      "description": "A CRM, invoicing and stock system for your small business, set up on your own computer with open-source tools and customized to how you work. From $600.",
       "for_who": "Owners running the business from paper, spreadsheets and memory, who want one place for customers, invoices and stock without another monthly bill.",
       "included": [
         [
           "Single system",
-          "One system set up and customised: customers (CRM), invoicing, or stock and equipment tracking."
+          "One system set up and customized: customers (CRM), invoicing, or stock and equipment tracking."
         ],
         [
           "Office suite",
@@ -161,7 +161,7 @@
       "faqs": [
         [
           "What can Claude actually do for a small business?",
-          "Answer routine questions, draft replies and quotes, summarise documents and keep notes, using the tools you already have. I connect only what you approve and show your team what to ask it and what not to share."
+          "Answer routine questions, draft replies and quotes, summarize documents and keep notes, using the tools you already have. I connect only what you approve and show your team what to ask it and what not to share."
         ]
       ]
     },
@@ -224,6 +224,10 @@
         [
           "App-store app",
           "A full app in the app stores when you need one."
+        ],
+        [
+          "Connected devices",
+          "Lights, locks and other smart devices you already own, on the same screen, where they support it."
         ]
       ],
       "faqs": [
@@ -267,7 +271,7 @@
         ],
         [
           "Local growth starter",
-          "A combined starting package for a business starting from scratch."
+          "A combined package for a business building its online presence from scratch."
         ]
       ],
       "faqs": [
@@ -306,7 +310,8 @@
         "≤3 LLM calls per document",
         "1 repair attempt",
         "1 human approval gate"
-      ]
+      ],
+      "gate": true
     },
     {
       "repo": "Portfolio-Summarizer",
@@ -317,7 +322,7 @@
         "Daily Airflow DAGs extract from SEC EDGAR, Yahoo Finance and Alpha Vantage.",
         "Three tiers: raw Parquet, a 14-table DuckDB warehouse, and derived scores in their own partition.",
         "Idempotent loads: appends dedupe on a declared primary key, so a re-run costs nothing.",
-        "A five-module scoring model blends price signals, EPS prediction, financial health and qualitative signals into one score.",
+        "A five-module scoring model: price signals, EPS prediction, financial health and qualitative signals, then a final module that blends them into one score.",
         "An MCP server exposes named DuckDB queries as tools; a Claude agent (LangGraph) answers questions about the portfolio."
       ],
       "stack": [
@@ -344,8 +349,8 @@
     {
       "repo": "inbound_lead_responder",
       "slug": "inbound-lead-responder",
-      "kind": "Email agent · approval before send",
-      "summary": "An email agent that reads inbound messages, sorts real leads from spam and support, extracts the lead's details, routes it to the right team using an editable rules table, and drafts a proposal document — then waits for a person before anything is sent.",
+      "kind": "Email agent · human handover",
+      "summary": "An email agent that reads inbound messages, sorts real leads from spam and support, extracts the lead's details, routes it to the right team using an editable rules table, and drafts a proposal document — then hands it to that team in an internal email, so a person decides what goes back to the lead.",
       "how": [
         "A six-node LangGraph graph: it classifies the email, extracts the lead, routes it, drafts the proposal and hands it over.",
         "Routing follows a keyword rules table the team can edit; Claude only breaks ties.",
@@ -366,7 +371,7 @@
       "numbers": [
         "6 nodes",
         "≤4 Claude calls per lead",
-        "1 human approval before sending"
+        "0 emails sent to the lead automatically"
       ]
     },
     {
@@ -417,7 +422,8 @@
         "140 tests",
         "frozen-config hashes",
         "capped budgets per child"
-      ]
+      ],
+      "gate": true
     },
     {
       "repo": "ai_knowledge_bot",
@@ -471,7 +477,7 @@
     ],
     [
       "How do payments work?",
-      "A fixed quote, 50% up front and 50% on delivery, when it is live and you are happy with it."
+      "A fixed quote, 50% up front and 50% on delivery, after a 7-day review against the agreed scope."
     ],
     [
       "What happens after it is delivered?",
@@ -483,11 +489,12 @@
     ],
     [
       "Who is behind this?",
-      "Saad Waseem, an independent software engineer. I am the lead developer of AI Reports at Maiden Century, where Claude agents run over 100GB+ of financial data in production, and my demo projects are public on GitHub."
+      "I'm Saad Waseem, an independent AI/ML and data engineer. I'm the lead developer of AI Reports at Maiden Century, where Claude agents run over 100GB+ of financial data in production, and my demo projects are public on GitHub."
     ],
     [
       "How do I start?",
       "Book a free 20-minute audit. We talk through what is slowing the business down, and you get a fixed quote for the fix."
     ]
-  ]
+  ],
+  "work_intro": "Six public repositories. Each page has a sample run, how it works, and the source. Two of them stop at a human before anything irreversible happens."
 }

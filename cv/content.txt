@@ -23,7 +23,7 @@ a header doesn't match. Lines above the first header (like these) are notes;
 the site ignores them.
 
 <!-- GLOBAL | Page / browser tab title -->
-Saad Waseem — AI/ML and data engineer
+Saad Waseem — AI/ML and Data Engineer
 
 <!-- GLOBAL | Page / search description -->
 AI/ML and data engineer in Lahore. LangGraph agents over 100GB+ of financial data, three report tiers in production. $40/hr for build work.
@@ -41,7 +41,7 @@ saad@saad-dev.com
 https://linkedin.com/in/s-waseem
 
 <!-- GLOBAL | Links / WhatsApp link -->
-https://wa.me/+923390071419
+https://wa.me/923390071419
 
 <!-- GLOBAL | Links / GitHub profile -->
 https://github.com/s-wasim
@@ -56,7 +56,7 @@ PKT e1→e2 128b 11.9ms .. e2→e3 96b 8.4ms .. HIL idle .. NODES 6 .. F-6 18 ..
 Channels
 
 <!-- GLOBAL | Nav tabs / HOME tab -->
-Saad.DEV
+Saad-DEV
 
 <!-- GLOBAL | Nav tabs / METHOD tab -->
 Method
@@ -301,7 +301,7 @@ Screen contrast
 SAT
 
 <!-- GLOBAL | Control module / fader SAT (screen-reader) -->
-Colour saturation
+Color saturation
 
 <!-- GLOBAL | Control module / fader GLO label -->
 GLO
@@ -355,7 +355,7 @@ art: pixel sprites as hex source · type: Michroma, Chakra Petch, JetBrains Mono
 close
 
 <!-- GLOBAL | SYS panel / build line -->
-one file · no build step · no framework · no npm
+static HTML · one Python build script · no npm
 
 <!-- GLOBAL | Command palette / screen-reader label -->
 Command palette
@@ -490,10 +490,10 @@ Burst mode on. Every node is lit for three seconds.
 {channel} channel loaded.
 
 <!-- HOME | Header / chapter label -->
-ch 01 · saad.dev
+ch 01 · saad-dev
 
 <!-- HOME | Header / title -->
-SAAD.DEV
+SAAD-DEV
 
 <!-- HOME | Header / intro -->
 AI/ML and data engineer in Lahore, working remotely with US and EU teams. Lead developer of AI Reports at Maiden Century — Claude agents over 100GB+ of financial data, three tiers in production. Four years of pipelines that run without me watching them.
@@ -565,7 +565,7 @@ Structured output, schema-enforced. ≤3 LLM calls/doc.
 Non-LLM cross-field logic. Cheap, deterministic.
 
 <!-- HOME | Pipeline graph / tooltip: repair -->
-One shot. If it fails twice, a human looks at it.
+One shot. If it still fails, a human looks at it.
 
 <!-- HOME | Pipeline graph / tooltip: commit -->
 Transactional write to Postgres. 69 tests green.
@@ -607,7 +607,7 @@ Proof
 {n}.0★
 
 <!-- HOME | Proof stats / 6 number -->
-9
+10
 
 <!-- HOME | Proof stats / 6 text -->
 {n} PUBLIC REPOS
@@ -643,7 +643,7 @@ STEP 02 · BUDGET
 Count the model calls
 
 <!-- METHOD | Step 2 / text -->
-Three LLM calls per document, capped, and the cap is a test. Vision for classification, structured output for extraction, and that's the budget. Every call that isn't in the budget is a cost you'll discover in production instead of in review.
+Three LLM calls per document, capped, and the cap is a test. Vision for classification, structured output for extraction, one repair if validation fails, and that's the budget. Every call that isn't in the budget is a cost you'll discover in production instead of in review.
 
 <!-- METHOD | Step 3 / label -->
 STEP 03 · SCHEMA
@@ -694,7 +694,7 @@ commit
 human
 
 <!-- METHOD | Pinned graph / ship badge -->
-DOCKER · 55 TESTS · README
+DOCKER · 69 TESTS · README
 
 <!-- METHOD | Legend / wire -->
 WIRE
@@ -718,7 +718,7 @@ ch 03 · work
 WORK
 
 <!-- WORK | Header / intro -->
-Six public repositories, each with a runnable trace. Press run and watch the real path a job takes. Three of them stop at a human — when they do, this console stops with them.
+Six public repositories, each with a runnable trace. Press run and watch the real path a job takes. Two of them stop at a human — when they do, this console stops with them.
 
 <!-- WORK | Current role / label -->
 CURRENT · MAIDEN CENTURY
@@ -811,7 +811,7 @@ data dictionary →
 inbound_lead_responder
 
 <!-- WORK | inbound_lead_responder card / description -->
-Six-node email agent. Classifies, extracts, routes on a rules table, drafts a proposal — then waits for a person before anything is sent.
+Six-node email agent. Classifies, extracts, routes on a rules table, drafts a proposal — then hands it to the right team. Nothing goes back to the lead without a person.
 
 <!-- WORK | inbound_lead_responder card / command -->
 $ lead-agent --watch inbox
@@ -991,7 +991,7 @@ ensemble
 consensus vote · 6 thresholds
 
 <!-- WORK | FaceClusterer run trace / final line -->
-✓ 7 stable identities → faces.txt
+✓ 7 stable identities → folders + faces.txt
 
 <!-- WORK | self_spawnAgents run trace / step 1 name -->
 mother
@@ -1045,19 +1045,19 @@ voyage-code-3 · pgvector
 retrieve
 
 <!-- WORK | ai_knowledge_bot run trace / step 3 text -->
-top-k 8 · rerank
+top-k 8 · graded
 
 <!-- WORK | ai_knowledge_bot run trace / step 4 name -->
 answer
 
 <!-- WORK | ai_knowledge_bot run trace / step 4 text -->
-grounded · 4 citations
+grounded · 2 citations
 
 <!-- WORK | ai_knowledge_bot run trace / step 4 time -->
 2.2s
 
 <!-- WORK | ai_knowledge_bot run trace / final line -->
-✓ auth.py:42 · middleware.py:118 · 1 claude call
+✓ auth.py:42 · middleware.py:118 · 3 claude calls
 
 <!-- WORK | Screen-reader / approval gate open -->
 A human approval gate is open on {repo}. The machine is waiting for you.
@@ -1072,7 +1072,7 @@ ch 04 · lab
 LAB
 
 <!-- LAB | Header / intro -->
-Things built to answer a question rather than to ship. Two of them are how I learned the tool I now bill for; one is a game; one is an Android launcher that fits in 80 kilobytes. Same discipline, no client attached.
+Things built to answer a question rather than to ship. Two of them are how I learned the tools I now bill for; one is a game; one is an Android home launcher in plain Java. Same discipline, no client attached.
 
 <!-- LAB | LoRA card / title -->
 LoRA Fine-Tuning + Eval Harness
@@ -1081,7 +1081,7 @@ LoRA Fine-Tuning + Eval Harness
 Qwen2.5 on banking77, MLflow-tracked, base-vs-tuned in a table: accuracy 0.28 → 0.36, macro-F1 0.15 → 0.21. That's a capped CPU smoke run, not a claim — the caveat is the point, and it's the artifact behind the 5★ Upwork fine-tuning review.
 
 <!-- LAB | LoRA card / command in the description -->
-make train && make eval
+make setup && make data && make train && make eval
 
 <!-- LAB | LoRA card / description after the command -->
 reproduces it.
@@ -1132,13 +1132,13 @@ https://github.com/s-wasim/hikarus-day-game
 retro-launcher
 
 <!-- LAB | retro-launcher card / description -->
-A native Android home launcher, Java only, zero runtime dependencies, a per-pixel renderer, ten palettes, 97 commits, built on a CI-only pipeline because there's no local Android toolchain in reach. Release APK budget: under 80 KB. The domain is a variable; the discipline is the constant.
+A native Android home launcher in plain Java — no Kotlin, no Compose, no Material — with a per-pixel animated sky, built on a CI-only pipeline because there's no local Android toolchain in reach. This repo is the open-source edition. The domain is a variable; the discipline is the constant.
 
 <!-- LAB | retro-launcher card / chip: Java · Android -->
 Java · Android
 
 <!-- LAB | retro-launcher card / source link address -->
-https://github.com/s-wasim/retro-launcher
+https://github.com/s-wasim/retro-launcher-open
 
 <!-- RANGE | Header / chapter label -->
 ch 05 · range
@@ -1454,7 +1454,7 @@ reset conversation
 what’s the hardest thing you’ve shipped?
 why LangGraph and not CrewAI?
 how do you keep LLM costs down?
-has he actually built a data warehouse?
+have you actually built a data warehouse?
 are you actually available?
 
 <!-- TWIN | Ask box / stop button -->
@@ -1527,7 +1527,7 @@ how do you keep LLM costs down?
 Call budget is a design constraint I decide up front — document_pipeline is three calls per document, and the validator is deterministic code because that is cheaper than a second opinion.
 
 <!-- TWIN | Demo chat (shown when openrouter is unreachable) / question 4 -->
-has he actually built a data warehouse?
+have you actually built a data warehouse?
 
 <!-- TWIN | Demo chat (shown when openrouter is unreachable) / answer 4 -->
 Three sources into a 14-table DuckDB warehouse — 2 dimension, 9 fact, 3 derived, kept in their own partition. Loads are idempotent: append dedupes on a declared primary key, so a re-run costs nothing.
@@ -1623,16 +1623,16 @@ ROUTED · STEP 02 OF 02
 Now pick a time
 
 <!-- BOOK | After routing / text after the request summary -->
-— logged. Twenty minutes, UTC+5, mornings US / afternoons EU. Grab whichever slot suits you.
+— this goes into your booking notes. Twenty minutes, UTC+5, mornings US / afternoons EU. Grab whichever slot suits you.
 
 <!-- BOOK | After routing / name when none was given -->
 you
 
 <!-- BOOK | Scheduler / placeholder line 1 -->
-SCHEDULER · PATCH IN CAL.COM
+SCHEDULER · 20 MIN · GOOGLE MEET
 
 <!-- BOOK | Scheduler / booking link (clickable) -->
-https://cal.id/saad-saad-dev/onboarding-call
+https://cal.id/saad-saad-dev/onboarding-call?duration=20
 
 <!-- BOOK | Links / email link -->
 email instead
@@ -1641,7 +1641,7 @@ email instead
 linkedin
 
 <!-- BOOK | Screen-reader / request routed -->
-Request routed. The scheduler is open.
+Request ready. Open the scheduler to pick a time; your note goes with it.
 
 <!-- FAQ | Header / chapter label -->
 faq · plain text
@@ -1662,13 +1662,13 @@ An independent AI/ML and data engineer in Lahore, Pakistan, working remotely wit
 What does he build?
 
 <!-- FAQ | 2 answer -->
-Production AI agents with LangGraph, MCP and Claude; data pipelines on Airflow, Snowflake and Databricks; and automations that stop at a human approval step before anything irreversible happens. Six of them are public on GitHub, each with a runnable trace.
+Production AI agents with LangGraph, MCP and Claude; data pipelines on Airflow, Snowflake and Databricks; and automations that stop at a human approval step before anything irreversible happens. Six of them are public on GitHub, each with a case study at saad-dev.com/cv/work.
 
 <!-- FAQ | 3 question -->
 Can I hire him to build an AI agent for my team?
 
 <!-- FAQ | 3 answer -->
-Yes. $40/hr for build work, fixed-scope projects, part-time or retainer work, or a full-time role. Book 20 minutes: UTC+5, which means mornings in the US and afternoons in the EU.
+Yes: a fixed-scope project, part-time or retainer work, or a full-time role. Build work is $40/hr. Book 20 minutes: UTC+5, which means mornings in the US and afternoons in the EU.
 
 <!-- FAQ | 4 question -->
 How does he keep agents safe in production?
@@ -1686,4 +1686,4 @@ Yes: websites, business systems, AI assistants and automations, at fixed prices 
 How do I reach him?
 
 <!-- FAQ | 6 answer -->
-Email saad@saad-dev.com, book a call from the BOOK channel, or find him on LinkedIn (linkedin.com/in/s-waseem) and GitHub (github.com/s-wasim).
+Email saad@saad-dev.com, book a 20-minute call at cal.id/saad-saad-dev/onboarding-call, or find him on LinkedIn (linkedin.com/in/s-waseem) and GitHub (github.com/s-wasim).

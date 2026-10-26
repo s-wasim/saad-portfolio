@@ -37,7 +37,7 @@ class Landing(unittest.TestCase):
     def test_landing_labels(self):
         text = {d: re.sub(r'<[^>]+>', ' ', body) for d, _, body in self.doors()}
         self.assertIn('CV', text['cv'])
-        self.assertIn('AI/ML engineer · agents in production', text['cv'])
+        self.assertIn('AI/ML and data engineer · agents in production', text['cv'])
         self.assertIn('Services', text['services'])
         self.assertIn('Websites &amp; systems for small businesses', text['services'])
 

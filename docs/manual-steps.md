@@ -29,20 +29,20 @@ From then on, editing `cv/content.txt` on github.com republishes the site by its
 
 Assistants match people across sites by name plus a consistent description. Use the same words everywhere.
 
-- **Headline:** `Independent AI/ML engineer · Production AI agents (LangGraph, MCP, Claude) · Websites & AI automation for small businesses`
-- **About (first paragraph, verbatim):** `I'm Saad Waseem, an independent AI/ML engineer in Lahore, Pakistan. I build production AI agents (LangGraph, MCP, Claude) for tech teams, and websites, business systems and AI automations for small businesses.`
-- **About (second paragraph):** `Lead developer of AI Reports at Maiden Century: Claude agents over 100GB+ of financial data, three report tiers in production. Six of my agent and data projects are public, each with a runnable trace: saad-dev.com/cv/work`
+- **Headline:** `AI/ML and Data Engineer · Production AI agents (LangGraph, MCP, Claude) · Websites & AI automation for small businesses`
+- **About (first paragraph, verbatim):** `I'm Saad Waseem, an independent AI/ML and data engineer in Lahore, Pakistan. I build production AI agents (LangGraph, MCP, Claude) for tech teams, and websites, business systems and AI automations for small businesses.`
+- **About (second paragraph):** `Lead developer of AI Reports at Maiden Century: Claude agents over 100GB+ of financial data, three report tiers in production. Six of my agent and data projects are public, each with a case study: saad-dev.com/cv/work`
 - **Website field:** `https://saad-dev.com`
 - **Featured:** add links to `https://saad-dev.com/services/` and `https://saad-dev.com/cv/work/`.
 
 ## 5. GitHub (github.com/s-wasim)
 
-- **Profile → Edit profile:** bio `Independent AI/ML engineer · production AI agents (LangGraph, MCP, Claude) · Lahore, Pakistan`; website `https://saad-dev.com`; location `Lahore, Pakistan`.
+- **Profile → Edit profile:** bio `AI/ML and Data Engineer · production AI agents (LangGraph, MCP, Claude) · Lahore, Pakistan`; website `https://saad-dev.com`; location `Lahore, Pakistan`.
 - **Profile README:** create a public repo named `s-wasim` with a `README.md`:
 
   ```markdown
   # Saad Waseem
-  Independent AI/ML engineer in Lahore, Pakistan. I build production AI agents (LangGraph, MCP, Claude)
+  Independent AI/ML and data engineer in Lahore, Pakistan. I build production AI agents (LangGraph, MCP, Claude)
   for tech teams, and websites, business systems and AI automations for small businesses.
 
   - CV and case studies: https://saad-dev.com/cv/

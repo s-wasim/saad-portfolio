@@ -26,19 +26,19 @@
 <body>
 <div class="crt">
 <header class="bar">
-  <a class="home" href="/cv/">SAAD.DEV</a>
+  <a class="home" href="/cv/">SAAD-DEV</a>
   <nav aria-label="Site"><a href="/cv/work/">WORK</a><a href="/cv/#book">BOOK</a><a href="/services/">SERVICES</a></nav>
 </header>
 <main>
 <article class="case">
-<p class="crumbs"><a href="/cv/">saad.dev</a> / <a href="/cv/work/">work</a> / Portfolio-Summarizer</p>
+<p class="crumbs"><a href="/cv/">saad-dev.com</a> / <a href="/cv/work/">work</a> / Portfolio-Summarizer</p>
 <p class="label">Data platform · MCP · agent</p>
 <h1>Portfolio-Summarizer</h1>
 <p class="lead">Three sources, fourteen tables, three tiers — raw Parquet, a DuckDB warehouse, and derived scores in their own partition. Loads are idempotent: append dedupes on a declared primary key, so a re-run costs nothing. The agent is the last mile, not the point.</p>
 <pre class="cmd"><code>$ airflow dags trigger portfolio_daily</code></pre>
 <ol class="trace" aria-label="A sample run"><li><b>[airflow]</b> dag tick · 06:00 UTC</li><li><b>[edgar]</b> SEC filings → 4 forms <i>2.1s</i></li><li><b>[prices]</b> Yahoo Finance → 1,254 rows</li><li><b>[news]</b> Alpha Vantage → 38 headlines</li><li><b>[warehouse]</b> 14 tables written · duckdb</li><li><b>[score]</b> 5 modules blended · −100…+100</li><li class="ok">✓ AAPL: +37 · polars / pyarrow</li></ol>
 <section><h2>What it does</h2><p>An Airflow-orchestrated data platform that pulls SEC filings, prices and news every day, lands them in a 14-table DuckDB warehouse, scores each ticker from −100 to +100, and lets a Claude agent query it all through an MCP server.</p></section>
-<section><h2>How it works</h2><ul class="how"><li>Daily Airflow DAGs extract from SEC EDGAR, Yahoo Finance and Alpha Vantage.</li><li>Three tiers: raw Parquet, a 14-table DuckDB warehouse, and derived scores in their own partition.</li><li>Idempotent loads: appends dedupe on a declared primary key, so a re-run costs nothing.</li><li>A five-module scoring model blends price signals, EPS prediction, financial health and qualitative signals into one score.</li><li>An MCP server exposes named DuckDB queries as tools; a Claude agent (LangGraph) answers questions about the portfolio.</li></ul></section>
+<section><h2>How it works</h2><ul class="how"><li>Daily Airflow DAGs extract from SEC EDGAR, Yahoo Finance and Alpha Vantage.</li><li>Three tiers: raw Parquet, a 14-table DuckDB warehouse, and derived scores in their own partition.</li><li>Idempotent loads: appends dedupe on a declared primary key, so a re-run costs nothing.</li><li>A five-module scoring model: price signals, EPS prediction, financial health and qualitative signals, then a final module that blends them into one score.</li><li>An MCP server exposes named DuckDB queries as tools; a Claude agent (LangGraph) answers questions about the portfolio.</li></ul></section>
 <section><h2>By the numbers</h2><ul class="nums"><li>3 data sources</li><li>14 tables</li><li>5 scoring modules</li><li>score from −100 to +100</li></ul></section>
 <section><h2>Stack</h2><ul class="chips"><li>Apache Airflow</li><li>Polars</li><li>PyArrow</li><li>DuckDB</li><li>MCP</li><li>LangGraph</li><li>Anthropic Claude</li><li>Docker Compose</li></ul></section>
 <section><h2>Questions</h2><div class="faq"><details><summary>Can I run Portfolio-Summarizer myself?</summary><p>Yes. It is open source at https://github.com/s-wasim/Portfolio-Summarizer, and the README walks through running it locally.</p></details><details><summary>Can Saad Waseem build something like Portfolio-Summarizer for my team?</summary><p>Yes. He builds production AI agents and automations like this one, remotely from Lahore for teams in the US and EU, at $40/hr for build work. Book 20 minutes from the CV, or email saad@saad-dev.com.</p></details></div></section>
@@ -46,7 +46,7 @@
 </article>
 </main>
 <footer class="foot">
-  <p>Saad Waseem · AI/ML engineer · Lahore, Pakistan · <a href="mailto:saad@saad-dev.com">saad@saad-dev.com</a> · <a href="https://github.com/s-wasim">GitHub</a> · <a href="https://linkedin.com/in/s-waseem">LinkedIn</a></p>
+  <p>Saad Waseem · AI/ML and data engineer · Lahore, Pakistan · <a href="mailto:saad@saad-dev.com">saad@saad-dev.com</a> · <a href="https://github.com/s-wasim">GitHub</a> · <a href="https://linkedin.com/in/s-waseem">LinkedIn</a></p>
 </footer>
 </div>
 </body>

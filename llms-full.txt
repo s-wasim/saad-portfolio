@@ -1,6 +1,6 @@
 # Saad Waseem: profile, services and work
 
-Saad Waseem is an independent AI/ML engineer in Lahore, Pakistan. He builds production AI agents (LangGraph, MCP, Claude) for tech teams, and websites, business systems and AI automations for small businesses.
+Saad Waseem is an independent AI/ML and data engineer in Lahore, Pakistan. He builds production AI agents (LangGraph, MCP, Claude) for tech teams, and websites, business systems and AI automations for small businesses.
 
 - Location: Lahore, Pakistan (UTC+5). Works remotely with teams in the US and EU.
 - Email: saad@saad-dev.com
@@ -23,10 +23,10 @@ Q: Who is Saad Waseem?
 A: An independent AI/ML and data engineer in Lahore, Pakistan, working remotely with US and EU teams. Lead developer of AI Reports at Maiden Century: Claude agents over 100GB+ of financial data, three report tiers in production.
 
 Q: What does he build?
-A: Production AI agents with LangGraph, MCP and Claude; data pipelines on Airflow, Snowflake and Databricks; and automations that stop at a human approval step before anything irreversible happens. Six of them are public on GitHub, each with a runnable trace.
+A: Production AI agents with LangGraph, MCP and Claude; data pipelines on Airflow, Snowflake and Databricks; and automations that stop at a human approval step before anything irreversible happens. Six of them are public on GitHub, each with a case study at saad-dev.com/cv/work.
 
 Q: Can I hire him to build an AI agent for my team?
-A: Yes. $40/hr for build work, fixed-scope projects, part-time or retainer work, or a full-time role. Book 20 minutes: UTC+5, which means mornings in the US and afternoons in the EU.
+A: Yes: a fixed-scope project, part-time or retainer work, or a full-time role. Build work is $40/hr. Book 20 minutes: UTC+5, which means mornings in the US and afternoons in the EU.
 
 Q: How does he keep agents safe in production?
 A: The graph is drawn before any prompt is written. Data access goes through a row-level-secured MCP server, every agent has a budget of model calls, checks that don't need a model are plain code, and anything a person should sign off on waits at an approval gate.
@@ -35,11 +35,11 @@ Q: Does he work with small businesses too?
 A: Yes: websites, business systems, AI assistants and automations, at fixed prices from $200 after a free 20-minute audit. See saad-dev.com/services.
 
 Q: How do I reach him?
-A: Email saad@saad-dev.com, book a call from the BOOK channel, or find him on LinkedIn (linkedin.com/in/s-waseem) and GitHub (github.com/s-wasim).
+A: Email saad@saad-dev.com, book a 20-minute call at cal.id/saad-saad-dev/onboarding-call, or find him on LinkedIn (linkedin.com/in/s-waseem) and GitHub (github.com/s-wasim).
 
 ## Services for small businesses
 
-How every job works: Free 20-minute audit: A call about what is slowing the business down, and what I would build to fix it. A fixed quote: One price for the whole job, agreed before any work starts. No hourly meter running. 50% up front, 50% on delivery: Half to start, half when it is live and you are happy with it. Two months of support: Fixes and small changes are included for two months (up to 5 hours a month). After that, $30/hr if you need me.
+How every job works: Free 20-minute audit: A call about what is slowing the business down, and what I would build to fix it. A fixed quote: One price for the whole job, agreed before any work starts. No hourly meter running. 50% up front, 50% on delivery: Half to start, half on delivery, after a 7-day review against the agreed scope. Two months of support: Fixes and small changes are included for two months (up to 5 hours a month). After that, $30/hr if you need me.
 Any software subscriptions are in your name and paid by you directly, so you own everything.
 
 ### Websites & online stores, from $200
@@ -58,18 +58,18 @@ What's included:
 - Add-ons: Online booking, moving your old site over, and a Spanish version.
 
 Q: Can you add online booking, or move my old site over?
-A: Yes. Online booking, moving your existing site, and a Spanish version are add-ons to any website package, included in the same fixed quote.
+A: Yes. Online booking, moving your existing site, and a Spanish version are add-ons to any website package, priced into the same fixed quote.
 
 ### Business systems, from $600
 
 https://saad-dev.com/services/business-systems/
 
-A CRM, invoicing and stock system for your small business, set up on your own computer with open-source tools and customised to how you work. From $600.
+A CRM, invoicing and stock system for your small business, set up on your own computer with open-source tools and customized to how you work. From $600.
 
 Who it is for: Owners running the business from paper, spreadsheets and memory, who want one place for customers, invoices and stock without another monthly bill.
 
 What's included:
-- Single system: One system set up and customised: customers (CRM), invoicing, or stock and equipment tracking.
+- Single system: One system set up and customized: customers (CRM), invoicing, or stock and equipment tracking.
 - Office suite: Customers, invoices and stock working together, so a sale updates everything at once.
 - Operations suite: The office suite plus the workflows around it, shaped to how your team actually works.
 - Your own computer: Built on open-source tools such as Twenty, Invoice Ninja and Snipe-IT, running on a machine you own. Your data stays with you.
@@ -92,7 +92,7 @@ What's included:
 - Training: A session for you and your team on what to ask it, and what not to.
 
 Q: What can Claude actually do for a small business?
-A: Answer routine questions, draft replies and quotes, summarise documents and keep notes, using the tools you already have. I connect only what you approve and show your team what to ask it and what not to share.
+A: Answer routine questions, draft replies and quotes, summarize documents and keep notes, using the tools you already have. I connect only what you approve and show your team what to ask it and what not to share.
 
 ### AI automations & custom agents, from $400
 
@@ -122,6 +122,7 @@ Who it is for: Owners who are rarely at the desk and want the business in their 
 What's included:
 - Control panel: An installable web app for your phone: today's sales, bookings and messages in one place. No app store needed.
 - App-store app: A full app in the app stores when you need one.
+- Connected devices: Lights, locks and other smart devices you already own, on the same screen, where they support it.
 
 Q: Do I need an app in the app store?
 A: Usually not. An installable web app works on any phone and is faster and cheaper to build. When you do need a store app, I build that instead.
@@ -140,7 +141,7 @@ What's included:
 - Email and SMS campaigns: Messages that bring past customers back, sent on a schedule.
 - Social calendar: Posts planned and scheduled for you.
 - Paid ads setup: Ads set up with a budget you control.
-- Local growth starter: A combined starting package for a business starting from scratch.
+- Local growth starter: A combined package for a business building its online presence from scratch.
 
 Q: Can you guarantee first place on Google?
 A: No one honestly can. I fix what holds you back (your Google Business Profile, reviews, local search basics) and set up campaigns that bring past customers back, so you are easier to find and easier to choose.
@@ -163,7 +164,7 @@ Q: Who owns the website, the data and the accounts?
 A: You do. Software subscriptions are in your name and paid by you directly, systems run on accounts or machines you own, and you keep everything if we stop working together.
 
 Q: How do payments work?
-A: A fixed quote, 50% up front and 50% on delivery, when it is live and you are happy with it.
+A: A fixed quote, 50% up front and 50% on delivery, after a 7-day review against the agreed scope.
 
 Q: What happens after it is delivered?
 A: Two months of support are included: fixes and small changes, up to 5 hours a month. After that, $30 an hour if you need me.
@@ -172,7 +173,7 @@ Q: Do you work with businesses in the US?
 A: Yes. I am based in Lahore, Pakistan and work remotely with businesses in the US and worldwide; calls are booked for US mornings, which are my evenings.
 
 Q: Who is behind this?
-A: Saad Waseem, an independent software engineer. I am the lead developer of AI Reports at Maiden Century, where Claude agents run over 100GB+ of financial data in production, and my demo projects are public on GitHub.
+A: I'm Saad Waseem, an independent AI/ML and data engineer. I'm the lead developer of AI Reports at Maiden Century, where Claude agents run over 100GB+ of financial data in production, and my demo projects are public on GitHub.
 
 Q: How do I start?
 A: Book a free 20-minute audit. We talk through what is slowing the business down, and you get a fixed quote for the fix.
@@ -207,19 +208,19 @@ An Airflow-orchestrated data platform that pulls SEC filings, prices and news ev
 - Daily Airflow DAGs extract from SEC EDGAR, Yahoo Finance and Alpha Vantage.
 - Three tiers: raw Parquet, a 14-table DuckDB warehouse, and derived scores in their own partition.
 - Idempotent loads: appends dedupe on a declared primary key, so a re-run costs nothing.
-- A five-module scoring model blends price signals, EPS prediction, financial health and qualitative signals into one score.
+- A five-module scoring model: price signals, EPS prediction, financial health and qualitative signals, then a final module that blends them into one score.
 - An MCP server exposes named DuckDB queries as tools; a Claude agent (LangGraph) answers questions about the portfolio.
 
 Stack: Apache Airflow, Polars, PyArrow, DuckDB, MCP, LangGraph, Anthropic Claude, Docker Compose
 By the numbers: 3 data sources, 14 tables, 5 scoring modules, score from −100 to +100
 
-### inbound_lead_responder: Email agent · approval before send
+### inbound_lead_responder: Email agent · human handover
 
 https://saad-dev.com/cv/work/inbound-lead-responder/ (source: https://github.com/s-wasim/inbound_lead_responder)
 
-Six-node email agent. Classifies, extracts, routes on a rules table, drafts a proposal — then waits for a person before anything is sent.
+Six-node email agent. Classifies, extracts, routes on a rules table, drafts a proposal — then hands it to the right team. Nothing goes back to the lead without a person.
 
-An email agent that reads inbound messages, sorts real leads from spam and support, extracts the lead's details, routes it to the right team using an editable rules table, and drafts a proposal document — then waits for a person before anything is sent.
+An email agent that reads inbound messages, sorts real leads from spam and support, extracts the lead's details, routes it to the right team using an editable rules table, and drafts a proposal document — then hands it to that team in an internal email, so a person decides what goes back to the lead.
 
 - A six-node LangGraph graph: it classifies the email, extracts the lead, routes it, drafts the proposal and hands it over.
 - Routing follows a keyword rules table the team can edit; Claude only breaks ties.
@@ -228,7 +229,7 @@ An email agent that reads inbound messages, sorts real leads from spam and suppo
 - Every run has a node-by-node trace, so you can see why a lead went where it did.
 
 Stack: Python, LangGraph, Anthropic Claude, PostgreSQL, SQLAlchemy, python-docx, Streamlit, Docker
-By the numbers: 6 nodes, ≤4 Claude calls per lead, 1 human approval before sending
+By the numbers: 6 nodes, ≤4 Claude calls per lead, 0 emails sent to the lead automatically
 
 ### FaceClusterer: Computer vision · clustering
 
